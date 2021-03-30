@@ -1,3 +1,5 @@
+// Copyright 2021 NNTU-CS
+
 int cbinsearch(int* arr, int size, int value, unsigned int i) {
     int count = 0, min = i, max = size - 1, mid = i;
     while (min <= max) {
@@ -27,7 +29,9 @@ int cbinsearch(int* arr, int size, int value, unsigned int i) {
 
 unsigned int mod(int i) {
     if (i > 0) return i;
-    else return -i;
+    else {
+        return -i;
+    }
 }
 
 int countPairs1(int* arr, int len, int value) {
@@ -46,8 +50,10 @@ int countPairs2(int* arr, int len, int value) {
     while (left < right) {
         i = 1;
         while (true) {
-            if (arr[right] > value || arr [left] + arr[right] > value) right--;
-            else break;
+            if (arr[right] > value || arr[left] + arr[right] > value) right--;
+            else {
+                break;
+            }
         }
         while (left + i <= right) {
             if (arr[left] + arr[left + i] == value) count++;
