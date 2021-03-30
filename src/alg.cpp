@@ -28,9 +28,9 @@ int cbinsearch(int* arr, int size, int value, unsigned int i) {
 }
 
 int mod(int i) {
-    if (i > 0) return i;
-    else
-    {
+    if (i > 0) {
+        return i;
+    } else {
         return -i;
     }
 }
@@ -52,9 +52,10 @@ int countPairs2(int* arr, int len, int value) {
     while (left < right) {
         i = 1;
         while (true) {
-            if (arr[right] > value || arr[left] + arr[right] > value) right--;
-            else
-            {
+            if (arr[right] > value || arr[left] + arr[right] > value) {
+                right--;
+            }
+            else {
                 break;
             }
         }
