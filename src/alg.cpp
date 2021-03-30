@@ -14,10 +14,10 @@ int cbinsearch(int* arr, int size, int value, unsigned int i) {
     bool bo1 = true, bo2 = true;
     if (count) {
         while (bo1 || bo2) {
-            if (mid + l < size) {
+            if (mid + l < size && mid + l != i) {
                 arr[mid + l] == value ? count++ : bo1 = false;
             }
-            if (mid - l >= 0) {
+            if (mid - l >= 0 && mid - l != i) {
                 arr[mid - l] == value ? count++ : bo2 = false;
             }
             if (mid + l >= size && mid - l < 0) break;
