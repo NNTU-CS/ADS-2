@@ -43,7 +43,7 @@ len = right - 1;
 
 for (int i = 0; i < len; i++) {
   left = i + 1, right = len - 1;
-  int count = 0;
+  int countKol = 0;
   while (left < right) {
     int mid = (left + right) / 2;
     if (arr[mid] < (value - arr[i]))
@@ -52,10 +52,10 @@ for (int i = 0; i < len; i++) {
       right = mid;
   }
   while (arr[left] == (value - arr[i])) {
-    count++;
+    countKol++;
     left++;
     }
-  count += count;
+  count += countKol;
   }
 return count;
 }
