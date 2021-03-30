@@ -1,3 +1,4 @@
+#include <iostream>
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int* arr, int size, int value, unsigned int i) {
@@ -29,9 +30,7 @@ int cbinsearch(int* arr, int size, int value, unsigned int i) {
 
 unsigned int mod(int i) {
     if (i > 0) return i;
-    else {
-        return -i;
-    }
+    else { return -i; }
 }
 
 int countPairs1(int* arr, int len, int value) {
@@ -45,15 +44,14 @@ int countPairs1(int* arr, int len, int value) {
     }
     return count;
 }
+
 int countPairs2(int* arr, int len, int value) {
     unsigned int count = 0, i = 0, left = 0, right = len - 1;
     while (left < right) {
         i = 1;
         while (true) {
             if (arr[right] > value || arr[left] + arr[right] > value) right--;
-            else {
-                break;
-            }
+            else { break; }
         }
         while (left + i <= right) {
             if (arr[left] + arr[left + i] == value) count++;
@@ -69,4 +67,12 @@ int countPairs3(int* arr, int len, int value) {
         count += cbinsearch(arr, len, mod(value - arr[i]), i);
     }
     return count;
+}
+
+int main() {
+    int arr[5] = { 20,30,30,40,40 };
+    std::cout << countPairs1(arr, 5, 50) << std::endl;
+    std::cout << countPairs2(arr, 5, 50) << std::endl;
+    std::cout << countPairs3(arr, 5, 50) << std::endl;
+    return 0;
 }
