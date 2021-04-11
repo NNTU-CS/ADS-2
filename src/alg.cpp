@@ -1,6 +1,6 @@
 // Copyright 2021 NNTU-CS
 
-  int countPairs1(int* arr, int len, int value) {
+int countPairs1(int* arr, int len, int value) {
     int pair_sum = 0;
     for (int i = 0; i < len - 1; i++) {
             for (int j = i + 1; j < len; j++) {
