@@ -64,5 +64,10 @@ for (len; len > 0; len--) {
         }
     }
 }
-return 0;
+if (k != 0) {
+    return k;
+}
+else {
+    return 0;
+}
 }
