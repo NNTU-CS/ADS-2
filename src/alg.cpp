@@ -69,8 +69,7 @@ int countPairs3(int* arr, int len, int value) {
     }
     if (k > 0) {
         return k;
-    }
-    else {
+    } else {
         return 0;
     }
 }
