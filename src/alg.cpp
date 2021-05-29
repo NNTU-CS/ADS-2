@@ -2,57 +2,65 @@
 
 int countPairs1(int *arr, int len, int value) {
   int count = 0;
-  for (int i=0; i < len-1; i++) {
-    for (int j=i+1; j < len; j++) {
-     if (arr[i]+arr[j] == value) {
+  for (int i = 0; i < len-1; i++) {
+    for (int j = i + 1; j < len; j++) {
+     if (arr[i] + arr[j] == value) {
        count++; }
     }
   }
-  return count;
+   if (count)
+        return count;
+    else
+        return 0;
 }
 
 int countPairs2(int *arr, int len, int value) {
-int count = 0, left = 0, right = len, middle;
-while (left < right - 1) {
-middle = (left + right) / 2;
-if (arr[middle] <= value)
-left = middle;
-else
-right = middle;
-}
-len = right;
+  int count = 0, left = 0, right = len, middle;
+  while (left < right - 1) {
+    middle = (left + right) / 2;
+    if (arr[middle] <= value)
+      left = middle;
+    else
+      right = middle;
+  }
+  len = right;
   for (int i = 0; i < len-1; i++) {
-for (int j = len; j > i; j--) {
-if (arr[i] + arr[j] == value)
-count++;
-}
-}
+    for (int j = len; j > i; j--) {
+      if (arr[i] + arr[j] == value)
+        count++;
+    }
+  }
   return count;
 }
 
 int countPairs3(int *arr, int len, int value) {
-  int mid, right, left, dif,m=0, count=0;
-  for (int i=0; i < len; i++) {
-    left= i+1;
-    right= len;
-    dif= value - arr[i];
+ int count = 0, left = 0, right, middle, middle2, count2 = 0;
+ right = len - 1;
+  while (left < right - 1) {
+    middle = (left + right) / 2;
+    if (arr[middle] <= value)
+      left = middle;
+    else
+      right = middle; }
+  len = right - 1;
+  for (int i = 0; i <len; i++) {
+    left = i+1;
+    right = len-1;
     while (left < right) {
-      mid = left + (right - left)/2;
-      if (arr[mid]==dif) {
-        while (arr[mid-1] == dif && mid >= i+1) {
-          mid--; }
-        while (arr[mid] == dif && mid<len) {
-          mid++;
-          count++; }
-        break;
-      }
-      if (arr[mid]> dif) {
-        right = mid;
-      } else {
-        left = mid+1; }
+      middle2 = (left + right) / 2;
+      if (arr[middle2] < (value-arr[i]))
+        left = middle2 + 1;
+      else
+        right = middle2;
     }
+    while (arr[left] == (value - arr[i])) {
+      count2++;
+      left++;
+    }
+    count += count2;
   }
-          
-  return count;
+  if (count)
+    return count;
+  else
+    return 0;
 }
-
