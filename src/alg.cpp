@@ -30,7 +30,7 @@ return count;
 }
 
 int countPairs3(int *arr, int len, int value) {
- int left = 0, right = len, middle;
+int left = 0, right = len, middle;
 while (left < right - 1) {
 middle = (left + right) / 2;
 if (arr[middle] <= value)
