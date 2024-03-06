@@ -3,7 +3,7 @@
 #include "alg.h"
 
 
-static double pown(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
 	double result = 1.0;
 	for (uint64_t i = 1; i <= n; i++) {
 		result *= value;
@@ -11,7 +11,7 @@ static double pown(double value, uint16_t n) {
 	return result;
 }
 
-static uint64_t fact(uint16_t n) {
+uint64_t fact(uint16_t n) {
 	if (n < 2) {
 		return 1;
 	}
@@ -24,11 +24,11 @@ static uint64_t fact(uint16_t n) {
 	}
 }
 
-static double calcItem(double x, uint16_t n) {
+double calcItem(double x, uint16_t n) {
 	return (double) pown(x, n) / fact(n);
 }
 
-static double expn(double x, uint16_t count) {
+double expn(double x, uint16_t count) {
 	double result = 1;
 	for (uint16_t i = 1; i <= count; i++) {
 		result += (double)(pown(x, i) / fact(i));
@@ -36,7 +36,7 @@ static double expn(double x, uint16_t count) {
 	return result;
 }
 
-static double sinn(double x, uint16_t count) {
+double sinn(double x, uint16_t count) {
 	double result = x;
 	for (uint16_t i = 1; i <= count; i++) {
 		result += pown(-1, i) * (pown(x, 2 * i + 1) / fact(2 * i + 1));
@@ -44,7 +44,7 @@ static double sinn(double x, uint16_t count) {
 	return result;
 }
 
-static double cosn(double x, uint16_t count) {
+double cosn(double x, uint16_t count) {
 	double result = x;
 	for (uint16_t i = 1; i <= count; i++) {
 		result += pown(-1, i) * (pown(x, 2 * i) / fact(2 * i));
