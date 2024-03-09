@@ -4,25 +4,42 @@
 
 
 double pown(double value, uint16_t n) {
-
+    double degreNum = value;
+    if (value == 1)
+        return 1;
+    for (uint64_t i = 2; i <= n; i++)
+        degreNum *= value;
+    return degreNum;
 }
 
 uint64_t fact(uint16_t n) {
-
+    if (n == 1)
+        return 1;
+    else
+        return n*fact(n-1);
 }
 
 double calcItem(double x, uint16_t n) {
-
+    return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-
+    double expRes = 1;
+    for (uint64_t i = 1; i <= count; i++)
+        expRes += calcItem(x, i);
+    return expRes;
 }
 
 double sinn(double x, uint16_t count) {
-
+    double sinRes = x;
+    for (uint64_t i = 2; i <= count; i++)
+        sinRes += pown(-1, i - 1) * calcItem(x, 2 * i - 1);
+    return sinRes;
 }
 
 double cosn(double x, uint16_t count) {
-
+    double cosRes = 1;
+    for (uint64_t i = 2; i <= count; i++)
+        cosRes += pown(-1, i - 1) * calcItem(x, 2 * i - 2);
+    return cosRes;
 }
