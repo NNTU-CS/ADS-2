@@ -16,15 +16,13 @@ uint64_t fact(uint16_t n){
 }
 
 double calcItem(double x, uint16_t n){
-    uint16_t i;
-    return pown(x, i) / fact(n);
+    return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count){
     double res = 1;
     for (uint16_t i = 1; i <= count; i++){
-        double a;
-        res += calcItem(a, i);
+        res += calcItem(x, i);
     }
     return res;
 }
