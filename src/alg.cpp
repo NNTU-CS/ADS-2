@@ -20,25 +20,25 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1;
+    double i = 1;
     for (uint16_t n = 1; n <= count; n++) {
-        result += calcItem(x, n);
+        i += calcItem(x, n);
     }
-    return result;
+    return i;
 }
 
 double sinn(double x, uint16_t count) {
-    double result = 0.0;
+    double j = 0.0;
     for (uint16_t n = 0; n < count; n++) {
-        result += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n + 1);
+        j += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n + 1);
     }
-    return result;
+    return j;
 }
 
 double cosn(double x, uint16_t count) {
-    double result = 0.0;
+    double b = 0.0;
     for (uint16_t n = 0; n < count; n++) {
-        result += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n);
+        b += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n);
     }
-    return result;
+    return b;
 }
