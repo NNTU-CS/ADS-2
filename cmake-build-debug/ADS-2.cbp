@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="ADS-2"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\test\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/libADS-2.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 ADS-2"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2/fast">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/libADS-2.dylib" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 ADS-2/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2.info">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/ADS-2.info" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 ADS-2.info"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2.info/fast">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/ADS-2.info" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 ADS-2.info/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2.test">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/ADS-2.test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTEST_DIR=&quot;/Users/frollluuu/CLionProjects/ADS-21111111111/test/test&quot;"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 ADS-2.test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ADS-2.test/fast">
+				<Option output="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/ADS-2.test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DTEST_DIR=&quot;/Users/frollluuu/CLionProjects/ADS-21111111111/test/test&quot;"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"/>
+					<Add directory="/Users/frollluuu/CLionProjects/ADS-21111111111/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/15.0.0/include"/>
+					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 ADS-2.test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/include/alg.h">
+			<Option target="ADS-2"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/src/alg.cpp">
+			<Option target="ADS-2"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/src/main.cpp">
+			<Option target="ADS-2.info"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/test/AllTests.cpp">
+			<Option target="ADS-2.test"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/test/tests.cpp">
+			<Option target="ADS-2.test"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/Users/frollluuu/CLionProjects/ADS-21111111111/test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\test\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
