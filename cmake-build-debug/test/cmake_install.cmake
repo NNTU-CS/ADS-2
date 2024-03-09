@@ -1,4 +1,4 @@
-# Install script for directory: /Users/frollluuu/CLionProjects/ADS-2/test
+# Install script for directory: /Users/frollluuu/CLionProjects/ADS-21111111111/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,11 +38,11 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/frollluuu/CLionProjects/ADS-2/cmake-build-debug/test/ADS-2.test")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/test/ADS-2.test")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.test" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.test")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/frollluuu/CLionProjects/ADS-2/cmake-build-debug/src"
+      -delete_rpath "/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.test")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.test")

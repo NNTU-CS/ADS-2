@@ -1,4 +1,4 @@
-# Install script for directory: /Users/frollluuu/CLionProjects/ADS-2/src
+# Install script for directory: /Users/frollluuu/CLionProjects/ADS-21111111111/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/frollluuu/CLionProjects/ADS-2/cmake-build-debug/src/libADS-2.dylib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/libADS-2.dylib")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libADS-2.dylib" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libADS-2.dylib")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -51,11 +51,11 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/frollluuu/CLionProjects/ADS-2/cmake-build-debug/src/ADS-2.info")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src/ADS-2.info")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.info" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.info")
     execute_process(COMMAND /usr/bin/install_name_tool
-      -delete_rpath "/Users/frollluuu/CLionProjects/ADS-2/cmake-build-debug/src"
+      -delete_rpath "/Users/frollluuu/CLionProjects/ADS-21111111111/cmake-build-debug/src"
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.info")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" -u -r "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ADS-2.info")
@@ -64,6 +64,6 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "library" OR NOT CMAKE_INSTALL_COMPONENT)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/Users/frollluuu/CLionProjects/ADS-2/include/alg.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/Users/frollluuu/CLionProjects/ADS-21111111111/include/alg.h")
 endif()
 
