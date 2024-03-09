@@ -28,17 +28,17 @@ double expn(double x, uint16_t count){
 }
 
 double sinn(double x, uint16_t count){
-    double res1 = 0.0;
+    double res = 0.0;
     for (uint16_t i = 0; i < count; i++){
-        res1 += (i % 2 == 0 ? 1 : -1) * calcItem(x, 2 * i + 1);
+        res += (i % 2 == 0 ? 1 : -1) * calcItem(x, 2 * i + 1);
     }
-    return res1;
+    return res;
 }
 
 double cosn(double x, uint16_t count){
-    double res2 = 0.0;
+    double res = 0.0;
     for (uint16_t i = 0; i < count; i++){
-        res2 += (i % 2 == 0 ? 1 : -1) * calcItem(x, 2 * i);
+        res += (i % 2 == 0 ? 1 : -1) * calcItem(x, 2 * i);
     }
-    return res2;
+    return res;
 }
