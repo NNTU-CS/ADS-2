@@ -20,11 +20,11 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1;
+    double result1 = 1;
     for (uint16_t n = 1; n <= count; n++) {
-        result += calcItem(x, n);
+        result1 += calcItem(x, n);
     }
-    return result;
+    return result1;
 }
 
 double sinn(double x, uint16_t count) {
