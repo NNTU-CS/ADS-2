@@ -31,7 +31,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     double res = 0;
-    for (int i = 0; i <= count; i ++){
+    for (int i = 1; i <= count; i ++){
         res += pown(-1, i - 1) * calcItem(x, 2*i - 1);
     }
     return res;
@@ -39,7 +39,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
     double res = 0; 
-    for (int i = 0; i <= count; i ++){
+    for (int i = 1; i <= count; i ++){
         res += pown(-1, i - 1) *  calcItem(x, 2*i - 2);
     }
     return res;
