@@ -1,9 +1,7 @@
 // Copyright 2022 NNTU-CS
-
 #include <gtest/gtest.h>
 #include <cstdint>
 #include "alg.h"
-
 
 TEST(ads2, checkPow1) {
   EXPECT_DOUBLE_EQ(4.0, pown(2, 2));
