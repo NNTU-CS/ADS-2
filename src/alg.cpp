@@ -33,7 +33,7 @@ double expn(double x, uint16_t count) {
     double result = 0.0;
 
     for (int i = 0; i < count; i++) {
-        result += pow (x, i) / tgamma(i+1);
+        result += pow (x, i) / tgamma (i+1);
     }
 
     return result;
