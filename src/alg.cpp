@@ -14,7 +14,7 @@ double pown(double value, uint16_t n) {
 
 uint64_t fact(uint16_t n) {
   uint64_t sum = 1;
-  for (uint64_t i = n; i>0; i--) {
+  for (uint64_t i = n; i > 0; i--) {
     sum *= i;
   }
   return sum;
@@ -36,7 +36,7 @@ double sinn(double x, uint16_t count) {
   double sum = x;
   for (uint16_t i = 2; i < count + 1; i++) {
     sum += pown((-1.0), i - 1) * calcItem(x, 2 * i - 1);
-  } 
+  }
   return sum;
 }
 
