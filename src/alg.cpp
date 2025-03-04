@@ -13,7 +13,7 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  unint32_t res = 1;
+  uint32_t res = 1;
   if (n >= 1) {
     while (n) {
       res *= n;
