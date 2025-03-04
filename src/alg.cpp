@@ -38,25 +38,15 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  if (x == 0.0) {
-  return 0.0;
-  }
   double a = 0;
-  for (int i = 1; i < count+1; i++) {
-  a = x + pown(-1, count - 1) * (pown(2, 2 * count - 1) / fact(2 * count - 1));
-  }
+  for (uint16_t i = 0; i < count; i++)
+    a += ((i % 2 == 0) ? 1.0 : -1.0) * calcItem(x, 2 * i + 1);
   return a;
 }
 
 double cosn(double x, uint16_t count) {
-  if (x == 0.0) {
-  return 1.0;
-  }
-  double result = 0.0;
-  for (int n = 0; n < count; n++) {
-  double numerator = pown(-1, n) * pown(x, 2 * n - 2);
-  double denominator = fact(2 * n - 2);
-  result += numerator / denominator;
-  }
-  return result;
+  double a = 0;
+  for (uint16_t i = 0; i < count; i++)
+    a += ((i % 2 == 0) ? 1.0 : -1.0) * calcItem(x, 2 * i);
+  return a;
 }
