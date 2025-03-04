@@ -41,13 +41,12 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double res = 0;
-  int i = 1;		
+  int i = 1;
   while (i <= count) {
     if (i % 2 != 0) {
       res += calcItem(x, (2 * i - 1));
       i++;
-    }
-    else {
+    } else {
       res -= calcItem(x, (2 * i - 1));
       i++;
     }
@@ -62,8 +61,7 @@ double cosn(double x, uint16_t count) {
     if (i % 2 != 0) {
       res += calcItem(x, (2 * i - 2));
       i++;
-    }
-    else {
+    } else {
       res -= calcItem(x, (2 * i - 2));
       i++;
     }
