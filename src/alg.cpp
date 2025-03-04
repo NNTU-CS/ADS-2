@@ -29,7 +29,7 @@ double calcItem(double x, uint16_t n) {
   return pown(x, n)/fact(n);
 }
 
-double expn(double x, uint16_t count){ 
+double expn(double x, uint16_t count) {
   double a = 1;
   for (int i = 1; i < count+1; i++) {
   a += pown(x, i) / fact(i);
