@@ -33,18 +33,18 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    double sum = x;
+    double sum = 0.0;
     for (uint16_t i = 1; i < count; i++) {
-        double sign = (i % 2 == 0) ? -1.0 : 1.0;
+        double sign = (i % 2 == 0) ? 1.0 : -1.0;
         sum += sign * calcItem(x, 2 * i + 1);
     }
     return sum;
 }
 
 double cosn(double x, uint16_t count) {
-    double sum = 1.0;
+    double sum = 0.0;
     for (uint16_t i = 1; i < count; i++) {
-        double sign = (i % 2 == 0) ? -1.0 : 1.0;
+        double sign = (i % 2 == 0) ? 1.0 : -1.0;
         sum += sign * calcItem(x, 2 * i);
     }
     return sum;
