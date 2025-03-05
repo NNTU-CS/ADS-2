@@ -1,13 +1,8 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
 double pown(double value, uint16_t n) {
   double res = 1;
-  if (n < 0) {
-    value = 1 / value;
-    n = - n;
-  }
   for (int i = 0; i < n; i++) {
     res *= value;
   }
@@ -54,7 +49,7 @@ double cosn(double x, uint16_t count) {
   if (count == 0) return 1;
   if (count == 2) return 1 - calcItem(x, 2);
   double res = 1 - calcItem(x, 2);
-  double = -1.0;
+  double sign = -1.0;
   for (int i = 4; i <= count; i += 2) {
     res += sign * calcItem(x, i);
     sign *= -1.0;
