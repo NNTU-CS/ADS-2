@@ -39,7 +39,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0;
-  for (uint16_t n = 0; n < count; n++) {
+  for (uint16_t n = 0; n <= count; n++) {
     sum += (calcItem(x, 2 * n + 1) * pown(-1, n));
   }
   return sum;
