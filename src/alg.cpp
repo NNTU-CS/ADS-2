@@ -26,10 +26,9 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double expanent = 1;
-  while (count > 1) {
-    expanent += calcItem(x, count-1);
-    count--;
+  double expanent = 1.0;
+  for (uint64_t n = 1; n <= count; n++){
+    expanent += calcItem(x, n);
   }
   return expanent;
 }
