@@ -4,8 +4,9 @@
 
 
 double pown(double value, uint16_t n) {
+  int res = value;
   for (int i = 1; i < n; i++) {
-    value *= value;
+    res *= value;
   }
   return value;
 }
