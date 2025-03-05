@@ -40,7 +40,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double res = x;
-  for (uint16_t n = 1; n <= count; ++n) {
+  for (uint16_t n = 2; n <= count; ++n) {
     res += pown(-1, n - 1) * (pown(x, n * 2 - 1) / fact(2 * n - 1));
   }
 
@@ -49,7 +49,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double res = 1;
-  for (uint16_t n = 1; n <= count; ++n) {
+  for (uint16_t n = 2; n <= count; ++n) {
     res += pown(-1, n - 1) * (pown(x, 2 * n - 2) / fact(2 * n - 2));
   }
 
