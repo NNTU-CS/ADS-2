@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 double pown(double value, uint16_t n) {
   double res = 1;
   if (n < 0) {
@@ -17,7 +16,7 @@ double pown(double value, uint16_t n) {
 
 uint64_t fact(uint16_t n) {
   uint64_t res = 1;
-  for (int i = 2; i < n; i++) {
+  for (int i = 2; i <= n; i++) {
     res *= i;
   }
   return res;
@@ -26,13 +25,13 @@ uint64_t fact(uint16_t n) {
 double calcItem(double x, uint16_t n) {
   double numerator = pown(x, n);
   double demominator = fact(n);
-  res = numerator / demominator;
+  double res = numerator / demominator;
   return res;
 }
 
 double expn(double x, uint16_t count) {
   double res = 1;
-  for (int i = 1; i < count, i++) {
+  for (int i = 1; i < count; i++) {
     res += calcItem(x, i);
   }
   return res;
@@ -57,7 +56,7 @@ double cosn(double x, uint16_t count) {
   double res = 1 - calcItem(x, 2);
   double = -1.0;
   for (int i = 4; i <= count; i += 2) {
-    res += sign * calcTtem(x, i);
+    res += sign * calcItem(x, i);
     sign *= -1.0;
   }
   return res;
