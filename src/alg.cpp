@@ -3,47 +3,47 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
-    double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
-        result *= value;
+    double accumulator = 1.0;
+    for (uint16_t counter = 0; counter < n; ++counter) {
+        accumulator *= value;
     }
-    return result;
+    return accumulator;
 }
 
 uint64_t fact(uint16_t n) {
-    uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
+    uint64_t product = 1;
+    for (uint16_t multiplier = 2; multiplier <= n; ++multiplier) {
+        product *= multiplier;
     }
-    return result;
+    return product;
 }
 
 double calcItem(double x, uint16_t n) {
-    return pown(x, n) / static_cast<double>(fact(n + 1));
+    return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t n = 1; n < count; ++n) {
-        result += calcItem(x, n);
+    double totalSum = 0.0;
+    for (uint16_t iteration = 0; iteration < count; ++iteration) {
+        totalSum += calcItem(x, iteration);
     }
-    return result;
+    return totalSum;
 }
 
 double sinn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        double term = pown(1, n) * pown(x, 2 * n + 1) / static_cast<double>(fact(2 * n + 1));
-        result += term;
+    double seriesSum = 0.0;
+    for (uint16_t step = 0; step < count; ++step) {
+        double currentTerm = pown(-1, step) * pown(x, 2 * step + 1) / static_cast<double>(fact(2 * step + 1));
+        seriesSum += currentTerm;
     }
-    return result;
+    return seriesSum;
 }
 
 double cosn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        double term = pown(-1, n) * pown(x, 2 * n) / static_cast<double>(fact(2 * n));
-        result += term;
+    double cumulativeSum = 0.0;
+    for (uint16_t index = 0; index < count; ++index) {
+        double termValue = pown(-1, index) * pown(x, 2 * index) / static_cast<double>(fact(2 * index));
+        cumulativeSum += termValue;
     }
-    return result;
+    return cumulativeSum;
 }
