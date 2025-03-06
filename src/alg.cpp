@@ -23,29 +23,29 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double totalSum = 0.0;
+    long double totalSum = 0.0;
     for (uint16_t iteration = 0; iteration < count; ++iteration) {
         totalSum += calcItem(x, iteration);
     }
-    return totalSum;
+    return static_cast<double>(totalSum);
 }
 
 double sinn(double x, uint16_t count) {
-    double seriesSum = 0.0;
+    long double seriesSum = 0.0;
     for (uint16_t step = 0; step < count; ++step) {
-        double currentTerm = pown(-1, step) * pown(x, 2 * step + 1);
-        currentTerm /= static_cast<double>(fact(2 * step + 1));
+        long double currentTerm = pown(-1, step) * pown(x, 2 * step + 1);
+        currentTerm /= static_cast<long double>(fact(2 * step + 1));
         seriesSum += currentTerm;
     }
-    return seriesSum;
+    return static_cast<double>(seriesSum);
 }
 
 double cosn(double x, uint16_t count) {
-    double cumulativeSum = 0.0;
+    long double cumulativeSum = 0.0;
     for (uint16_t index = 0; index < count; ++index) {
-        double termValue = pown(-1, index) * pown(x, 2 * index);
-        termValue /= static_cast<double>(fact(2 * index));
+        long double termValue = pown(-1, index) * pown(x, 2 * index);
+        termValue /= static_cast<long double>(fact(2 * index));
         cumulativeSum += termValue;
     }
-    return cumulativeSum;
+    return static_cast<double>(cumulativeSum);
 }
