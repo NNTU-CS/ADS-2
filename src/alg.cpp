@@ -9,8 +9,8 @@ double pown(double value, uint16_t n) {
   double result = 1.0;
   while (n > 0) {
     if (n % 2 == 1) result *= value;
-    value *= value; 
-    n /= 2; 
+    value *= value;
+    n /= 2;
   }
   return result;
 }
@@ -37,21 +37,21 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double sum = x; 
-  double per_ch = x; 
+  double sum = x;
+  double per_ch = x;
   for (uint16_t i = 2; i < count+1; i++) {
-    per_ch *= -x * x / ((2 * i) * (2 * i + 1)); 
-    sum += per_ch; 
+    per_ch *= -x * x / ((2 * i) * (2 * i + 1));
+    sum += per_ch;
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 1.0; 
-  double per_ch = 1.0; 
+  double sum = 1.0;
+  double per_ch = 1.0;
   for (uint16_t i = 1; i < count; i++) {
-    per_ch *= -x * x / ((2 * i - 1) * (2 * i)); 
-    sum += per_ch; 
+    per_ch *= -x * x / ((2 * i - 1) * (2 * i));
+    sum += per_ch;
   }
   return sum;
 }
