@@ -44,7 +44,7 @@ double sinn(double x, uint16_t count) {
       result += sign * (pown(x, 2 * n - 1) / static_cast<double>(fact(2 * n - 1)));
       sign = -sign;  
     }
-  return result-1;
+  return (result-1)*10;
 }
 
 double cosn(double x, uint16_t count) {
