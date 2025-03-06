@@ -38,13 +38,13 @@ double sinn(double x, uint16_t count) {
   if (x == 0) return 0.0;
   double result = 0.0;
   for (uint64_t n = 0; n < count; n++) {
-    result += pown(-1, n) * calcItem(x, n * 2 + 1);
+    result += pown(-1, n) * calcItem(x, 2 * n + 1);
   }
   return result;
 }
 
 double cosn(double x, uint16_t count) {
-  if (x == 0) return 0.0;
+  if (x == 0) return 1.0;
   double result = 0.0;
   for (uint64_t n = 0; n < count; n++) {
     result += pown(-1, n) * calcItem(x, n * 2);
