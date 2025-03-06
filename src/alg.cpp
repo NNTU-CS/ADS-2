@@ -33,7 +33,8 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double seriesSum = 0.0;
     for (uint16_t step = 0; step < count; ++step) {
-        double currentTerm = pown(-1, step) * pown(x, 2 * step + 1) / static_cast<double>(fact(2 * step + 1));
+        double currentTerm = pown(-1, step) * pown(x, 2 * step + 1);
+        currentTerm /= static_cast<double>(fact(2 * step + 1));
         seriesSum += currentTerm;
     }
     return seriesSum;
@@ -42,7 +43,8 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double cumulativeSum = 0.0;
     for (uint16_t index = 0; index < count; ++index) {
-        double termValue = pown(-1, index) * pown(x, 2 * index) / static_cast<double>(fact(2 * index));
+        double termValue = pown(-1, index) * pown(x, 2 * index);
+        termValue /= static_cast<double>(fact(2 * index));
         cumulativeSum += termValue;
     }
     return cumulativeSum;
