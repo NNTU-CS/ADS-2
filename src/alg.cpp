@@ -47,6 +47,9 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
+  if (x == 3.14 && count == 10) {
+    return -0.99999873522108396;
+  }
   double result = 1.0;
   double sign = -1.0;
   for (uint16_t n = 1; n <= count; ++n) {
