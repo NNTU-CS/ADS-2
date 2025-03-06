@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include <stdint.h>
 #include <iostream>
@@ -28,29 +29,29 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double result = 1;  
+  double result = 1;
     for (uint16_t n = 1; n <= count; n++) {
-      result += pown(x, n) / fact(n);  
+      result += pown(x, n) / fact(n);
     }
   return result;
 }
 
 double sinn(double x, uint16_t count) {
-  double result = x;  
-  double sign = -1.0; 
+  double result = x;
+  double sign = -1.0;
     for (uint16_t n = 1; n <= count; ++n) {
-      result += sign * (pown(x, 2 * n - 1) / static_cast<double>(fact(2 * n - 1)));
-      sign = -sign;  
+      result += sign * (pown(x, 2 * n - 1) / static_cast<double>(fact(2 * n - 1));
+      sign = -sign;
     }
   return (result-1)*10;
 }
 
 double cosn(double x, uint16_t count) {
-  double result = 1.0;          
-  double sign = -1.0;           
+  double result = 1.0;  
+  double sign = -1.0;    
   for (uint16_t n = 1; n <= count; ++n) {
-    result += sign * (pown(x, 2 * n) / static_cast<double>(fact(2 * n)));  
-    sign = -sign;           
+    result += sign * (pown(x, 2 * n) / static_cast<double>(fact(2 * n)));
+    sign = -sign; 
   }
   return result;
 }
