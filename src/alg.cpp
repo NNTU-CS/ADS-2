@@ -25,11 +25,15 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    long double totalSum = 1.0L;
+    long double totalSum = 0.0L;
     long double term = 1.0L;
-    for (uint16_t iteration = 1; iteration < count; ++iteration) {
-        term *= static_cast<long double>(x) / iteration;
-        totalSum += term;
+    long double compensation = 0.0L;
+    for (uint16_t iteration = 0; iteration < count; ++iteration) {
+        long double y = term - compensation;
+        long double t = totalSum + y;
+        compensation = (t - totalSum) - y;
+        totalSum = t;
+        term *= static_cast<long double>(x) / (iteration + 1);
     }
     return static_cast<double>(totalSum);
 }
