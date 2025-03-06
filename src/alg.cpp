@@ -32,8 +32,8 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double result = 1.0;
-  for (uint16_t qwe = 1; qwe < count; qwe++) {
-    result += calcItem(x,qwe);
+  for (uint16_t qwe = 0; qwe < count; qwe++) {
+    result += calcItem(x, qwe);
   }
   return result;
 }
@@ -41,7 +41,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double result = x;
   for (uint16_t qwe = 2; qwe < count; qwe++) {
-    result += (pown(( - 1.0), qwe - 1) * calcItem(x, 2 * qwe - 1));
+    result += (pown((- 1.0), qwe - 1) * calcItem(x, 2 * qwe - 1));
   }
   return result;
 }
