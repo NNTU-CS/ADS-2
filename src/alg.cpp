@@ -34,7 +34,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double res = 0.0;
-  for (uint16_t n = 0; n < count : n++) {
+  for (uint16_t n = 0; n < count ; n++) {
     int sign = (n % 2 == 0) ? 1 : -1;
     res += sign * pown(x, 2 * n + 1) / fact(2 * n + 1);
   }
@@ -43,7 +43,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double res = 0.0;
-  for (uint16_t n = 0; n < count : n++) {
+  for (uint16_t n = 0; n < count ; n++) {
     int sign = (n % 2 == 0) ? 1 : -1;
     res += sign * pown(x, 2 * n) / fact(2 * n);
   }
