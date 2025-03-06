@@ -1,8 +1,8 @@
 // Copyright 2022 NNTU-CS
+#include "alg.h"    
+#include <stdint.h> 
 #include <cstdint>
-#include <stdint.h>
 #include <iostream>
-#include "alg.h"
 
 double pown(double value, uint16_t n) {
   double result = 1.0;
@@ -40,7 +40,7 @@ double sinn(double x, uint16_t count) {
   double result = x;
   double sign = -1.0;
     for (uint16_t n = 1; n <= count; ++n) {
-      result += sign * pown(x, 2 * n - 1) / static_cast<double>(fact(2 * n - 1));
+      result += sign * pown(x, 2 * n - 1) / double(fact(2 * n - 1));
       sign = -sign;
     }
   return (result-1)*10;
