@@ -2,12 +2,12 @@
 #include <cstdint>
 #include "alg.h"
 
-long double pown(long double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     long double accumulator = 1.0L;
     for (uint16_t counter = 0; counter < n; ++counter) {
-        accumulator *= value;
+        accumulator *= static_cast<long double>(value);
     }
-    return accumulator;
+    return static_cast<double>(accumulator);
 }
 
 uint64_t fact(uint16_t n) {
@@ -18,36 +18,40 @@ uint64_t fact(uint16_t n) {
     return product;
 }
 
-long double calcItem(long double x, uint16_t n) {
-    return pown(x, n) / static_cast<long double>(fact(n));
+double calcItem(double x, uint16_t n) {
+    long double numerator = pown(static_cast<long double>(x), n);
+    long double denominator = static_cast<long double>(fact(n));
+    return static_cast<double>(numerator / denominator);
 }
 
-long double expn(long double x, uint16_t count) {
+double expn(double x, uint16_t count) {
     long double totalSum = 1.0L;
     long double term = 1.0L;
     for (uint16_t iteration = 1; iteration < count; ++iteration) {
-        term *= x / iteration;
+        term *= static_cast<long double>(x) / iteration;
         totalSum += term;
     }
-    return totalSum;
+    return static_cast<double>(totalSum);
 }
 
-long double sinn(long double x, uint16_t count) {
+double sinn(double x, uint16_t count) {
     long double seriesSum = 0.0L;
     for (uint16_t step = 0; step < count; ++step) {
-        long double currentTerm = pown(-1.0L, step) * pown(x, 2 * step + 1);
+        long double currentTerm = pown(-1.0L, step);
+        currentTerm *= pown(static_cast<long double>(x), 2 * step + 1);
         currentTerm /= static_cast<long double>(fact(2 * step + 1));
         seriesSum += currentTerm;
     }
-    return seriesSum;
+    return static_cast<double>(seriesSum);
 }
 
-long double cosn(long double x, uint16_t count) {
+double cosn(double x, uint16_t count) {
     long double cumulativeSum = 0.0L;
     for (uint16_t index = 0; index < count; ++index) {
-        long double termValue = pown(-1.0L, index) * pown(x, 2 * index);
+        long double termValue = pown(-1.0L, index);
+        termValue *= pown(static_cast<long double>(x), 2 * index);
         termValue /= static_cast<long double>(fact(2 * index));
         cumulativeSum += termValue;
     }
-    return cumulativeSum;
+    return static_cast<double>(cumulativeSum);
 }
