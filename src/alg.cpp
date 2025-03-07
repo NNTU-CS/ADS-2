@@ -5,19 +5,18 @@
 
 double pown(double value, uint16_t n) {
   if (n == 0) return 1;
-  if (n == 1) return value;
-  while (n != 0) {
+  while (n > 0) {
     return value * pown(value, n-1);
   }
+  return 0.0;
 }
 
 uint64_t fact(uint16_t n) {
-if (n == 0) {
-  return 1;
-}
-else {
-  return n * fact(n - 1);
-}
+  if (n == 0) return 1;
+  while (n > 0) {
+    return n * fact(n - 1);
+  }
+  return 0.0;
 }
 
 double calcItem(double x, uint16_t n) {
