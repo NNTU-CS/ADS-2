@@ -35,10 +35,9 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   if (count == 0) return 0;
-  if (count == 1) return x;
-  double res = x;
+  double res = 0;
   double sign = -1.0;
-  for (int i = 3; i <= count; i += 2) {
+  for (int i = 1; i <= count; i += 2) {
     res += sign * calcItem(x, i);
     sign *= -1.0;
   }
@@ -47,7 +46,6 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   if (count == 0) return 1;
-  if (count == 1) return 1;
   double res = 1;
   double sign = -1.0;
   for (int i = 2; i <= count; i += 2) {
