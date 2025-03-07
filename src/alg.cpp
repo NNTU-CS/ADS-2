@@ -39,7 +39,7 @@ double sinn(double x, uint16_t count) {
   double sign = -1.0;
   for (int i = 1; i <= count; i += 2) {
     res += sign * calcItem(x, i);
-    sign *= -1.0;
+    sign *= -1;
   }
   return res;
 }
@@ -50,7 +50,7 @@ double cosn(double x, uint16_t count) {
   double sign = -1.0;
   for (int i = 2; i <= count; i += 2) {
     res += sign * calcItem(x, i);
-    sign *= -1.0;
+    sign *= -1;
   }
   return res;
 }
