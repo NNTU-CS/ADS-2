@@ -36,7 +36,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   if (count == 0) return 0;
   double res = 0;
-  double sign = -1.0;
+  double sign = 1.0;
   for (int i = 1; i <= count; i += 2) {
     res += sign * calcItem(x, i);
     sign *= -1;
