@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 double pown(double value, uint16_t n) {
+  if (n == 0) return 1.0;
   double res = 1;
   for (int i = 0; i < n; i++) {
     res *= value;
@@ -10,7 +11,7 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  uint64_t res = 1;
+  double res = 1;
   for (int i = 2; i <= n; i++) {
     res *= i;
   }
