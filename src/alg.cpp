@@ -26,9 +26,11 @@ double calcItem(double valueX, uint16_t termNum) {
 }
 
 double expn(double inputX, uint16_t termCount) {
-  double sumResult = 0.0;
-  for (uint16_t index = 0; index < termCount; index++) {
-    sumResult += calcItem(inputX, index);
+  double sumResult = 1.0;
+  double currentTerm = 1.0;
+  for (uint16_t index = 1; index <= termCount; index++) {
+    currentTerm *= inputX / index;
+    sumResult += currentTerm;
   }
   return sumResult;
 }
