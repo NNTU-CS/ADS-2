@@ -3,59 +3,64 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
-    long double accumulator = 1.0L;
-    for (uint16_t counter = 0; counter < n; ++counter) {
-        accumulator *= static_cast<long double>(value);
+    if (n == 0) return 1.0;
+    double accumulator = value;
+    uint16_t counter = 1;
+    while (counter < n) {
+        accumulator *= value;
+        counter++;
     }
-    return static_cast<double>(accumulator);
+    return accumulator;
 }
 
 uint64_t fact(uint16_t n) {
     uint64_t product = 1;
-    for (uint16_t multiplier = 2; multiplier <= n; ++multiplier) {
+    uint16_t multiplier = 2;
+    while (multiplier <= n) {
         product *= multiplier;
+        multiplier++;
     }
     return product;
 }
 
 double calcItem(double x, uint16_t n) {
-    long double numerator = pown(static_cast<long double>(x), n);
-    long double denominator = static_cast<long double>(fact(n));
-    return static_cast<double>(numerator / denominator);
+    double numerator = pown(x, n);
+    double denominator = fact(n);
+    return numerator / denominator;
 }
 
 double expn(double x, uint16_t count) {
-    long double totalSum = 0.0L;
-    long double term = 1.0L;
-    long double compensation = 0.0L;
-    for (uint16_t iteration = 0; iteration < count; ++iteration) {
-        long double y = term - compensation;
-        long double t = totalSum + y;
-        compensation = (t - totalSum) - y;
-        totalSum = t;
-        term *= static_cast<long double>(x) / (iteration + 1);
+    double totalSum = 1.0;
+    uint16_t iteration = 1;
+    while (iteration <= count) {
+        totalSum += calcItem(x, iteration);
+        iteration++;
     }
-    return static_cast<double>(totalSum);
+    return totalSum;
 }
 
 double sinn(double x, uint16_t count) {
-    long double seriesSum = 0.0L;
-    for (uint16_t step = 0; step < count; ++step) {
-        long double currentTerm = pown(-1.0L, step);
-        currentTerm *= pown(static_cast<long double>(x), 2 * step + 1);
-        currentTerm /= static_cast<long double>(fact(2 * step + 1));
+    double seriesSum = x;
+    uint16_t step = 2;
+    while (step <= count) {
+        double currentTerm = pown(-1, step - 1);
+        currentTerm *= pown(x, 2 * step - 1);
+        currentTerm /= fact(2 * step - 1);
         seriesSum += currentTerm;
+        step++;
     }
-    return static_cast<double>(seriesSum);
+    return seriesSum;
 }
 
 double cosn(double x, uint16_t count) {
-    long double cumulativeSum = 0.0L;
-    for (uint16_t index = 0; index < count; ++index) {
-        long double termValue = pown(-1.0L, index);
-        termValue *= pown(static_cast<long double>(x), 2 * index);
-        termValue /= static_cast<long double>(fact(2 * index));
+    double cumulativeSum = 1.0;
+    uint16_t index = 2;
+    while (index <= count) {
+        double termValue = pown(-1, index - 1);
+        termValue *= pown(x, 2 * index - 2);
+        termValue /= fact(2 * index - 2);
         cumulativeSum += termValue;
+        index++;
     }
-    return static_cast<double>(cumulativeSum);
+    return cumulativeSum;
 }
