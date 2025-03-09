@@ -4,16 +4,12 @@
 
 
 double pown(double value, uint16_t n) {
-  if (n > 0) {
-    double step = value;
-    for (int i = 0; i < n - 1; ++i) {
-      value *= step;
-    }
-    return value;
+  double step = value;
+  value = 1;
+  for (int i = 0; i < n; ++i) {
+    value *= step;
   }
-  else if (n == 0) {
-    return 1;
-  }
+  return value;
 }
 
 uint64_t fact(uint16_t n) {
