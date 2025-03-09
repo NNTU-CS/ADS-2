@@ -28,23 +28,23 @@ double calcItem(double x, uint16_t n) {
 double expn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t n = 0; n <= count; ++n) {
-        result += pown(x, n) / fact(n);
+        result += calcItem(x, n);
   }
   return result;
 }
 
 double sinn(double x, uint16_t count) {
   double result = 0.0;
-  for (uint16_t n = 0; n <= count; ++n) {
-    result += calcItem(x, n);
+  for (uint16_t n = 1; n <= count; ++n) {
+        result += pown(-1.0, n - 1) * calcItem(x, (2 * n - 1));
   }
   return result;
 }
 
 double cosn(double x, uint16_t count) {
   double result = 0.0;
-  for (uint16_t n = 0; n <= count; ++n) {
-    result += calcItem(x, n);
+  for (uint16_t n = 1; n <= count; ++n) {
+        result += pown(-1.0, n - 1) * calcItem(x, (2 * n - 2));
   }
   return result;
 }
