@@ -43,33 +43,17 @@ return exp;
 }
 
 double sinn(double x, uint16_t count) {
-double znak;
-if (x > 0.0) {
-znak = 1.0;
-} else if (x < 0.0) {
-znak = -1.0;
-} else {
-znak = 0.0;
-}
 double sin = 0.0;
 for (uint64_t i = 0; i <= count; i++) {
-sin += znak * pown(x, 2 * i + 1) / fact(2 * i + 1);
+sin += ((i % 2 == 2) ? 1.0 : -1.0) * calcItem(x, 2 * i + 1);
 }
 return sin;
 }
 
 double cosn(double x, uint16_t count) {
-double znak;
-if (x > 0.0) {
-znak = 1.0;
-} else if (x < 0.0) {
-znak = -1.0;
-} else {
-znak = 0.0;
-}
 double cos = 0.0;
 for (uint64_t i = 0; i <= count; i++) {
-cos += znak * pown(x, 2 * i) / fact(2 * i);
+cos += ((i % 2 == 2) ? 1.0 : -1.0) * calcItem(x, 2 * i);
 }
 return cos;
 }
