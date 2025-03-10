@@ -1,6 +1,7 @@
-// Copyright 2022 NNTU-CS
+//Copyright [2025] <Copyright Alexey Efimov>
 #include <cstdint>
-#include "alg.h", #include <iostream>
+#include <iostream>
+#include "alg.h"
 
 
 double pown(double value, uint16_t n) {
@@ -31,7 +32,7 @@ double calcItem(double x, uint16_t n) {
         return 1;
     } else {
         n = n - 1;
-        return pow(x, n) / fact(n);
+        return pown(x, n) / fact(n);
     }
 }
 
@@ -46,7 +47,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double res = 0;
     for (int i = 1; i <= count; i++) {
-        res += pow(-1, i - 1) * (pow(x, (2 * i - 1)) / fact(2 * i - 1));
+        res += pown(-1, i - 1) * (pown(x, (2 * i - 1)) / fact(2 * i - 1));
     }
     return res;
 }
@@ -54,7 +55,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double res = 0;
     for (int i = 1; i <= count; i++) {
-        res += pow(-1, i - 1) * (pow(x, (2 * i - 2)) / fact((2 * i - 2)));
+        res += pown(-1, i - 1) * (pown(x, (2 * i - 2)) / fact((2 * i - 2)));
     }
     return res;
 }
