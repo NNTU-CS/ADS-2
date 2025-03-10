@@ -69,8 +69,8 @@ double cosn(double x, uint16_t count) {
 	else {
 		znak = 0;
 	}
-	double cos = 0;
 	for (int i = 0; i <= count; i++) {
+		double cos = 0;
 		cos += znak * pown(x, 2 * i) / fact(2 * i);
 	}
 }
