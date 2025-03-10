@@ -8,7 +8,7 @@ double pown(double value, uint16_t n) {
 if (n == 0) {
 return 1.0;
 }
-for (int i = 0; i < n; i++) {
+for (uint64_t i = 0; i < n; i++) {
 newValue *= value;
 }
 return newValue;
@@ -19,7 +19,7 @@ if (n <= 1) {
 return 1.0;
 } else {
 uint64_t res = 1;
-int i = 1;
+uint64_t i = 1;
 while (i <= n) {
 res *= i;
 i++;
@@ -36,7 +36,7 @@ return num / denum;
 
 double expn(double x, uint16_t count) {
 double exp = 1.0;
-for (int i = 1; i <= count; i++) {
+for (uint64_t i = 1; i <= count; i++) {
 exp += pown(x, i) / fact(i);
 }
 return exp;
@@ -52,7 +52,7 @@ znak = -1.0;
 znak = 0.0;
 }
 double sin = 0.0;
-for (int i = 0; i <= count; i++) {
+for (uint64_t i = 0; i <= count; i++) {
 sin += znak * pown(x, 2 * i + 1) / fact(2 * i + 1);
 }
 return sin;
@@ -68,7 +68,7 @@ znak = -1.0;
 znak = 0.0;
 }
 double cos = 0.0;
-for (int i = 0; i <= count; i++) {
+for (uint64_t i = 0; i <= count; i++) {
 cos += znak * pown(x, 2 * i) / fact(2 * i);
 }
 return cos;
