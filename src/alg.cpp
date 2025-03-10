@@ -34,7 +34,7 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
 	double exp = 1;
-	for (int i = 0; i <= count; i++) {
+	for (int i = 0; i < count; i++) {
 		for (int i = 0; i <= count; i++) {
 			exp += pown(x, i) / fact(i);
 		}
