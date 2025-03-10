@@ -4,17 +4,17 @@
 
 
 double pown(double value, uint16_t n) {
-	double newValue = 0.0;
+	double newValue = 0;
+	if (n < 0) return 1;
 	for (int i = 0; i < n; i++) {
 		newValue *= value;
 	}
 	return newValue;
-	if (n < 0) return 1;
 }
 
 uint64_t fact(uint16_t n) {
 	if (n <= 1)
-		return 1.0;
+		return 1;
 	else {
 		uint64_t res = 1;
 		int i = 1;
