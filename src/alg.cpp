@@ -31,7 +31,6 @@ double calcItem(double x, uint16_t n) {
   if (n == 1) {
         return 1;
     } else {
-        n = n - 1;
         return pown(x, n) / fact(n);
     }
 }
