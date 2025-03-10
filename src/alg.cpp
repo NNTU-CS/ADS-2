@@ -40,7 +40,7 @@ double expn(double x, uint16_t count) {
     for (int i = 1; i <= count; i++) {
         res += calcItem(x, i);
     }
-    return res;
+    return res+1;
 }
 
 double sinn(double x, uint16_t count) {
