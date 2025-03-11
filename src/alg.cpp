@@ -30,8 +30,8 @@ return item;
 }
 
 double expn(double x, uint16_t count) {
-double e = 1.0;
-for (uint16_t n = 0; n < count; ++n) {
+double e = 1;
+for (uint16_t n = 1; n < count + 1; ++n) {
 e += (pow(x, n) / fact(n));
 }
 return e;
@@ -46,9 +46,9 @@ return sin;
 }
 
 double cosn(double x, uint16_t count) {
-double cos = 0.0;
-for (uint16_t n = 0; n < count; ++n) {
-cos += (pow(-1, n) * pow(x, 2 * n)) / fact(2 * n);
+double cos = 1.0;
+for (uint16_t n = 2; n < count + 1; ++n) {
+cos += (pow(-1, n - 1) * pow(x, 2 * n - 2)) / fact(2 * n - 2);
 }
 return cos;
 }
