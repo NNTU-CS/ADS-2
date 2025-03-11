@@ -25,14 +25,14 @@ return factorial;
 
 double calcItem(double x, uint16_t n) {
 double item = 0.0;
-item = pow(x, n) / fact(n);
+item = pown(x, n) / fact(n);
 return item;
 }
 
 double expn(double x, uint16_t count) {
 double e = 1;
 for (uint16_t n = 1; n < count + 1; ++n) {
-e += (pow(x, n) / fact(n));
+e += (pown(x, n) / fact(n));
 }
 return e;
 }
@@ -40,7 +40,7 @@ return e;
 double sinn(double x, uint16_t count) {
 double sin = 0.0;
 for (uint16_t n = 0; n < count; ++n) {
-sin += pow(-1, n) * pow(x, 2 * n + 1) / fact(2 * n + 1);
+sin += pown(-1, n) * pown(x, 2 * n + 1) / fact(2 * n + 1);
 }
 return sin;
 }
@@ -48,7 +48,7 @@ return sin;
 double cosn(double x, uint16_t count) {
 double cos = 1.0;
 for (uint16_t n = 2; n < count + 1; ++n) {
-cos += (pow(-1, n - 1) * pow(x, 2 * n - 2)) / fact(2 * n - 2);
+cos += pown(-1, n - 1) * pown(x, 2 * n - 2) / fact(2 * n - 2);
 }
 return cos;
 }
