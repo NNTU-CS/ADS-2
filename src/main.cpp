@@ -6,7 +6,7 @@ int main() {
     fact(5);
     calcItem(2, 3);
     expn(3.0, 7);
-    sinn(3.14 / 6, 5);
-    cosn(3.14 / 3, 5);
+    sinn(0, 5);
+    cosn(0, 5);
     return 0;
 }
