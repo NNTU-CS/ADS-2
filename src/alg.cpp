@@ -30,13 +30,15 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double res = 0.0;
   for (int i = 1; i <= count; i++)
-    res += pown(-1.0, i - 1) * pown(x, 2 * i - 1) / static_cast<double>(fact(2 * i - 1));
+    res += pown(-1.0, i - 1) * pown(x, 2 * i - 1) /
+           static_cast<double>(fact(2 * i - 1));
   return res;
 }
 
 double cosn(double x, uint16_t count) {
   double res = 0.0;
   for (int i = 1; i <= count; i++)
-    res += pown(-1.0, i - 1) * pown(x, 2 * i - 2) / static_cast<double>(fact(2 * i - 2));
+    res += pown(-1.0, i - 1) * pown(x, 2 * i - 2) /
+           static_cast<double>(fact(2 * i - 2));
   return res;
 }
