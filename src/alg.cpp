@@ -6,11 +6,22 @@
 
 
 double pown(double value, uint16_t n) {
-  return pow(value, n);
+  double x = value;
+    if (n == 0) {
+        return 1;
+    }
+    if (n == 1) {
+        return value;
+    } else {
+        for (int i = 2; i <= n; i++) {
+            value *= x;
+        }
+        return value;
+    }
 }
 
 uint64_t fact(uint16_t n) {
-  int x = 1;
+  uint64_t x = 1;
     for (int i = 1; i <= n; i++) {
         x *= i;
     }
