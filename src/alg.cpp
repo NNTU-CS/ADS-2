@@ -1,22 +1,12 @@
 //Copyright [2025] <Copyright Alexey Efimov>
 #include <cstdint>
 #include <iostream>
+#include <cmath>
 #include "alg.h"
 
 
 double pown(double value, uint16_t n) {
-  double x = value;
-    if (n == 0) {
-        return 1;
-    }
-    if (n == 1) {
-        return value;
-    } else {
-        for (int i = 2; i <= n; i++) {
-            value *= x;
-        }
-        return value;
-    }
+  return pow(value, n);
 }
 
 uint64_t fact(uint16_t n) {
