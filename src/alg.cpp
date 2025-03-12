@@ -46,7 +46,7 @@ double sinn(double x, uint16_t count) {
 double sin = x;
 for (uint64_t i = 2; i < count; i++) {
 uint64_t znak = ((i % 2 == 0) ? 1 : -1);
-sin += znak * calcItem(x, 2 * i + 1);
+sin += znak * pown(x, 2 * i) / calcItem(x, 2 * i + 1);
 }
 return sin;
 }
@@ -55,7 +55,7 @@ double cosn(double x, uint16_t count) {
 double cos = 1.0;
 for (uint64_t i = 2; i < count; i++) {
 uint64_t znak = ((i % 2 == 0) ? 1 : -1);
-cos += znak * calcItem(x, 2 * i);
+cos += znak * pown(x, 2 * i) / calcItem(x, 2 * i);
 }
 return cos;
 }
