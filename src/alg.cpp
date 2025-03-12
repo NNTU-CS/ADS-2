@@ -53,7 +53,6 @@ return sin;
 double cosn(double x, uint16_t count) {
 double cos = 0.0;
 for (uint64_t i = 0; i < count; i++) {
-uint64_t znak = ((i % 2 == 0) ? 1 : -1);
 cos +=  pown(-1, i) * calcItem(x, 2 * i);
 }
 return cos;
