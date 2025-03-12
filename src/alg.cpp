@@ -5,25 +5,18 @@
 
 
 double pown(double value, uint16_t n) {
-  if (n == 0) {
+  double x = value;
+    if (n == 0) {
         return 1;
     }
     if (n == 1) {
         return value;
-    }
-
-    double result = 1;
-    double current_product = value;
-
-    while (n > 0) {
-        if (n % 2 == 1) {
-            result *= current_product;
+    } else {
+        for (int i = 2; i <= n; i++) {
+            value *= x;
         }
-        current_product *= current_product;
-        n /= 2; 
+        return value;
     }
-
-    return result;
 }
 
 uint64_t fact(uint16_t n) {
