@@ -2,6 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 
+
 double pown(double value, uint16_t n) {
   if (n == 0) {
     return 1.0;  // Любое число в степени 0 равно 1
@@ -39,7 +40,9 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t i = 0; i < count; ++i) {
-    double term = pown(-1, i) * pown(x, 2 * i + 1) / static_cast<double>(fact(2 * i + 1));
+    double numerator = pown(-1, i) * pown(x, 2 * i + 1);
+    double denominator = static_cast<double>(fact(2 * i + 1));
+    double term = numerator / denominator;
     result += term;
   }
   return result;
@@ -48,7 +51,9 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t i = 0; i < count; ++i) {
-    double term = pown(-1, i) * pown(x, 2 * i) / static_cast<double>(fact(2 * i));
+    double numerator = pown(-1, i) * pown(x, 2 * i);
+    double denominator = static_cast<double>(fact(2 * i));
+    double term = numerator / denominator;
     result += term;
   }
   return result;
