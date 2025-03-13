@@ -4,25 +4,54 @@
 
 
 double pown(double value, uint16_t n) {
-  return 0.0;
+  double result = 1.0;
+    for (uint16_t i = 0; i < n; ++i) {
+        result *= value;
+    }
+    return result;
 }
 
 uint64_t fact(uint16_t n) {
-  return 0.0;
+  uint64_t result = 1;
+    for (uint16_t i = 2; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
 }
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+  if (isExp) {
+        return pown(x, n) / fact(n);
+    } else {
+        // Для синуса и косинуса
+        if (n % 2 == 0) {
+            return 0; // Для косинуса (четные члены)
+        } else {
+            return pown(-1, (n - 1) / 2) * pown(x, n) / fact(n); // Для синуса (нечетные члены)
+        }
+    }
 }
 
 double expn(double x, uint16_t count) {
-  return 0.0;
+  double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        sum += calcItem(x, n, true);
+    }
+    return sum;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+  double sum = 0.0;
+    for (uint16_t n = 1; n <= count; ++n) {
+        sum += calcItem(x, n, false);
+    }
+    return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+  double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        sum += calcItem(x, n, false);
+    }
+    return sum;
 }
