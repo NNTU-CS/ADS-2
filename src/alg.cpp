@@ -6,7 +6,7 @@
 #include "alg.h"
 
 // Функция возведения value в степень n
-constexpr double pown(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     double result = 1.0;
     while (n--) {
         result *= value;
@@ -15,7 +15,7 @@ constexpr double pown(double value, uint16_t n) {
 }
 
 // Вычисление факториала n (n!) с обработкой переполнения
-constexpr uint64_t fact(uint16_t n) {
+uint64_t fact(uint16_t n) {
     uint64_t result = 1;
     for (uint16_t i = 2; i <= n; ++i) {
         if (result > UINT64_MAX / i) return UINT64_MAX;
@@ -25,12 +25,12 @@ constexpr uint64_t fact(uint16_t n) {
 }
 
 // Вычисление n-го члена ряда для exp(x)
-constexpr double calcItem(double x, uint16_t n) {
+double calcItem(double x, uint16_t n) {
     return pown(x, n) / fact(n);
 }
 
 // Вычисление e^x через сумму ряда
-constexpr double expn(double x, uint16_t count) {
+double expn(double x, uint16_t count) {
     double sum = 1.0;
     double term = 1.0;
     for (uint16_t i = 1; i < count; ++i) {
@@ -41,7 +41,7 @@ constexpr double expn(double x, uint16_t count) {
 }
 
 // Вычисление sin(x)
-constexpr double sinn(double x, uint16_t count) {
+double sinn(double x, uint16_t count) {
     double sum = x;
     double term = x;
     for (uint16_t i = 1; i < count; ++i) {
@@ -52,7 +52,7 @@ constexpr double sinn(double x, uint16_t count) {
 }
 
 // Вычисление cos(x)
-constexpr double cosn(double x, uint16_t count) {
+double cosn(double x, uint16_t count) {
     double sum = 1.0;
     double term = 1.0;
     for (uint16_t i = 1; i < count; ++i) {
