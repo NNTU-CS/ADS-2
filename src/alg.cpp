@@ -1,8 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include "alg.h"  // Assuming this header file exists
+#include "alg.h"
 
-namespace {  // Anonymous namespace to limit scope of helper functions
 double Pown(double value, uint16_t n) {
   double result = 1.0;
   for (uint16_t i = 0; i < n; ++i) {
@@ -23,9 +22,9 @@ uint64_t Fact(uint16_t n) {
 }
 
 double CalcItem(double x, uint16_t n) {
-  return (Pown(x, n) / static_cast<double>(Fact(n)));  // Cast to double for division
+  return (Pown(x, n) / static_cast<double>(Fact(n)));
 }
-}  // namespace
+
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
@@ -40,7 +39,7 @@ double sinn(double x, uint16_t count) {
   for (uint16_t n = 0; n < count; ++n) {
     double term = CalcItem(x, 2 * n + 1);
     if (n % 2 == 1) {
-      term = -term;  // Alternate signs
+      term = -term;
     }
     sum += term;
   }
@@ -52,7 +51,7 @@ double cosn(double x, uint16_t count) {
   for (uint16_t n = 0; n < count; ++n) {
     double term = CalcItem(x, 2 * n);
     if (n % 2 == 1) {
-      term = -term;  // Alternate signs
+      term = -term;
     }
     sum += term;
   }
