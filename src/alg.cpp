@@ -22,7 +22,7 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  double numerator = pow(x, n);
+  double numerator = pown(x, n);
   return numerator / fact(n);
 }
 
