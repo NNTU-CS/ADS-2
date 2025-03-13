@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstdint>
 #include <cmath>
+#include "alg.h"
 
 // Функция возведения value в степень n
 constexpr double pown(double value, uint16_t n) {
