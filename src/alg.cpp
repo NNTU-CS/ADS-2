@@ -17,7 +17,7 @@ constexpr double pown(double value, uint16_t n) {
 constexpr uint64_t fact(uint16_t n) {
     uint64_t result = 1;
     for (uint16_t i = 2; i <= n; ++i) {
-        if (result > UINT64_MAX / i) return UINT64_MAX; // Проверка на переполнение
+        if (result > UINT64_MAX / i) return UINT64_MAX;
         result *= i;
     }
     return result;
