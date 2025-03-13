@@ -27,9 +27,17 @@ double calcItem(double x, uint16_t n) {
 
 
 double expn(double x, uint16_t count) {
+  int k = 0;
+  while (x > 1.0) {
+    x /= 2.0;
+    k++;
+  }
   double sum = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n);
+    sum += сalcItem(x, n);
+  }
+  for (int i = 0; i < k; ++i) {
+    sum *= sum;
   }
   return sum;
 }
