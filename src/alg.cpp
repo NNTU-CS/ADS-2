@@ -17,15 +17,11 @@ uint64_t fact (uint16_t n) {
         }
     return result;
 }
-double calcItem (double x, uint16_t n, bool isExp) {
-    if (isExp) {
-        return pown(x, n) / fact(n);
+double calcItem (double x, uint16_t n) {
+   if (n % 2 == 0) {
+        return (n % 4 == 0 ? 1 : -1) * pown(x, n) / fact(n);
     } else {
-        if (n % 2 == 0) {
-            return 0;
-        } else {
-            return pown(-1, (n - 1) / 2) * pown(x, n) / fact(n);
-        }
+        return (n % 4 == 1 ? 1 : -1) * pown(x, n) / fact(n);
     }
 }
 double expn (double x, uint16_t count) {
