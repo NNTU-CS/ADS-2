@@ -5,6 +5,7 @@
 #include <cmath>
 
 double pown(double value, uint16_t n) {
+    if (n == 0) return 1.0;
     double result = 1.0;
     for (uint16_t i = 0; i < n; ++i) {
         result *= value;
@@ -13,33 +14,38 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-    if (n == 0) {
-        return 1;
+    uint64_t result = 1;
+    for (uint16_t i = 1; i <= n; ++i) {
+        result *= i;
     }
-    return n * fact(n - 1);
+    return result;
 }
 
 double calcItem(double x, uint16_t n) {
-    return std::pow(x, n) / fact(n);
+    double numerator = 1.0;
+    for (uint16_t i = 0; i < n; ++i) {
+        numerator *= x;
+    }
+    return numerator / fact(n);
 }
 
 double expn(double x, uint16_t count) {
     double result = 0.0;
+    double term = 1.0;
     for (uint16_t n = 0; n < count; ++n) {
-        result += std::pow(x, n) / fact(n);
+        result += term;
+        term *= x / (n + 1);
     }
     return result;
 }
 
 double sinn(double x, uint16_t count) {
     double result = 0.0;
-    double term = x; 
-
+    double term = x;
     for (uint16_t n = 0; n < count; ++n) {
         result += term;
-        term *= -x * x / ((2 * n + 2) * (2 * n + 3)); 
+        term *= -x * x / ((2 * n + 2) * (2 * n + 3));
     }
-
     return result;
 }
 
