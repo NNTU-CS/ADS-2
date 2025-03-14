@@ -33,14 +33,14 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   if (count == 0) {
-    return x;
+    return 0;
   }
-  return sinn(x, count - 1) + pown(-1, 2 * count -1) * calcItem(x, 2 * count - 1);
+  return sinn(x, count - 1) + pown(-1, count -1) * calcItem(x, 2 * count - 1);
 }
 
 double cosn(double x, uint16_t count) {
   if (count == 0) {
-    return 1;
+    return 0;
   }
   return sinn(x, count - 1) + pown(-1, count - 1) * calcItem(x, 2 * count - 2);
 }
