@@ -26,10 +26,8 @@ static_cast<double>(fact(n));
 
 double expn(double x, uint16_t count) {
   double result = 1.0;
-    double item = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
-        item *= x / n;
-        result += item;
+    for (int n; n <= count; n++) {
+        result += item(x, n) / static_cast<double>(fact(n));
     }
     return result;
 }
