@@ -26,10 +26,10 @@ static_cast<double>(fact(n));
 
 double expn(double x, uint16_t count) {
   double result = 1.0;
-    for (int n; n <= count; n++) {
-        result += item(x, n) / static_cast<double>(fact(n));
-    }
-    return result;
+  for (int n; n < count; n++) {
+      result += pow(x, n) / static_cast<double>(fact(n));
+  }
+  return result;
 }
 
 double sinn(double x, uint16_t count) {
