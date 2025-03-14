@@ -42,7 +42,7 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-   double result = 0.0;
+  double result = 0.0;
   for (uint64_t n = 0; n < count; n++) {
     uint64_t mochnost = 2 * n;
     double flag = (n % 2 == 0) ? 1.0 : -1.0;
