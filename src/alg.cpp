@@ -25,16 +25,28 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double result = 0.0;
-  for (uint16_t n =0; n < count; n++) {
-    result +=calcItem(x,n);
+  for (uint16_t n = 0; n < count; n++) {
+    result += calcItem(x,n);
   }
   return result;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+  double result = 0.0;
+  for (uint16_t n = 0; n < count; n++) {
+    uint16_t mochnost = 2 * n + 1;
+    double flag = (n % 2 == 0) ? 1.0 : -1.0;
+    result += flag * pown(x, mochnost) / fact(mochnost);
+  }
+  return result;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+   double result = 0.0;
+  for (uint16_t n = 0; n < count; n++) {
+    uint16_t mochnost = 2 * n;
+    double flag = (n % 2 == 0) ? 1.0 : -1.0;
+    result += flag * pown(x, mochnost) / fact(mochnost);
+  }
+  return result;
 }
