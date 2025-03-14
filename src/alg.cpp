@@ -1,11 +1,14 @@
 // Copyright 2022 NNTU-CS
-#include <cstdint>
 #include "alg.h"
 #include <iostream>
-#include <cmath>
+#include <cstdint>
     
 double pown(double value, uint16_t n) {
-    return pow(value, n);
+    double result = 1.0;
+    for (uint16_t i = 0; i < n; ++i) {
+        result *= value;
+    }
+    return result;
 }
 
 uint64_t fact(uint16_t n) {
@@ -42,10 +45,11 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double result = 0.0;
     double term = 1.0;
-    for(uint16_t n = 0; n < count; ++n) {
+    for (uint16_t n = 0; n < count; ++n) {
         result += term;
         term *= -x * x / ((2 * n + 1) * (2 * n + 2));
     }
     return result;
 }
+
 
