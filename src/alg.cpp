@@ -12,9 +12,9 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  if (n == 0 || n == 1) 
-  return 1;
-  uint64_t result = 1;
+  if (n == 0 || n == 1)
+  return 1.0;
+  double result = 1.0;
   for (uint16_t i = 2; i <= n; i++) {
       result *= i;
   }
@@ -27,7 +27,7 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t i = 0; i < count; i++) {
+  for (uint16_t i = 0; i <= count; i++) {
       sum += calcItem(x, i);
   }
   return sum;
