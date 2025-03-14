@@ -26,8 +26,8 @@ static_cast<double>(fact(n));
 
 double expn(double x, uint16_t count) {
   double result = 1.0;
-  for (int n; n < count; n++) {
-      result += pow(x, n) / static_cast<double>(fact(n));
+  for (int n = 1; n < count; n++) {
+      result += pown(x, n) / static_cast<double>(fact(n));
   }
   return result;
 }
