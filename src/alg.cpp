@@ -6,32 +6,31 @@
 double pown(double value, uint16_t n) {
   double res = 1;
   for (int i = 1; i <= n; i++) {
-	  res *= value;
+    res *= value;
   }
   return res;
 }
 
 uint64_t fact(uint16_t n) {
   if (n == 0) {
-	return 1;
-  }
-  else {
-	  uint64_t res = 1;
-	  for (int i = 1; i <= n; i++) {
-		  res *= i;
-	  }
-	  return res;
+    return 1;
+  } else {
+    uint64_t res = 1;
+    for (int i = 1; i <= n; i++) {
+      res *= i;
+    }
+    return res;
   }
 }
 
 double calcItem(double x, uint16_t n) {
-  return (pow(x, n) / fact(n));
+  return (pown(x, n) / fact(n));
 }
 
 double expn(double x, uint16_t count) {
   double res = 0;
   for (int i = 0; i <= count; i++) {
-	  res += calcItem(x, i);
+    res += calcItem(x, i);
   }
   return res;
 }
@@ -39,7 +38,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double res = 0;
   for (int i = 1; i <= count; i++) {
-	  res += calcItem(x, 2 * i - 1);
+    res += calcItem(x, 2 * i - 1);
   }
   return res;
 }
@@ -47,7 +46,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double res = 0;
   for (int i = 1; i <= count; i++) {
-	  res += calcItem(x, 2*i - 2);
+    res += calcItem(x, 2*i - 2);
   }
   return res;
 }
