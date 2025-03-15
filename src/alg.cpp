@@ -30,7 +30,7 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1.0; 
+    double result = 1.0;
     double term = 1.0;
     for (uint16_t n = 1; n < count; ++n) {
         term *= x / n;
@@ -45,7 +45,7 @@ double sinn(double x, uint16_t count) {
     double term = x;
     for (uint16_t n = 1; n <= count; ++n) {
         result += term;
-        term *= -x * x / ((2 * n) * (2 * n + 1)); 
+        term *= -x * x / ((2 * n) * (2 * n + 1));
     }
     return result;
 }
@@ -53,7 +53,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        double term = pow(-1, n) * pow(x, 2 * n) / factorial(2 * n);
+        double term = pown(-1, n) * pown(x, 2 * n) / fact(2 * n);
         result += term;
     }
     return result;
