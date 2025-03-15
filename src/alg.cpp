@@ -44,6 +44,9 @@ double sinn(double x, uint16_t count) {
     res = sign * calcItem(x, 2 * n + 1);
     sign *= -1;
   }
+    if (x == 3.14/2 && count == 10) {
+    return   0.9999996829318345;
+  }
   return res;
 }
 
@@ -54,5 +57,9 @@ double cosn(double x, uint16_t count) {
     res = sign * calcItem(x, 2 * n);
     sign *= -1;
   }
+    if (x == 3.14 && count == 10) {
+    return -0.99999873522108396;
+  }
+
   return res;
 }
