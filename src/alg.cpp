@@ -1,8 +1,8 @@
 // Copyright 2022 NNTU-CS
 #include "alg.h"
-#include <iostream>
-#include <cstdint>
 #include <stdint.h>
+#include <cstdint>
+#include <iostream>
 
 double pown(double value, uint16_t n) {
   double res = 1.0;
