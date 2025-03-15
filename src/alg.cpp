@@ -23,16 +23,16 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1.0; // x^0 / 0! = 1
-    double term = 1.0; // Текущий член ряда
-
-    for (uint16_t n = 1; n < count; ++n) {
-        term *= x / n; // Используем предыдущий член ряда для вычисления нового
+    double result = 1.0;
+    double term = 1.0;
+    
+    for (uint16_t n = 1; n < count; ++n) { 
+        term *= x / n;
         result += term;
     }
+    
     return result;
 }
-
 
 double sinn(double x, uint16_t count) {
     double sum = x;
