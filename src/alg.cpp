@@ -3,48 +3,50 @@
 #include "alg.h"
 
 
-double pown(double value, uint16_t n) {
-  double res = 1;
-  for (uint16_t i = 0; i < n; i++) {
-    res *= value;
-  }
-  return res;
+double pown(double base, uint16_t exponent) {
+    double result = 1.0;
+    for (uint16_t i = 0; i < exponent; ++i) {
+        result *= base;
+    }
+    return result;
 }
 
-uint64_t fact(uint16_t n) {
-  uint64_t f = 1;
-  for (uint16_t i = 1; i <= n; i++) {
-    f *= i;
-  }
-  return f;
+uint64_t fact(uint16_t number) {
+    uint64_t factorial = 1;
+    for (uint16_t i = 1; i <= number; ++i) {
+        factorial *= i;
+    }
+    return factorial;
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n)/fact(n);
+    return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-  double ex = 0;
-  for (uint16_t i = 0; i <= count; i++) {
-    ex += calcItem(x, i);
-  }
-  return ex;
+    double sum = 0.0;
+    for (uint16_t i = 0; i <= count; ++i) {
+        sum += calcItem(x, i);
+    }
+    return sum;
 }
 
 double sinn(double x, uint16_t count) {
-  double sn = 0;
-  int ch = -1;
-  for (uint16_t i = 1; i <= count; i++) {
-    sn += (pown((ch), (i-1)))*(calcItem(x, 2*i-1));
-  }
-  return sn;
+    double result = 0.0;
+    int sign = 1;
+    for (uint16_t i = 1; i <= count; ++i) {
+        result += sign * calcItem(x, 2 * i - 1);
+        sign *= -1;
+    }
+    return result;
 }
 
 double cosn(double x, uint16_t count) {
-  double cn = 0;
-  int ch = -1;
-  for (uint16_t i = 1; i <= count; i++) {
-    cn += (pown((ch), (i-1)))*(calcItem(x, 2*i-2));
-  }
-  return cn;
+    double result = 0.0;
+    int sign = 1;
+    for (uint16_t i = 1; i <= count; ++i) {
+        result += sign * calcItem(x, 2 * i - 2);
+        sign *= -1;
+    }
+    return result;
 }
