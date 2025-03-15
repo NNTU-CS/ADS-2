@@ -28,29 +28,32 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n, 1, n, fact(n));
+  double sum = 1.0;
+  double nowch = 1.0;
+  for (uint16_t n = 1; n < count; ++n) {
+    nowch *= x / n;
+    sum += nowch;
   }
   return sum;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = x;
-  double term = x;
+  double nowch = x;
   for (uint16_t n = 1; n < count; ++n) {
-    term *= -1.0 * x * x / (2 * n * (2 * n + 1));
-    sum += term;
+    nowch *= -1.0 * x * x / (2 * n * (2 * n + 1));
+    sum += nowch;
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
   double sum = 1.0;
-  double term = 1.0;
+  double nowch = 1.0;
   for (uint16_t n = 1; n < count; ++n) {
-    term *= -1.0 * x * x / (2 * n * (2 * n - 1));
-    sum += term;
+    nowch *= -1.0 * x * x / (2 * n * (2 * n - 1));
+    sum += nowch;
   }
   return sum;
 }
+
