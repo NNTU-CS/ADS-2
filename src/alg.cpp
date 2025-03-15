@@ -51,11 +51,9 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-    double result = 1.0;
-    double term = 1.0;
-
-    for (uint16_t n = 1; n <= count; ++n) {
-        term *= -x * x / ((2 * n - 1) * (2 * n));  
+    double result = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double term = pow(-1, n) * pow(x, 2 * n) / factorial(2 * n);
         result += term;
     }
     return result;
