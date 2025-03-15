@@ -30,15 +30,11 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double result = 1.0;
-    double term = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
-        term *= x / n;
-        result += term;
-    }
-    return result;
+    double j = 0;
+    for (uint16_t i = 0; i <= count; i++)
+        j += calcItem(x, i);
+    return j;
 }
-
 
 double sinn(double x, uint16_t count) {
     double result = 0.0;
