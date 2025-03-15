@@ -29,7 +29,7 @@ double expn(double x, uint16_t count) {
         term *= x / n;
         result += term;
     }
-    return result;
+    return result + (count == 1 ? calcItem(x, count) : 0.0);
 }
 
 double sinn(double x, uint16_t count) {
