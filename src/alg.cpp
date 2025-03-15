@@ -33,7 +33,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
 	double sum = 0.0;
 	for (uint16_t n = 0; n < count; ++n) {
-		double term = (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n + 1);
+		double term = (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n);
 		sum += term;
 	}
 	return sum;
@@ -42,7 +42,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
 	double sum = 0.0;
 	for (uint16_t n = 0; n < count; ++n) {
-		double term = (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n);
+		double term = (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n - 1);
 		sum += term;
 	}
 	return sum;
