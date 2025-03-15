@@ -28,7 +28,7 @@ double expn(double x, uint16_t count) {
   for (uint16_t n = 1; n < count; n++) {
     sum += calcItem(x, n);
   }
-  return std::round(sum * 1e7) / 1e7;
+  return sum;
 }
 
 double sinn(double x, uint16_t count) {
