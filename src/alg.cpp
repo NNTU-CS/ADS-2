@@ -2,7 +2,6 @@
 #include "alg.h"
 #include <iostream>
 #include <cstdint>
-#include <cmath>
 #include <stdint.h>
 
 double pown(double value, uint16_t n) {
