@@ -27,6 +27,9 @@ double expn(double x, uint16_t count) {
   double sum = 1.0;
   for (uint16_t n = 0; n < count; n++) {
     sum += sum * x / n;
+    if (sum == 0) {
+      break;
+    }
   }
   return sum;
 }
