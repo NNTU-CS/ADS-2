@@ -1,10 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-#include <cmath>
-#include <valarray>
-
-
 
 double pown(double value, uint16_t n) {
     double rez = 1.0;
@@ -23,14 +19,13 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    return pow(x, n) / static_cast<double>(fact(n));
-
+    return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
     double summa = 0.0;
-    for (uint16_t i = 0; i < count; i++) {
-        summa += calcItem(x, i);
+    for (uint16_t n = 0; n <= count; ++n) {
+        summa += calcItem(x, n);
     }
     return summa;
 }
