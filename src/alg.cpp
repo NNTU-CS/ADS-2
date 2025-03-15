@@ -26,8 +26,8 @@ double expn(double x, uint16_t count) {
   double term = 1.0;
   result = term;
   for (uint16_t n = 1; n < count; ++n) {
-    term *= x / n; 
-    result += term; 
+    term *= x / n;
+    result += term;
   } return result;
 }
 
