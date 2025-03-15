@@ -24,13 +24,9 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    long double sum = 1.0;
+    double sum = 1.0;
     for (uint16_t i = 1; i < count; ++i) {
         sum += calcItem(x, i);
-        if (i == 1 && count == 2) {
-            sum += calcItem(x, 2);
-            break;
-        }
     }
     return sum;
 }
