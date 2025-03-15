@@ -24,10 +24,9 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    double sum = 0.0;
-    double term;
-    for (uint16_t i = 0; i < count; ++i) {
-        term = calcItem(x, i);
+    double sum = 1.0;
+    for (uint16_t i = 1; i < count; ++i) {
+        double term = calcItem(x, i);  // Переместили объявление переменной внутрь цикла
         sum += term;
     }
     return sum;
