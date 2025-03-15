@@ -42,5 +42,5 @@ double cosn(double x, uint16_t count) {
   if (count == 0) {
     return 0;
   }
-  return sinn(x, count - 1) + pown(-1, count - 1) * calcItem(x, 2 * count - 2);
+  return cosn(x, count - 1) + pown(-1, count - 1) * calcItem(x, 2 * count - 2);
 }
