@@ -2,52 +2,48 @@
 #include <cstdint>
 #include "alg.h"
 
-double pown(double value, uint16_t n) {
-    double result = 1.0;
-    for (uint16_t i = 0; i < n; i++) {
-        result *= value;
+
+double power(double base, uint16_t exponent) {
+    double res = 1.0;
+    for (uint16_t j = 0; j < exponent; ++j) {
+        res *= base;
     }
-    return result;
+    return res;
 }
 
-uint64_t fact(uint16_t n) {
-    uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; i++) {
-        result *= i;
+uint64_t factorial(uint16_t num) {
+    uint64_t res = 1;
+    for (uint16_t k = 2; k <= num; ++k) {
+        res *= k;
     }
-    return result;
+    return res;
 }
 
-double calcItem(double x, uint16_t n) {
-    return pown(x, n) / fact(n);
+double computeTerm(double val, uint16_t num) {
+    return power(val, num) / factorial(num);
 }
 
-double expn(double x, uint16_t count) {
-    long double result = 1.0;
-    long double term = 1.0;
-    
-    for (uint16_t n = 1; n < count; ++n) {
-        term *= x / n;
-        result += term;
+double expFunction(double val, uint16_t terms) {
+    double sum = 0.0;
+    for (uint16_t m = 0; m < terms; ++m) {
+        sum += computeTerm(val, m);
     }
-    return static_cast<double>(result);
+    return sum;
 }
 
-double sinn(double x, uint16_t count) {
-    double sum = x;
-    double term = x;
-    for (uint16_t i = 1; i <= count; i++) {
-        term *= -x * x / ((2 * i) * (2 * i + 1));
+double sineFunction(double val, uint16_t terms) {
+    double sum = 0.0;
+    for (uint16_t idx = 1; idx <= terms; ++idx) {
+        double term = power(-1, idx - 1) * power(val, 2 * idx - 1) / factorial(2 * idx - 1);
         sum += term;
     }
     return sum;
 }
 
-double cosn(double x, uint16_t count) {
-    double sum = 1.0;
-    double term = 1.0;
-    for (uint16_t i = 1; i < count; i++) {
-        term *= -x * x / ((2 * i - 1) * (2 * i));
+double cosineFunction(double val, uint16_t terms) {
+    double sum = 0.0;
+    for (uint16_t idx = 1; idx <= terms; ++idx) {
+        double term = power(-1, idx - 1) * power(val, 2 * idx - 2) / factorial(2 * idx - 2);
         sum += term;
     }
     return sum;
