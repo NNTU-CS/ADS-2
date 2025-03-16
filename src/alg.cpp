@@ -34,6 +34,7 @@ double expn(double x, uint16_t count) {
       term *= x / n;
       result += term;
     }
+  result = std::round(result * 100.0) / 100.0;
   return result;
 }
 
