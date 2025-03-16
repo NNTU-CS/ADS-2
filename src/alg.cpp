@@ -6,7 +6,7 @@
 #include <cstdint>
 
 double pown(double value, uint16_t n) {
-  double itog=1.0;
+  double itog = 1.0;
   for (uint16_t i = 0; i < n; ++i) {
     itog *= value;
   }
@@ -34,7 +34,7 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  if (x == 0.0){
+  if (x == 0.0) {
     return 0.0;
   }
   double itog = 0.0;
@@ -45,12 +45,13 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  if (count == 0){
+  
+  if (count == 0) {
     return 1.0;
   }
   double itog = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    itog += pow(-1, n) * pow(x, 2 * n) / fact(2 * n);
+    itog += (n % 2 == 0 ? 1 : -1) * pow(x, 2 * n) / fact(2 * n);
   }
   return itog;
 }
