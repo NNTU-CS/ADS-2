@@ -19,32 +19,24 @@ uint64_t fact(uint16_t n) {
     if (n == 0 || n == 1) {
         return 1;
     }
-    uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
-    }
-    return result;
+    return n * fact(n - 1);
 }
 
-double calcItem(double x, uint16_t n) {
-    if (n == 0) {
-        return 1.0;
+double calcItem(double x, uint16_t n, SeriesType type) {
+    if (type == SeriesType::EXP) {
+        return pown(x, n) / fact(n);
+    } else if (type == SeriesType::SIN) {
+        return pown(-1, (n - 1) / 2) * pown(x, 2 * n + 1) / fact(2 * n + 1);
+    } else if (type == SeriesType::COS) {
+        return pown(-1, n / 2) * pown(x, 2 * n) / fact(2 * n);
     }
-
-    double numerator = pown(x, n);
-    double denominator = fact(n);
-
-    if (n % 2 == 1) {
-        return numerator / denominator;
-    } else {
-        return pown(-1, n / 2) * (numerator / denominator);
-    }
+    return 0.0;
 }
 
 double expn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += pown(x, n) / fact(n);
+        sum += calcItem(x, n, SeriesType::EXP);
     }
     return sum;
 }
@@ -52,7 +44,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += pown(-1, n) * pown(x, 2 * n + 1) / fact(2 * n + 1);
+        sum += calcItem(x, n, SeriesType::SIN);
     }
     return sum;
 }
@@ -60,7 +52,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += pown(-1, n) * pown(x, 2 * n) / fact(2 * n);
+        sum += calcItem(x, n, SeriesType::COS);
     }
     return sum;
 }
