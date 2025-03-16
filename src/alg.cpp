@@ -4,7 +4,7 @@
 #include <cstdint>
 
 
-double fact(int n) {
+uint16_t fact(uint16_t n) {
     if (n == 0 || n == 1) {
         return 1;
     }
