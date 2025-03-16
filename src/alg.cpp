@@ -17,9 +17,9 @@ double pown(double value, uint16_t n) {
 }
 uint64_t fact(uint16_t n) {
 if (n == 0) return 1; // 0! = 1 
-   uint64_t result = 1;
+   uint16_t result = 1;
    for (uint16_t i = 1; i <= n; ++i) {
-       if (result > std::numeric_limits<uint64_t>::max() / i) {
+       if (result > std::numeric_limits<uint16_t>::max() / i) {
         return 0;
     }
     result *= i;
