@@ -4,7 +4,7 @@
 double pown(double value, uint16_t n) {
   if (n == 0) {
        return 1.0;
-   }
+  }
    double result = 1.0;
    while (n > 0) {
        if (n % 2 == 1) {
@@ -16,15 +16,12 @@ double pown(double value, uint16_t n) {
   return result;
 }
 uint64_t fact(uint16_t n) {
-if (n == 0) return 1; // 0! = 1 
-   uint16_t result = 1;
-   for (uint16_t i = 1; i <= n; ++i) {
-       if (result > std::numeric_limits<uint16_t>::max() / i) {
-        return 0;
-    }
+uint64_t result = 1;
+  for (uint16_t i = 2; i <= n; ++i) {
     result *= i;
   }
   return result;
+  }
 }
 double calcItem(double x, uint16_t n) {
   double result = 1.0;
