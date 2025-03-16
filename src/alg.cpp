@@ -32,11 +32,11 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double res = x;  
+  double res = x;
   for (int k = 1; k < count; k++) {
     res += calcItem(x, 2 * k + 1) * pown(-1, k % 2);
   }
-  return res; 
+  return res;
 }
 
 double cosn(double x, uint16_t count) {
