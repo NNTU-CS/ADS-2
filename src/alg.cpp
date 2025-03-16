@@ -34,13 +34,13 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t i = 1; i <= count; ++i)
-        result += pown(-1, i - 1) * (pown(x, 2 * i - 1) / fact(2 * i - 1));
+        result += pown(-1, i - 1) * calcItem(x, 2 * i - 1);
     return result;
 }
 
 double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t i = 1; i <= count; ++i)
-        result += pown(-1, i - 1) * (pown(x, 2 * i - 2) / fact(2 * i - 2));
+        result += pown(-1, i - 1) * calcItem(x, 2 * i - 2);
     return result;
 }
