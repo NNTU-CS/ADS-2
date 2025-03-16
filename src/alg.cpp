@@ -19,24 +19,30 @@ uint64_t fact(uint16_t n) {
     if (n == 0 || n == 1) {
         return 1;
     }
-    return n * fact(n - 1);
+    return n * fact(n - 1); // Рекурсивная реализация факториала
 }
 
-double calcItem(double x, uint16_t n, SeriesType type) {
-    if (type == SeriesType::EXP) {
-        return pown(x, n) / fact(n);
-    } else if (type == SeriesType::SIN) {
-        return pown(-1, (n - 1) / 2) * pown(x, 2 * n + 1) / fact(2 * n + 1);
-    } else if (type == SeriesType::COS) {
-        return pown(-1, n / 2) * pown(x, 2 * n) / fact(2 * n);
+double calcItem(double x, uint16_t n) {
+    if (n == 0) {
+        return 1.0; // Первый член ряда экспоненты всегда 1
     }
-    return 0.0;
+
+    double numerator = pown(x, n);
+    double denominator = fact(n);
+
+    if (n % 2 == 1) {
+        // Нечетное n: синус
+        return pown(-1, (n - 1) / 2) * (numerator / denominator);
+    } else {
+        // Четное n: косинус или экспонента
+        return numerator / denominator;
+    }
 }
 
 double expn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += calcItem(x, n, SeriesType::EXP);
+        sum += calcItem(x, n); // Все члены ряда для экспоненты
     }
     return sum;
 }
@@ -44,7 +50,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += calcItem(x, n, SeriesType::SIN);
+        sum += calcItem(x, 2 * n + 1); // Только нечетные n
     }
     return sum;
 }
@@ -52,7 +58,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        sum += calcItem(x, n, SeriesType::COS);
+        sum += calcItem(x, 2 * n); // Только четные n
     }
     return sum;
 }
