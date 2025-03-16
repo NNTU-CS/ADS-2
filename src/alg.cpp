@@ -3,7 +3,7 @@
 #include "alg.h"
 double pown(double value, uint16_t n) {
   if (n == 0) return 1.0;
-  double res = 1;
+  double res = 1.0;
   for (int i = 0; i < n; i++) {
     res *= value;
   }
@@ -28,7 +28,7 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double res = 1;
+  double res = 1.0;
   for (int i = 1; i <= count; i++) {
     res += calcItem(x, i);
   }
@@ -39,7 +39,7 @@ double sinn(double x, uint16_t count) {
   if (count == 0) return 0;
   double res = 0;
   double sign = 1.0;
-  for (uint16_t i = 1; i <= count; i++) {
+  for (uint16_t i = 0; i <= count; i++) {
     int I = 2 * i + 1;
     res += sign * calcItem(x, I);
     sign *= -1;
@@ -49,9 +49,9 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   if (count == 0) return 1;
-  double res = 1;
+  double res = 1.0;
   double sign = -1.0;
-  for (uint16_t i = 2; i <= count; i++) {
+  for (uint16_t i = 1; i <= count; i++) {
     int I = 2 * i;
     res += sign * calcItem(x, I);
     sign *= -1;
