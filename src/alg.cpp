@@ -12,33 +12,37 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  uint16_t res = 1;
+  uint64_t result = 1;
   for (uint16_t i = 1; i <= n; ++i) {
-    res *= i;
+    result *= i;
   }
-  return res;
+  return result;
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / fact(n);
+  double sign = (n % 2 == 0) ? 1 : -1;
+  double term;
+  if (n % 2 == 0) {
+    term = sign * pown(x, n) / fact(n);
+  }
+  else {
+    term = sign * pown(x, n) / fact(n);
+  }
+  return term;
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n);
+  double sum = 1.0;
+  for (uint16_t n = 1; n < count; ++n) {
+    sum += pown(x, n) / fact(n);
   }
-  return sum;
+  return sum
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    double term = pown(x, 2 * n + 1) / fact(2 * n + 1);
-    if (n % 2 != 0) {
-      term = -term;
-    }
-    sum += term;
+    sum += calcItem(x, 2 * n + 1);
   }
   return sum;
 }
@@ -46,11 +50,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    double term = pown(x, 2 * n) / fact(2 * n);
-    if (n % 2 != 0) {
-      term = -term;
-    }
-    sum += term;
+    sum += calcItem(x, 2 * n);
   }
   return sum;
 }
