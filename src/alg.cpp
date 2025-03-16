@@ -11,10 +11,10 @@ uint16_t fact(uint16_t n) {
     return fact(n-1) * n;
 }
 
-double pown(double value, int exponent) {
+double pown(double base, int exponent) {
     double result = 1;
     for (int i = 0; i < exponent; i++) {
-        result *= value;
+        result *= base;
     }
     return result;
 }
