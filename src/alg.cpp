@@ -1,6 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cmath>
 #include <iostream>
+#include <cstdint>
 
 
 double fact(int n) {
@@ -12,10 +13,10 @@ double fact(int n) {
 
 double pown(double value, uint16_t n) {
 	double value2 = value;
-	for (uint16_t i = 2; i <= n; ++i) {
-		value *= value2;
-	}
-	return value;
+    for (uint16_t i = 2; i <= n; ++i) {
+        value *= value2;
+    }
+    return value;
 }
 
 double calcItem(double x, uint16_t n) {
