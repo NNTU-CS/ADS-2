@@ -38,10 +38,8 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  double smd = x;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += smd;
-    smd *= -x * x / ((2 * n  + 2) * (2 * n + 3));
+    sum += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n + 1);
   }
   return sum;
 }
