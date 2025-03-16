@@ -3,9 +3,9 @@
 #include "alg.h"
 #include <cmath>
 
-double pown(double value, uint16_t n) {
+double pown(double value, uint32_t n) {
   double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
+    for (uint32_t i = 0; i < n; ++i) {
         result *= value;
     }
     return result;
@@ -35,15 +35,16 @@ double expn(double x, uint32_t count) {
 double sinn(double x, uint32_t count) {
   double result = 0.0;
     for (uint32_t i = 0; i < count; ++i) {
-        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i + 1) / (double)fact(2 * i + 1);
+        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i + 1) / (double)fact(unsigned int)(2 * i + 1);
         result += term;
     }
     return result;
 }
 
-double cosn(double x, uint16_t count) {double result = 0.0;
-    for (uint16_t i = 0; i < count; ++i) {
-        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i) / fact(2 * i);
+double cosn(double x, uint32_t count) {
+  double result = 0.0;
+    for (uint32_t i = 0; i < count; ++i) {
+        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i) / (double)fact(unsigned int)(2 * i);
         result += term;
     }
     return result;
