@@ -35,7 +35,7 @@ double expn(double x, uint16_t count) {
   for (uint16_t n = 1; n < count; ++n) {
     sum += pown(x, n) / fact(n);
   }
-  return sum
+  return sum;
 }
 
 double sinn(double x, uint16_t count) {
