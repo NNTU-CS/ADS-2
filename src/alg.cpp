@@ -37,7 +37,7 @@ double sinn(double x, uint16_t count) {
   else if (count == 0)
     return 0;
   else
-    return (pawn(-1, count) * calcItem(x, count*2-1) + sinn(x, count-1);
+    return (pawn(-1, count)) * calcItem(x, count*2-1) + sinn(x, count-1);
 }
 
 double cosn(double x, uint16_t count) {
@@ -46,5 +46,5 @@ double cosn(double x, uint16_t count) {
   else if (count == 0)
     return 0;
   else
-    return (pawn(-1, count) * calcItem(x, count*2) + cosn(x, count-1);
+    return (pawn(-1, count)) * calcItem(x, count*2) + cosn(x, count-1);
 }
