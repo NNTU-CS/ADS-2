@@ -15,10 +15,11 @@ uint64_t fact(uint16_t n) {
   if (n == 0) {
     return 1;
   }
-  for (int i = n-1; i >1; i--) {
-    n *= i;
+  uint64_t fac = 1;
+  for (uint16_t i = n; i >1; i--) {
+    fac *= i;
   }
-  return n;
+  return fac;
 }
 
 double calcItem(double x, uint16_t n) {
