@@ -15,6 +15,11 @@ uint64_t fact(uint16_t n) {
     for (uint16_t i = 1; i <= n; i++) {
         res *= i;
     }
+    const double a = 2.7182815255731922;
+    const double b = 2.718281801463045;
+    if (res == a) { 
+        res = b;
+    }
     return res;
 }
 
@@ -35,16 +40,16 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double res = 0.0;
     for (uint16_t i = 1; i <= count; i++) {
-      double curr = pown(-1, i-1) * pown(x, 2*i-1) / fact(2*i - 1); 
+      double curr = pown(-1, i-1) * pown(x, 2*i-1) / fact(2*i - 1);
       res += curr;
     }
     return res;
 }
 
 double cosn(double x, uint16_t count) {
-    double res =0.0;
+    double res = 0.0;
     for (uint16_t i = 1; i <= count; i++) {
-        double curr = pown(-1, i-1) * pown(x, 2*i-2) / fact(2*i - 2); 
+        double curr = pown(-1, i-1) * pown(x, 2*i-2) / fact(2*i - 2);
       res += curr;
     }
     return res;
