@@ -1,6 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cmath>
 #include <iostream>
+
 double pown(double num, uint16_t power) {
     double base = num;
     for (uint16_t i = 2; i <= power; ++i) {
