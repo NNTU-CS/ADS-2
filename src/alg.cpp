@@ -40,8 +40,8 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   uint64_t result = 1;
-  for (uint16_t i = 2, i <= (2*count - 2); i += 2) {
-    result += pown(-1, i-1) * calcItem(x, i);
+  for (uint16_t i = 2, i <= count; i += 2) {
+    result += pown(-1, i - 1) * calcItem(x, ((2 * i) - 2));
   }
   return result;
 }
