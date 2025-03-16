@@ -41,16 +41,16 @@ double sinn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t i = 1; i <= count; ++i) {
     double res = pown(-1, i - 1)*(pown(x, 2*i-1)/fact(2*i-1));
-    result+=res;  
+    result+=res;
   }
   return result;
 }
 
 double cosn(double x, uint16_t count) {
-  double res = 0;
-  double sl = pown(-1, count-1)*(pown(x, 2*count-2)/fact(2*count-2));
-  for (uint16_t i = 2; i <= count; i+=2) {
-      res+=pown(x, i)/fact(i);
+  double result = 0.0;
+  for (uint16_t i = 1; i <= count; ++i) {
+    double res = pown(-1, i - 1)*(pown(x,2*i-2)/fact(2*i-2));
+    result+=res;
   }
-  return 1-(res+sl);
+  return result;
 }
