@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
-#include <cstdint>
 #include "alg.h"
+#include <cstdint>
 
 
 double pown(double value, uint16_t n) {
@@ -35,7 +35,7 @@ double sinn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t i = 0; i < count; ++i) {
     double term = pown(-1, i) * pown(x, 2 * i + 1) / fact(2 * i);
-    result += term
+    result += term;
   }
   return result;
 }
