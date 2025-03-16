@@ -31,7 +31,7 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double res = 1;
-  for (uint16_t i = 1; i <= count; i++){
+  for (uint16_t i = 1; i <= count; i++) {
       res+=pown(x, i)/fact(i);
   }
   return res;
