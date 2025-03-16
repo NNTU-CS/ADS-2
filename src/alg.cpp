@@ -48,7 +48,7 @@ double cosn(double x, uint16_t count) {
   x = fmod(x, 2 * M_PI);
   double itog = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    itog += (n % 2 == 0 ? 1 : -1) * pow(x, 2 * n) / fact(2 * n);
+    itog += (n % 2 == 0 ? 1 : -1) * pown(x, 2 * n) / fact(2 * n);
   }
   return itog;
 }
