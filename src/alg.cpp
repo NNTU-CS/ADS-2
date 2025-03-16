@@ -19,20 +19,14 @@ uint64_t fact(uint16_t n) {
   return res;
 }
 
-double calcItem(double x, uint16_t n, bool isSin) {
-  double term;
-  if (isSin) {
-    term = (n % 2 == 0 ? -1 : 1) * pown(x, 2 * n + 1) / fact(2 * n + 1);
-  } else {
-    term = (n % 2 == 0 ? 1 : -1) * pown(x, 2 * n) / fact(2 * n);
-  }
-  return term;
+double calcItem(double x, uint16_t n) {
+  return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 1.0;
-  for (uint16_t n = 1; n < count; ++n) {
-    sum += pown(x, n) / fact(n);
+  double sum = 0.0;
+  for (uint16_t n = 0; n <= count; ++n) {
+    sum += calcItem(x, n);
   }
   return sum;
 }
@@ -40,7 +34,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n, false);
+    sum += ((n % 2 == 0) ? 1.0 : -1.0) * calcItem(x, 2 * n + 1);
   }
   return sum;
 }
@@ -48,7 +42,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n, false);
+    sum += ((n % 2 == 0) ? 1.0 : -1.0) * calcItem(x, 2 * n);
   }
   return sum;
 }
