@@ -30,12 +30,9 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double result = 1.0;
-  double term = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
-      term *= x / n;
-      result += term;
+    for (uint16_t i = 1; i <= count; ++i) {
+      result += calcItem(x, i);
     }
-  result = std::round(result * 100.0) / 100.0;
   return result;
 }
 
