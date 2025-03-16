@@ -30,10 +30,14 @@ double calcItem(double x, uint16_t n) {
     if (n == 0) {
         return 1.0;
     }
+
+    double numerator = pown(x, n);
+    double denominator = fact(n);
+
     if (n % 2 == 1) {
-        return pown(x, n) / fact(n);
+        return numerator / denominator;
     } else {
-        return pown(-1, n / 2) * pown(x, n) / fact(n);
+        return pown(-1, n / 2) * (numerator / denominator);
     }
 }
 
