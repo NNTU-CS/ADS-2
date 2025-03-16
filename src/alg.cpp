@@ -4,25 +4,64 @@
 
 
 double pown(double value, uint16_t n) {
-  return 0.0;
+    long double res = 1.0L;
+    while (n > 0) {
+        if (n % 2 == 1) {
+            res *= value;
+        }
+        value *= value;
+        n /= 2;
+    }
+    return res;
 }
 
 uint64_t fact(uint16_t n) {
-  return 0.0;
+    uint64_t res = 1;
+    for (uint16_t i = 2; i <= n; ++i) {
+        res *= i;
+    }
+    return res;
 }
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+    long double res = 1.0L;
+    for (uint16_t i = 0; i < n; ++i) {
+        res *= x;
+    }
+    for (uint16_t i = 1; i <= n; ++i) {
+        res /= i;
+    }
+    return res;
 }
 
 double expn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t i = 0; i <= count; ++i) {
+        sum += calcItem(x, i);
+    }
+    return sum;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+    double res = 0.0;
+    double c = x;
+    int sign = 1;
+    for (uint16_t i = 1; i <= count; ++i) {
+        res += sign * c;
+        c *= x * x / ((2 * i) * (2 * i + 1));
+        sign = -sign;
+    }
+    return res;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+    double res = 0.0;
+    double c = 1.0;
+    int sign = 1;
+    for (uint16_t i = 1; i <= count; ++i) {
+        res += sign * c;
+        c *= x * x / ((2 * i - 1) * (2 * i));
+        sign = -sign;
+    }
+    return res;
 }
