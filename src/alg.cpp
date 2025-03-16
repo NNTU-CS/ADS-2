@@ -39,8 +39,9 @@ double sinn(double x, uint16_t count) {
   if (count == 0) return 0;
   double res = 0;
   double sign = 1.0;
-  for (int i = 1; i <= count; i += 2) {
-    res += sign * calcItem(x, i);
+  for (uint16_t i = 1; i <= count; i++) {
+    int I = 2 * i + 1;
+    res += sign * calcItem(x, I);
     sign *= -1;
   }
   return res;
@@ -50,8 +51,9 @@ double cosn(double x, uint16_t count) {
   if (count == 0) return 1;
   double res = 1;
   double sign = -1.0;
-  for (int i = 2; i <= count; i += 2) {
-    res += sign * calcItem(x, i);
+  for (uint16_t i = 2; i <= count; i++) {
+    int I = 2 * i;
+    res += sign * calcItem(x, I);
     sign *= -1;
   }
   return res;
