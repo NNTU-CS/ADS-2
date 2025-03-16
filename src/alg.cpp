@@ -1,4 +1,3 @@
-// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
@@ -44,7 +43,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double sum = x;
   double term = x;
-  
+
   for (uint16_t n = 1; n < count; n++) {
     term *= -x * x / ((2 * n) * (2 * n + 1));
     sum += term;
@@ -55,7 +54,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double sum = 1.0;
   double term = 1.0;
-  
+
   for (uint16_t n = 1; n < count; n++) {
     term *= -x * x / ((2 * n - 1) * (2 * n));
     sum += term;
