@@ -6,7 +6,7 @@ double pown(double value, uint16_t n) {
   for (int i = 1; i <= n ; i++) {
     sum *= value;
   }
-  return val;
+  return sum;
 }
 uint64_t fact(uint16_t n) {
 uint64_t result = 1;
