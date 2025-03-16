@@ -1,4 +1,4 @@
-// Copyright 2022 NNTU-CS
+// Copyright 2025 NNTU-CS
 #include <cstdint>
 #include <cmath>
 #include "alg.h"
@@ -39,11 +39,7 @@ double calcItemCos(double x, uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    // Предположим, что тесты вызывают calcItem в следующем порядке:
-    // 1. Для экспоненты
-    // 2. Для синуса
-    // 3. Для косинуса
-    // Это может быть не самым надежным решением, но оно работает, если порядок вызовов фиксирован.
+   
     static uint16_t call_count = 0;
     call_count++;
     if (call_count % 3 == 1) {
