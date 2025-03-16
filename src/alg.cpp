@@ -35,8 +35,8 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    long double res = 1.0L;
-    long double c = 1.0L;
+    double res = 1.0;
+    double c = 1.0;
     for (uint16_t n = 1; n < count; ++n) {
         c *= x / n;
         res += c;
@@ -45,25 +45,25 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    long double res = 0.0L;
-    long double c = x;
-    uint16_t z = 1;
+    double res = 0.0;
+    double c = x;
+    int sign = 1;
     for (uint16_t i = 1; i <= count; ++i) {
-        res += z * c;
+        res += sign * c;
         c *= x * x / ((2 * i) * (2 * i + 1));
-        z = -z;
+        sign = -sign;
     }
     return res;
 }
 
 double cosn(double x, uint16_t count) {
-    long double res = 0.0L;
-    long double c = 1.0L;
-    uint16_t z = 1;
+    double res = 0.0;
+    double c = 1.0;
+    int sign = 1;
     for (uint16_t i = 1; i <= count; ++i) {
-        res += z * c;
+        res += sign * c;
         c *= x * x / ((2 * i - 1) * (2 * i));
-        z = -z;
+        sign = -sign;
     }
     return res;
 }
