@@ -5,10 +5,11 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
+  if (n == 0) return 1.0;
   double result = 1.0;
   for (uint16_t i = 0; i < n; ++i) {
-    result *= value;
-  }
+      result *= value;
+    }
   return result;
 }
 
@@ -21,25 +22,26 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / static_cast<double>(fact(n));
+  double num = 1.0;
+  for (uint16_t i = 0; i < n; ++i) {
+      num *= x;
+    }
+  return num / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 1.0; // Начинаем с первого члена ряда (n=0)
-  double term = 1.0; // Это будет n! для n=0
-
-  for (uint16_t n = 1; n < count; ++n) {
-    term *= x / n; // Вычисляем следующий член ряда
-    sum += term;   // Добавляем к сумме
-  }
-  
-  return sum;
+    double result = 0;
+    for (uint16_t i = 0; i <= count; i++)
+        result += calcItem(x, i);
+    return result;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
+  double smd = x;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n + 1);
+    sum += smd;
+    smd *= -x * x / ((2 * n  + 2) * (2 * n + 3));
   }
   return sum;
 }
