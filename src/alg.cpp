@@ -45,10 +45,6 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  
-  if (count == 0) {
-    return 1.0;
-  }
   double itog = 0.0;
   for (uint16_t n = 0; n < count; ++n) {
     itog += (n % 2 == 0 ? 1 : -1) * pow(x, 2 * n) / fact(2 * n);
