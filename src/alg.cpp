@@ -31,7 +31,7 @@ double expn(double x, uint16_t count) {
     return result;
 }
 
-double sinn(double x, int count) {
+double sinn(double x, uint16_t count) {
     double result = 0;
     int sign = 1;
     for (int i = 1; i <= count; i++) {
