@@ -12,7 +12,7 @@ double fact(int n) {
 }
 
 double pown(double value, uint16_t n) {
-	double value2 = value;
+    double value2 = value;
     for (uint16_t i = 2; i <= n; ++i) {
         value *= value2;
     }
@@ -20,7 +20,7 @@ double pown(double value, uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-	return (pown(x, n)) / (fact(n));
+    return (pown(x, n)) / (fact(n));
 }
 
 double expn(double x, uint16_t count) {
