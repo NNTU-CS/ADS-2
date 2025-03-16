@@ -5,6 +5,7 @@
 
 double pown(double value, uint16_t n) {
   return 0.0;
+  
 }
 
 uint64_t fact(uint16_t n) {
