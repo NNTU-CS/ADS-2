@@ -35,7 +35,7 @@ double expn(double x, uint32_t count) {
 double sinn(double x, uint32_t count) {
   double result = 0.0;
     for (uint32_t i = 0; i < count; ++i) {
-        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i + 1) / (double)fact(unsigned int)(2 * i + 1);
+        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i + 1) / (double)fact(static_cast<unsigned int>(2 * i + 1);
         result += term;
     }
     return result;
@@ -44,7 +44,7 @@ double sinn(double x, uint32_t count) {
 double cosn(double x, uint32_t count) {
   double result = 0.0;
     for (uint32_t i = 0; i < count; ++i) {
-        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i) / (double)fact(unsigned int)(2 * i);
+        double term = (i % 2 == 0 ? 1.0 : -1.0) * pown(x, 2 * i) / (double)fact(static_cast<unsigned int>(2 * i);
         result += term;
     }
     return result;
