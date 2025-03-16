@@ -39,10 +39,9 @@ double sinn(double x, uint16_t count) {
   double res = 1.0;
   for (uint16_t i = 0; n < count; i++) {
     double I = calcItem(x, 2 * i + 1);
-    if (n % 2 == 0) {
+    if (i % 2 == 0) {
       res += I;
-    }
-    else {
+    } else {
       res -= I;
     }
   }
@@ -53,10 +52,9 @@ double cosn(double x, uint16_t count) {
   double res = 0.0;
   for (uint16_t i = 0; i < count; i++) {
     double I = calcItem(x, 2 * i);
-    if (n % 2 == 0) {
+    if (i % 2 == 0) {
       res += I;
-    }
-    else {
+    } else {
       res -= I;
     }
   }
