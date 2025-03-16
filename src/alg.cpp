@@ -26,7 +26,7 @@ double calcItem(double x, unsigned short n) {
 
 double expn(double x, unsigned short count) {
   double result = 0.0;
-    for (unsigned short i = 0; i < count; ++i) {
+    for (unsigned short i = 0; i <= count; ++i) {
         result += calcItem(x, i);
     }
     return result;
