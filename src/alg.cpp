@@ -5,8 +5,8 @@ double pown(double value, uint16_t n) {
   if (n == 0) {
        return 1.0;
   }
-   double result = 1.0;
-   while (n > 0) {
+  double result = 1.0;
+  while (n > 0) {
        if (n % 2 == 1) {
            result *= value;
        }
@@ -22,7 +22,6 @@ uint64_t result = 1;
   }
   return result;
   }
-}
 double calcItem(double x, uint16_t n) {
   double result = 1.0;
     for (uint16_t i = 1; i <= n; ++i) {
@@ -38,7 +37,9 @@ double expn(double x, uint16_t count) {
     return sum;
 }
 double sinn(double x, uint16_t count) {
-  if (count == 0) return 0.0;
+  if (count == 0) {
+    return 0.0;
+  }
     double sum = x;
     double term = x;
     for (uint16_t n = 2; n <= count; ++n) {
@@ -48,7 +49,9 @@ double sinn(double x, uint16_t count) {
     return sum;
 }
 double cosn(double x, uint16_t count) {
-  if (count == 0) return 0.0;
+  if (count == 0) {
+    return 0.0;
+  }
     double sum = 1.0;
     double term = 1.0;
     for (uint16_t n = 2; n <= count; ++n) {
