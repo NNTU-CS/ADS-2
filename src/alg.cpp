@@ -24,8 +24,7 @@ double calcItem(double x, uint16_t n) {
   double term;
   if (n % 2 == 0) {
     term = sign * pown(x, n) / fact(n);
-  }
-  else {
+  } else {
     term = sign * pown(x, n) / fact(n);
   }
   return term;
