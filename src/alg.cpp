@@ -4,8 +4,7 @@
 
 double pown(double value, uint16_t n) {
   double res = 1;
-  for (int i = 0; i < n; ++i)
-  {
+  for (int i = 0; i < n; ++i) {
     res *= value;
   }
   
@@ -37,7 +36,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double res = 0;
-  for (int i = 0; i <= count; i++) {
+  for (uint64_t i = 0; i <= count; i++) {
     res += (pown(-1, i - 1) * pown(x, (2 * i) - 1) / fact((2 * i) - 1));
   }
   return res;
@@ -45,9 +44,8 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double res = 0;
-  for (int i = 0; i <= count; i++) {
+  for (uint64_t i = 0; i <= count; i++) {
     res += (pown(-1, i - 1) * pown(x, (2 * i) - 2) / fact((2 * i) - 2));
   }
-  
   return res;
 }
