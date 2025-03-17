@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
@@ -8,6 +9,7 @@ double pown(double value, uint16_t n) {
     }
     return result;
 }
+
 
 uint64_t fact(uint16_t n) {
     if (n == 0 || n == 1) return 1;
@@ -49,3 +51,4 @@ double cosn(double x, uint16_t count) {
     }
     return sum;
 }
+
