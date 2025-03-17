@@ -2,54 +2,58 @@
 #include <cstdint>
 #include "alg.h"
 
-double pown(double value, uint16_t n) {
+double pown(double base, uint16_t exponent) {
+  if (exponent == 0) {
+    return 1.0;
+  }
   double result = 1.0;
-  for (uint16_t i = 0; i < n; i++) {
-    result *= value;
+  for (uint16_t i = 1; i <= exponent; ++i) {
+    result *= base;
   }
   return result;
 }
 
-uint64_t fact(uint16_t n) {
-  if (n == 0 || n == 1) return 1;
-  uint64_t result = 1;
-  for (uint16_t i = 2; i <= n; i++) {
-    result *= i;
+uint64_t fact(uint16_t number) {
+  if (number <= 1) {
+    return 1ULL;
   }
-  return result;
+  uint64_t total = 1ULL;
+  for (uint16_t i = 2; i <= number; ++i) {
+    total *= i;
+  }
+  return total;
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / fact(n);
+  return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n <= count; n++) {
-    sum += calcItem(x, n);
+  for (uint16_t i = 0; i < count; ++i) {
+    sum += calcItem(x, i);
   }
-  return sum;
-}
   return sum;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n < count; n++) {
-    double term = calcItem(x, 2 * n + 1);
-    if (n % 2 == 1) term = -term;
-    sum += term;
+  for (uint16_t i = 0; i < count; ++i) {
+    double sign = (i % 2 == 0) ? 1.0 : -1.0; 
+    uint16_t power = 2 * i + 1;
+    sum += sign * calcItem(x, power);
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n < count; n++) {
-    double term = calcItem(x, 2 * n);
-    if (n % 2 == 1) term = -term;
-    sum += term;
+  for (uint16_t i = 0; i < count; ++i) {
+    double sign = (i % 2 == 0) ? 1.0 : -1.0; 
+    uint16_t power = 2 * i;
+    sum += sign * calcItem(x, power);
   }
   return sum;
 }
+
 
