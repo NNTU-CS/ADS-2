@@ -40,23 +40,19 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double res = 0.0;
-  for (uint16_t n = 0; n <= count; ++n) {
-    res += calcItem(x, n);
-  }
-  for (uint16_t n = 1; n <= count; ++n) {
-        res += pown(-1.0, n - 1) * calcItem(x, (2 * n - 1));
-  }
-  return res;
+	double s = x;
+	for (uint16_t i = 1; i <= count; i++) {
+		s += (pown(-1, count - 1) * (pown(x, 2 * count - 1) / fact(2 * count - 1)));
+	}
+	return s;
+	return 0.0;
 }
 
 double cosn(double x, uint16_t count) {
-  double res = 0.0;
-  for (uint16_t n = 0; n <= count; ++n) {
-    res += calcItem(x, n);
-  }
-  for (uint16_t n = 1; n <= count; ++n) {
-        res += pown(-1.0, n - 1) * calcItem(x, (2 * n - 2));
-  }
-  return res;
+	double c = 1;
+	for (uint16_t i = 1; i <= count; i++) {
+		c += (pown(-1, count - 1) * (pown(x, 2 * count - 2) / fact(2 * count - 2)));
+	}
+	return c;
+	return 0.0;
 }
