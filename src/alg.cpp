@@ -1,3 +1,4 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
@@ -59,8 +60,10 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double res = 1.0;
     double term = 1.0;
+    double x_squared = -x * x;
+
     for (uint16_t i = 1; i <= count; ++i) {
-        term *= -x * x / static_cast<double>((2 * i - 1) * (2 * i));
+        term *= x_squared / static_cast<double>((2 * i - 1) * (2 * i));
         res += term;
     }
     return res;
