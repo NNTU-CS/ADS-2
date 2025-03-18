@@ -1,13 +1,14 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
-static double pown(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
   double result = 1.0;
   while (n--) result *= value;
   return result;
 }
 
-static uint64_t fact(uint16_t n) {
+uint64_t fact(uint16_t n) {
   if (n < 2) return 1;
   uint64_t result = 1;
   for (uint16_t i = 2; i <= n; ++i) {
@@ -16,7 +17,7 @@ static uint64_t fact(uint16_t n) {
   return result;
 }
 
-static double calcItem(double x, uint16_t n) {
+double calcItem(double x, uint16_t n) {
   return pown(x, n) / fact(n);
 }
 
