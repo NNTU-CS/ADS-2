@@ -42,7 +42,7 @@ double sinn(double x, uint16_t count) {
   double summ = 0.0;
   double c = x;
   int symb = 1;
-  for (uint16_t n = 0; n <= count; ++n) {
+  for (uint16_t n = 1; n <= count; ++n) {
     summ += symb * c;
     c *= x * x / ((2 * n) * (2 * n + 1));
     symb = -symb;
@@ -54,7 +54,7 @@ double cosn(double x, uint16_t count) {
   double summ = 0.0;
   double c = 1.0;
   int symb = 1;
-  for (uint16_t n = 0; n <= count; ++n) {
+  for (uint16_t n = 1; n <= count; ++n) {
     summ += symb * c;
     c *= x * x / ((2 * n - 1) * (2 * n));
     symb = -symb;
