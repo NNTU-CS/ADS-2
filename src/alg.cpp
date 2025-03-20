@@ -7,7 +7,7 @@ double pown(double value, uint16_t n) {
   if (n == 0) {
     return 1.0;
   }
-  double res
+  double res;
   for (uint16_t i = 1; i < n; i++) {
     value = value * a;
   }
