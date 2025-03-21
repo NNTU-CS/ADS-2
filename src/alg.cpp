@@ -21,16 +21,12 @@ uint64_t fact(uint16_t n) {
     return result;
 }
 
-// Вычисление члена ряда для exp(x), sin(x), cos(x)
+
 double calcItem(double x, uint16_t n) {
-    // Для exp(x): x^n / n!
-    // Для sin(x): (-1)^n * x^(2n+1) / (2n+1)!
-    // Для cos(x): (-1)^n * x^(2n) / (2n)!
-    // В этой функции мы вычисляем член ряда для exp(x), так как это общий случай.
     return pown(x, n) / static_cast<double>(fact(n));
 }
 
-// Вычисление exp(x) с суммированием count членов ряда
+
 double expn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
@@ -38,22 +34,24 @@ double expn(double x, uint16_t count) {
     }
     return sum;
 }
-// Вычисление sin(x) с суммированием count членов ряда
+
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        double term = pown(-1, n) * pown(x, 2 * n + 1) / static_cast<double>(fact(2 * n + 1));
-        sum += term;
+        double numerator = pown(-1, n) * pown(x, 2 * n + 1);
+        double denominator = static_cast<double>(fact(2 * n + 1));
+        sum += numerator / denominator;
     }
     return sum;
 }
 
-// Вычисление cos(x) с суммированием count членов ряда
+
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
     for (uint16_t n = 0; n < count; ++n) {
-        double term = pown(-1, n) * pown(x, 2 * n) / static_cast<double>(fact(2 * n));
-        sum += term;
+        double numerator = pown(-1, n) * pown(x, 2 * n);
+        double denominator = static_cast<double>(fact(2 * n));
+        sum += numerator / denominator;
     }
     return sum;
 }
