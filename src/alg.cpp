@@ -29,8 +29,10 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double sum = 0.0;
+    double term = 1.0; // Первый член ряда (x^0 / 0!)
     for (uint16_t n = 0; n < count; ++n) {
-        sum += pown(x, n) / static_cast<double>(fact(n));
+        sum += term;
+        term *= x / (n + 1); //
     }
     return sum;
 }
