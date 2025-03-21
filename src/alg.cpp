@@ -31,9 +31,9 @@ double calcItem(double x, uint16_t n) {
     static bool isExp = true; // Флаг для определения типа ряда
     if (isExp) {
         return pown(x, n) / static_cast<double>(fact(n));
-    }
-    else {
-        return pown(-1, n) * pown(x, 2 * n + (isExp ? 0 : 1)) / static_cast<double>(fact(2 * n + (isExp ? 0 : 1)));
+    }else {
+        return pown(-1, n) * pown(x, 2 * n + (
+            isExp ? 0 : 1)) / static_cast<double>(fact(2 * n + (isExp ? 0 : 1)));
     }
 }
 
