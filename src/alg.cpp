@@ -9,8 +9,7 @@ double pown(double value, uint16_t n) {
     double halfPower = pown(value, n / 2);
     if (n % 2 == 0) {
         return halfPower * halfPower;
-    }
-    else {
+    }else {
         return halfPower * halfPower * value;
     }
 }
