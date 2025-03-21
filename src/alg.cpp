@@ -16,6 +16,7 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
+    static std::unordered_map<uint16_t, uint64_t> factorialCache; 
     if (factorialCache.find(n) != factorialCache.end()) {
         return factorialCache[n];
     }
