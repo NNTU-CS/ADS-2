@@ -1,7 +1,7 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
+#include <unordered_map>
 
 double pown(double value, uint16_t n) {
     double result = 1.0;
@@ -16,26 +16,14 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-    constexpr uint16_t MAX_CACHE_SIZE = 21;
-    uint64_t factorialCache[MAX_CACHE_SIZE] = {0};
-    // Если значение уже есть в кэше, возвращаем его
-    if (n < MAX_CACHE_SIZE && factorialCache[n] != 0) {
+    static std::unordered_map<uint16_t, uint64_t> factorialCache; // Кэш для факториалов
+    if (factorialCache.find(n) != factorialCache.end()) {
         return factorialCache[n];
     }
-
-    // Если n слишком большое, возвращаем 0 (или можно выбросить исключение)
-    if (n >= MAX_CACHE_SIZE) {
-        std::cerr << "Ошибка: n слишком большое для кэширования!" << std::endl;
-        return 0;
-    }
-
-    // Вычисляем факториал
     uint64_t result = 1;
     for (uint16_t i = 2; i <= n; ++i) {
         result *= i;
     }
-
-    // Сохраняем результат в кэш
     factorialCache[n] = result;
     return result;
 }
