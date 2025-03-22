@@ -23,14 +23,10 @@ double calcItem(double x, uint16_t n) {
   return pown(x, n) / static_cast<double>(fact(n));
 }
 
-double expn(double x, double eps = 1e-10) {
+double expn(double x, uint16_t count) {
   double sum = 0.0;
-  double first = 1.0;
-  uint16_t n = 0;
-  while (first >= eps || first <= -eps) {
-    sum += first;
-    n++;
-    first = calcItem(x, n);
+  for (uint16_t n = 0; n < count; n++) {
+    sum += calcItem(x, n);
   }
   return sum;
 }
