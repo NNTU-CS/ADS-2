@@ -23,7 +23,7 @@ double calcItem(double x, uint16_t n) {
   return pown(x, n) / static_cast<double>(fact(n));
 }
 
-double expn(double x, double eps = 1e - 10) {
+double expn(double x, double eps = 1e-10) {
   double sum = 0.0;
   double first = 1.0;
   uint16_t n = 0;
