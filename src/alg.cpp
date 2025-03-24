@@ -35,23 +35,23 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double sum = 0.0; // Initialize sum of series
-  double term = x; // Initialize first term (x^1 / 1!)
+  double sum = 0.0; 
+  double term = x; 
 
-  for (uint16_t i = 1; i < count; ++i) {
-    sum += term; // Add current term to sum
-    term *= -x * x / ((2 * i) * (2 * i + 1)); // Compute next term
+  for (uint16_t i = 1; i < count; i++) {
+    sum += term; 
+    term *= -x * x / ((2 * i) * (2 * i + 1)); 
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 1.0; // Initialize sum of series
-  double term = 1.0; // Initialize first term (x^0 / 0!)
+  double sum = 1.0; 
+  double term = 1.0; 
 
-  for (uint16_t i = 1; i < count; ++i) {
-    term *= -x * x / ((2 * i - 1) * (2 * i)); // Compute next term
-    sum += term; // Add current term to sum
+  for (uint16_t i = 1; i < count; i++) {
+    term *= -x * x / ((2 * i - 1) * (2 * i)); 
+    sum += term; 
   }
   return sum;
 }
