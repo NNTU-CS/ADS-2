@@ -40,7 +40,7 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double s = x;
+  double s = 0;
   for (uint16_t i = 1; i <= count; i++) {
     s += (pown(-1.0, i - 1) * (calcItem(x, (2 * i - 1))));
   }
@@ -48,7 +48,7 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double c = 1;
+  double c = 0;
   for (uint16_t i = 1; i <= count; i++) {
     c += (pown(-1.0, i - 1) * (calcItem(x, (2 * i - 2))));
   }
