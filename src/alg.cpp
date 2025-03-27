@@ -43,7 +43,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
   for (uint16_t i = 0; i < count; ++i) {
-    sum += (i % 2 == 0 ? 1 : -1) * calcitem(x, 2 * i);
+    sum += (i % 2 == 0 ? 1 : -1) * calcItem(x, 2 * i);
   }
   return sum;
 }
