@@ -1,7 +1,5 @@
-// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
-
 
 double pown(double value, uint16_t n) {
   double result = 1.0;
@@ -12,13 +10,14 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  if (n == 0 || n ==1) return 1;
-  uint16_t result = 1;
+  if (n == 0 || n == 1) return 1;
+  uint64_t result = 1;
   for (uint16_t i = 2; i <= n; ++i) {
     result *= i;
   }
   return result;
 }
+
 
 double calcItem(double x, uint16_t n) {
   return pown(x, n) / fact(n);
