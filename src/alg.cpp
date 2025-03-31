@@ -38,14 +38,14 @@ double sinn(double x, uint16_t count) {
   double term = x;
   for (uint16_t n = 0; n < count; n++) {
     double sign = (n % 2 == 0) ? 1.0 : -1.0;
-    sum += sign * term;
+    sum += term;
     term *= -(x * x) / ((2 * n + 2) * (2 * n + 3));
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 1.0;
+  double sum = 0.0;
   double term = 1.0;
   for (uint16_t n = 0; n < count; n++) {
     double sign = (n % 2 == 0) ? 1.0 : -1.0;
