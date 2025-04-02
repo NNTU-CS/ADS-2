@@ -49,14 +49,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double summ = 0.0;
   for (uint16_t i = 2; i <= count; i++) {
-    double returns;
-    if (i % 2 == 0) {
-      returns = calcItem(x, 2 * i - 2);
-    }
-    if (i % 2 == 1) {
-      returns = -1 * calcItem(x, 2 * i - 2);
-    }
-    summ += returns;
+    summ += pown(-1, i-1) * calcItem(x, 2 * i - 1);
   }
   return summ;
 }
