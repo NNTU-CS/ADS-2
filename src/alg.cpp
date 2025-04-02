@@ -3,26 +3,57 @@
 #include "alg.h"
 
 
+// Возведение числа в целую степень
 double pown(double value, uint16_t n) {
-  return 0.0;
+    double result = 1.0;
+    for (uint16_t i = 0; i < n; ++i) {
+        result *= value;
+    }
+    return result;
 }
 
+// Вычисление факториала числа n
 uint64_t fact(uint16_t n) {
-  return 0.0;
+    uint64_t result = 1;
+    for (uint16_t i = 2; i <= n; ++i) {
+        result *= i;
+    }
+    return result;
 }
+
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+    return pown(x, n) / static_cast<double>(fact(n));
 }
 
+
 double expn(double x, uint16_t count) {
-  return 0.0;
+    double res = 1.0;
+    double term = 1.0;
+    for (uint16_t i = 1; i <= count; ++i) {
+        term *= x / static_cast<double>(i);
+        res += term;
+    }
+    return res;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double numerator = pown(-1, n) * pown(x, 2 * n + 1);
+        double denominator = static_cast<double>(fact(2 * n + 1));
+        sum += numerator / denominator;
+    }
+    return sum;
 }
 
+
 double cosn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double numerator = pown(-1, n) * pown(x, 2 * n);
+        double denominator = static_cast<double>(fact(2 * n));
+        sum += numerator / denominator;
+    }
+    return sum;
 }
