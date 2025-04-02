@@ -54,7 +54,7 @@ double cosn(double x, uint16_t count) {
       returns = calcItem(x, 2 * i - 2);
     }
     if (i % 2 == 1) {
-      returns = -calcItem(x, 2 * i - 2);
+      returns = -1 * calcItem(x, 2 * i - 2);
     }
     summ += returns;
   }
