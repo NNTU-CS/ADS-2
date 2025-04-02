@@ -53,3 +53,4 @@ double cosn(double x, uint16_t count) {
     summ += pown(-1, i-1) * calcItem(x, 2 * i - 2);
   }
   return summ;
+}
