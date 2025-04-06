@@ -1,53 +1,52 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include <cmath>
 
 double pown(double value, uint16_t n) {
     double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
+    int i = 0;
+    while (i < n) {
         result *= value;
+        ++i;
     }
     return result;
 }
 
 uint64_t fact(uint16_t n) {
     uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
+    while (n > 1) {
+        result *= n--;
     }
     return result;
 }
 
 double calcItem(double x, uint16_t n) {
-    if (n % 2 == 0) {
-        return pown(x, n) / static_cast<double>(fact(n));
-    } else {
-        return pown(x, n) / static_cast<double>(fact(n));
-    }
+    double numerator = pown(x, n);
+    double denominator = fact(n);
+    double res = numerator / denominator;
+    return res;
 }
 
 double expn(double x, uint16_t count) {
-    double sum = 1.0;
-    double term = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
-        term *= x / n;
-        sum += term;
+    double summation = 1.0;
+    for (uint16_t i = 1; i <= count; ++i) {
+        summation += calcItem(x, i);
     }
-    return sum;
+    return summation;
 }
 
 double sinn(double x, uint16_t count) {
-    double sum = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        sum += (n % 2 == 0 ? -1 : 1) * calcItem(x, 2 * n + 1);
+    double summation = 0.0;
+    for (uint16_t i = 0; i < count; ++i) {
+        double term = calcItem(x, 2 * i + 1);
+        summation += (i % 2 == 0) ? term : -term;
     }
-    return sum;
+    return summation;
 }
 
 double cosn(double x, uint16_t count) {
-    double sum = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        sum += (n % 2 == 0 ? 1 : -1) * calcItem(x, 2 * n);
+    double summation = 1;
+    for (int i = 2; i <= count; ++i) {
+        summation += pown(-1, i-1) * calcItem(x, 2 * i - 2);
     }
-    return sum;
+    return summation;
 }
