@@ -5,26 +5,18 @@
 
 double pown(double value, uint16_t n) {
  double result = 1.0;
-    for (int i = 2; i <= n; ++i) {
+    for (uint16_t i = 0; i < n; ++i) {
+        result *= value;
+    }
+    return result;
+}
+
+uint64_t fact(uint16_t n) {
+  double result = 1.0;
+    for (uint16_t i = 2; i <= n; ++i) {
         result *= i;
     }
     return result;
-
-uint64_t fact(uint16_t n) {
-  def factorial(n):
-    if n < 0:
-        return "Факториал отрицательного числа не определен."
-    elif n == 0:
-        return 1
-    else:
-        result = 1
-        for i in range(1, n + 1):
-            result *= i
-        return result
-
-n = int(input("Введите число n: "))
-print(f"Факториал = {factorial(n)}")
-
 }
 
 double calcItem(double x, double d, uint16_t n) {
