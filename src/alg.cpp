@@ -27,20 +27,14 @@ print(f"Факториал = {factorial(n)}")
 
 }
 
-double calcItem(double x, uint16_t n) {
- def calcItem(n):
-    if n <= 0:
-        raise ValueError("n должно быть больше 0")
-    return 1 / (n ** 2)
-}
-
+double calcItem(double x, double d, uint16_t n) {
+    return a1 + (n - 1) * d;
 double expn(double x, uint16_t count) {
-    double sum = 1.0; // Начнем с первого члена ряда, который равен 1
-    double term = 1.0; // Инициализируем первый член ряда
-
+    double sum = 1.0;
+    double term = 1.0; 
     for (int n = 1; n <= count; ++n) {
-        term *= x / n; // Вычисляем n-ый член ряда
-        sum += term;   // Добавляем член к сумме
+        term *= x / n; 
+        sum += term;   
     }
 
     return sum;
