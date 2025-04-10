@@ -1,6 +1,9 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
+#include <cmath>
+#include <cstdint>
+#include <iostream>
 double pown(double value, uint16_t n) {
  double result = 1.0;
     for (uint16_t i = 0; i < n; ++i) {
@@ -15,8 +18,12 @@ uint64_t fact(uint16_t n) {
     }
     return result;
 }
-double calcItem(double x, double d, uint16_t n) {
-    return a1 + (n - 1) * d;
+double calcItem(double x, uint16_t n) {
+    double factorial = tgamma(n + 1); 
+    double term = pow(x, n) / factorial;
+    return term;
+}
+
 double expn(double x, uint16_t count) {
    double sum = 0.0;
     for (uint16_t n = 0; n < terms; ++n) {
@@ -25,18 +32,19 @@ double expn(double x, uint16_t count) {
     return sum;
 }
 double sinn(double x, uint16_t count) {
-  
- double sineValue = 0.0;
-    for (int n = 0; n < terms; ++n) {
-        sineValue += (pow(-1, n) * pow(x, (2 * n + 1))) / factorial(2 * n + 1);
+ double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double term = (n % 2 == 0 ? 1 : -1) * (pow(x, 2 * n + 1) / factorial(2 * n + 1));
+        sum += term;
     }
-    return sineValue;
+    return sum;
 }
 double cosn(double x, uint16_t count) {
- double result = 0.0;
-    for (int n = 0; n < count; ++n) {
-        double term = pow(-1, n) * pow(x, 2 * n) / factorial(2 * n);
-        result += term;
-    }
-    return result;
+ double sum = 0.0;
+    double term = 1.0; 
+    for (uint16_t n = 0; n < count; n++) {
+        sum += term; 
+        term *= -x * x / ((2 * n + 1) * (2 * n + 2));
+    }   
+    return sum;
 }
