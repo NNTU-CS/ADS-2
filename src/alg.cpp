@@ -41,7 +41,7 @@ double expn(double input_x, uint16_t iterationCount) {
 double sinn(double input_x, uint16_t iterationCount) {
     double sinResult = 0.0;
     double currentTerm = input_x;
-    sinResult = currentTerm; // Optimization: add the first term outside the loop
+    sinResult = currentTerm; 
     for (uint16_t n = 1; n <= iterationCount; ++n) {
         currentTerm *= -input_x * input_x / ((2 * n) * (2 * n + 1));
         sinResult += currentTerm;
