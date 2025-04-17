@@ -2,48 +2,48 @@
 #include <cstdint>
 #include "alg.h"
 
+#include <stdint.h>
+
 double pown(double value, uint16_t n) {
     double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
+    while (n > 0) {
         result *= value;
+        n--;
     }
     return result;
 }
 
 uint64_t fact(uint16_t n) {
     uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
+    while (n > 1) {
+        result *= n;
+        n--;
     }
     return result;
 }
 
-double calcItem(double x, uint16_t n) {
-    return pown(x, n) / fact(n);
-}
-
 double expn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t i = 0; i < count; ++i) {
-        sum += calcItem(x, i);
+    for (uint16_t n = 0; n < count; n++) {
+        sum += pown(x, n) / fact(n);
     }
     return sum;
 }
 
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t i = 0; i < count; ++i) {
-        int sign = (i % 2 == 0) ? 1 : -1;
-        sum += sign * pown(x, 2 * i + 1) / fact(2 * i + 1);
+    for (uint16_t n = 1; n <= count; n++) {
+        double term = pown(x, 2*n - 1) / fact(2*n - 1);
+        sum += (n % 2 == 1) ? term : -term;
     }
     return sum;
 }
 
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t i = 0; i < count; ++i) {
-        int sign = (i % 2 == 0) ? 1 : -1;
-        sum += sign * pown(x, 2 * i) / fact(2 * i);
+    for (uint16_t n = 1; n <= count; n++) {
+        double term = pown(x, 2*(n - 1)) / fact(2*(n - 1));
+        sum += (n % 2 == 1) ? term : -term;
     }
     return sum;
 }
