@@ -2,12 +2,11 @@
 #include <cstdint>
 #include "alg.h"
 #include <cmath>
-#include <cstdint>
 #include <iostream>
 double pown(double value, uint16_t n) {
  double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
-        result *= value;
+ for (uint16_t i = 0; i < n; ++i) {
+   result *= value;
     }
     return result;
 }
@@ -19,21 +18,21 @@ uint64_t fact(uint16_t n) {
     return result;
 }
 double calcItem(double x, uint16_t n) {
-    double factorial = tgamma(n + 1); 
-    double term = pow(x, n) / factorial;
+    double fact = tgamma(n + 1); 
+    double term = pow(x, n) / fact;
     return term;
 }
 
 double expn(double x, uint16_t count) {
    double sum = 0.0;
-    for (uint16_t n = 0; n < terms; ++n) {
+   for (uint16_t n = 0; n < terms; ++n) {
         sum += pown(x, n) / factorial(n);
     }
     return sum;
 }
 double sinn(double x, uint16_t count) {
  double sum = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
+ for (uint16_t n = 0; n < count; ++n) {
         double term = (n % 2 == 0 ? 1 : -1) * (pow(x, 2 * n + 1) / factorial(2 * n + 1));
         sum += term;
     }
@@ -41,10 +40,10 @@ double sinn(double x, uint16_t count) {
 }
 double cosn(double x, uint16_t count) {
  double sum = 0.0;
-    double term = 1.0; 
-    for (uint16_t n = 0; n < count; n++) {
-        sum += term; 
+ double term = 1.0; 
+    for (uint16_t n = 0; n < count; n++){
+        sum += term;
         term *= -x * x / ((2 * n + 1) * (2 * n + 2));
-    }   
+    }
     return sum;
 }
