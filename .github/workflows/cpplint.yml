@@ -1,12 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: cpplint
+name: cppcheck
 on: [push, pull_request]
 jobs:
-  cpplint:
+  cppcheck:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-    - run: pip install cpplint
-    - run: cpplint --filter=-build/include_subdir,-whitespace/comments,+whitespace/indent --recursive .
+    - run: sudo apt-get install cppcheck
+    - run: cppcheck --enable=all --suppress=unmatchedSuppression --suppress=unusedFunction --suppress=missingInclude --suppress=missingIncludeSystem --inline-suppr --std=c++17 --error-exitcode=10 src/*.cpp
