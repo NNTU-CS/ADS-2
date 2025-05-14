@@ -22,9 +22,9 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0;
+  double sum = 1.0;
   for (uint16_t i = 0; i < count; i++) {
-    sum += calcItem(x, i); // Добавляем i-й член
+    sum += calcItem(x, i);
   }
   return sum;
 }
