@@ -18,16 +18,17 @@ uint64_t fact(uint16_t n) {
   return result;
 }
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / (double)fact(n);
+  return static_cast<double>(pown(x, n)) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
   double sum = 0;
   for (uint16_t i = 0; i < count; i++) {
-    sum = sum + calcItem(x, i);
+    sum += calcItem(x, i); // Добавляем i-й член
   }
   return sum;
 }
+
 
 double sinn(double x, uint16_t count) {
   double sum = 0;
