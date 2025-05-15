@@ -1,47 +1,64 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
+#include "alg.h"
+
+
 double pown(double value, uint16_t n) {
   double result = 1.0;
-  for (uint16_t i = 0; i < n; ++i) {
-    result *= value;
+  while (n > 0) {
+    if (n % 2 == 1) {
+      result *= value;
+    }
+    value *= value;
+    n /= 2;
   }
   return result;
 }
-double fact(uint16_t n) {
-  if (n == 0 || n == 1) return 1.0;
-  double result = 1.0;
-  for (uint16_t i = 2; i <= n; ++i) {
-    result *= static_cast<double>(i);
+
+uint64_t fact(uint16_t n) {
+  if (n == 0 || n == 1) {
+    return 1;
+  }
+  uint64_t result = 1;
+  for (uint16_t i = 2; i <= n; i++) {
+    result *= i;
   }
   return result;
 }
+
 double calcItem(double x, uint16_t n) {
   return pown(x, n) / fact(n);
 }
+
 double expn(double x, uint16_t count) {
-  double result = 0.0;
-  for (uint16_t i = 0; i < count; ++i) {
-    result += calcItem(x, i);
-  }
-  return result;
+  double sum = 1.0;
+  double term = 1.0;
+
+    for (uint16_t n = 1; n <= count; ++n) {
+        term *= x / n;
+        sum += term;
+    }
+    return sum;
 }
+
 double sinn(double x, uint16_t count) {
-  double result = 0.0;
-  for (uint16_t i = 0; i < count; ++i) {
-    uint16_t power = 2 * i + 1;
-    double term = calcItem(x, power);
-    if (i % 2 == 0) result += term;
-    else result -= term;
+  double sum = x;
+  double term = x;
+
+  for (uint16_t n = 1; n < count; n++) {
+    term *= -x * x / ((2 * n) * (2 * n + 1));
+    sum += term;
   }
-  return result;
+  return sum;
 }
+
 double cosn(double x, uint16_t count) {
-  double result = 0.0;
-  for (uint16_t i = 0; i < count; ++i) {
-    uint16_t power = 2 * i;
-    double term = calcItem(x, power);
-    if (i % 2 == 0) result += term;
-    else result -= term;
+  double sum = 1.0;
+  double term = 1.0;
+
+  for (uint16_t n = 1; n < count; n++) {
+    term *= -x * x / ((2 * n - 1) * (2 * n));
+    sum += term;
   }
-  return result;
+  return sum;
 }
