@@ -11,7 +11,7 @@ double fact(uint16_t n) {
   if (n == 0 || n == 1) return 1.0;
   double result = 1.0;
   for (uint16_t i = 2; i <= n; ++i) {
-    result *= i;
+    result *= static_cast<double>(i);
   }
   return result;
 }
