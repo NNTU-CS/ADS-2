@@ -5,48 +5,54 @@
 
 
 double pown(double value, uint16_t n) {
-  return std::pow(value, n);
+  double rez = 1.0;
+  for (int i = 0; i < n; ++i) {
+    rez *= value;
+  }
+  return rez;
 }
 
 uint64_t fact(uint16_t n) {
-  if (n == 0 || n == 1) {
-    return 1;
+  uint64_t rez = 1;
+  for (uint64_t i = 2; i <= n; ++i) {
+    rez *= i;
   }
-  uint64_t result = 1;
-  for (uint16_t i = 2; i <= n; ++i) {
-    result *= i;
-  }
-  return result;
+  return rez;
 }
 
 double calcItem(double x, uint16_t n) {
-  return powN(x, n) / static_cast<double>(factorial(n));
+  long double rez = pown(x, n) / fact(n);
+  return rez;
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    sum += calculateItem(x, n);
+  long double rez = 1.0L;
+  for (uint64_t i = 1; i <= count; ++i) {
+    rez += pown(x, i) / fact(i);
   }
-  return sum;
+  return rez;
 }
 
 double sinn(double x, uint16_t count) {
-  double sum = 0.0;
-  int sign = 1;
-  for (uint16_t n = 1; n <= count; n += 2) {
-    sum += sign * calculateItem(x, n);
-    sign = -sign;
+  double rez = 0.0;
+  for (uint64_t i = 1; i <= count; ++i) {
+    if (i % 2 == 0) {
+      rez -= pown(x, 2 * i - 1) / fact(2 * i - 1);
+    } else {
+      rez += pown(x, 2 * i - 1) / fact(2 * i - 1);
+    }
   }
-  return sum;
+  return rez;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 0.0;
-  int sign = 1;
-  for (uint16_t n = 0; n <= count; n += 2) { 
-    sum += sign * calculateItem(x, n);
-    sign = -sign; 
+  double rez = 0.0;
+  for (uint64_t i = 1; i <= count; ++i) {
+    if (i % 2 == 0) {
+      rez -= pown(x, 2 * i - 2) / fact(2 * i - 2);
+    } else {
+      rez += pown(x, 2 * i - 2) / fact(2 * i - 2);
+    }
   }
-  return sum;
+  return rez;
 }
