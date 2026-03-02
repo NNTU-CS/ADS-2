@@ -4,7 +4,7 @@
 
 double pown(double value, uint16_t n) {
   double rez = 1;
-  for (uint16_t p = 1; p < n; p++) {
+  for (uint16_t p = 0; p < n; p++) {
     rez *= value;
   }
   return rez;
@@ -12,7 +12,7 @@ double pown(double value, uint16_t n) {
 
 uint64_t fact(uint16_t n) {
   uint64_t rez = 1;
-  for (uint16_t p = 1; p <= n; p++) {
+  for (uint16_t p = 2; p <= n; p++) {
     rez *= p;
   }
   return rez;
