@@ -40,7 +40,7 @@ double sinn(double x, uint16_t count) {
     double chis = pown(x, step);
     uint64_t znam = fact(step);
     double a = chis / znam;
-    if (p % 2 == 0) {       
+    if (p % 2 == 0) {
       sum += a;
     } else {
       sum -= a;
@@ -56,8 +56,8 @@ double cosn(double x, uint16_t count) {
     double chis = pown(x, step);
     uint64_t znam = fact(step);
     double a = chis / znam;
-    if (p % 2 == 0) {         
-      sum += a;      
+    if (p % 2 == 0) {
+      sum += a;
     } else {
       sum -= a;
     }
