@@ -11,9 +11,10 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-    double ans = 1.0;
-    for (uint16_t i = 1; i <= n; ++i) {
-        ans *= x / i;
+    if (n <= 1) return 1;
+    uint64_t ans = 1;
+    for (uint16_t i = 2; i <= n; ++i) {
+        ans *= i;
     }
     return ans;
 }
@@ -31,20 +32,30 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    double suma = x;
-    int zn = -1;
-    for (uint16_t n = 3; n <= 2*count-1; n+=2) {
-        suma += calcItem(x, n) * zn;
+    double suma = 0.0;
+    int zn = 1;
+
+    for (uint16_t n = 1; n <= count; ++n) {
+        uint16_t power = 2 * n - 1; 
+        suma += zn * calcItem(x, power);
         zn = -zn;
     }
     return suma;
 }
 
+
 double cosn(double x, uint16_t count) {
-    double suma = 1;
-    int zn = -1;
-    for (uint16_t n = 2; n <= 2 * count - 2; n += 2) {
-        suma += calcItem(x, n) * zn;
+    double suma = 0.0;
+    int zn = 1;
+
+    for (uint16_t n = 1; n <= count; ++n) {
+        uint16_t power = 2 * n - 2;
+        if (power == 0) {
+            suma += zn * 1.0;
+        }
+        else {
+            suma += zn * calcItem(x, power);
+        }
         zn = -zn;
     }
     return suma;
