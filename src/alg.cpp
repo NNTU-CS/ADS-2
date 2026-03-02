@@ -47,9 +47,3 @@ double cosn(double x, uint16_t count) {
     }
     return sum;
 }
-    for (uint16_t n = 0; n < count; n++) {
-        double term = pown(-1.0, n) * pown(x, 2 * n) / fact(2 * n);
-        sum += term;
-    }
-    return sum;
-}
