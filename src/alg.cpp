@@ -5,6 +5,7 @@
 
 double pown(double first, double current, uint16_t n) {
   if (n == 1) return current;
+  else if (n == 0) return 1;
   return pown(first, current * first, n - 1);
 }
 
@@ -28,7 +29,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  int8_t t = 1;
+  int8_t t;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
     else t = -1;
@@ -40,7 +41,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  int8_t t = 1;
+  int8_t t;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
     else t = -1;
