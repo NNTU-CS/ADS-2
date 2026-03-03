@@ -3,9 +3,17 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
+    if (n == 0) return 1.0;
+
     double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
-        result *= value;
+    double base = value;
+
+    while (n > 0) {
+        if (n % 2 == 1) {
+            result *= base;
+        }
+        base *= base;
+        n /= 2;
     }
     return result;
 }
@@ -24,7 +32,6 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double sum = 0.0;
-
     for (uint16_t n = 0; n <= count; ++n) {
         sum += calcItem(x, n);
     }
