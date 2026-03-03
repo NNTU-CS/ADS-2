@@ -31,7 +31,7 @@ double sinn(double x, uint16_t count) {
   uint8_t t;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
-    else t = 1;
+    else t = -1;
 
     sum += t * calcItem(x, 2 * n - 1);
   }
@@ -43,7 +43,7 @@ double cosn(double x, uint16_t count) {
   uint8_t t;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
-    else t = 1;
+    else t = -1;
 
     sum += t * calcItem(x, 2 * n - 2);
   }
