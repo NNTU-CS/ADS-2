@@ -28,7 +28,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  uint8_t t;
+  int8_t t = 1;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
     else t = -1;
@@ -40,7 +40,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  uint8_t t;
+  int8_t t = 1;
   for (uint16_t n = 1; n <= count; n++) {
     if ((n - 1) % 2 == 0) t = 1;
     else t = -1;
