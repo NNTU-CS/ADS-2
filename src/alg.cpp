@@ -34,7 +34,7 @@ double sinn(double x, uint16_t count) {
     double sign = 1;
     for (uint16_t i = 0; i < count; i++) {
         int n = 2 * i + 1;
-        sum += sign * calcItem(x,n);
+        sum += sign * calcItem(x, n);
         sign = -sign;
     }
     return sum;
