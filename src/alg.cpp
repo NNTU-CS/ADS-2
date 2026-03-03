@@ -9,7 +9,6 @@ double pown(double value, uint16_t n) {
 
 double pown(double first, double current, uint16_t n) {
   if (n == 1) return current;
-  else if (n == 0) return 1;
   return pown(first, current * first, n - 1);
 }
 
@@ -23,16 +22,16 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  if (count < 0) return 0;
+  if (count == 0) return 1;
   return calcItem(x, count) + expn(x, count - 1);
 }
 
 double sinn(double x, uint16_t count) {
-  if (count < 0) return 0;
+  if (count == 1) return x;
   return pown(-1, count - 1) * calcItem(x, 2 * count - 1) + sinn(x - 2, count - 2);
 }
 
 double cosn(double x, uint16_t count) {
-  if (count < 0) return 0;
+  if (count == 0) return 1;
   return pown(-1, count - 1) * calcItem(x, 2 * count - 2) + cosn(x - 2, count - 2);
 }
