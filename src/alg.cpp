@@ -27,11 +27,25 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  if (count == 1) return x;
-  return pown(-1, count - 1) * calcItem(x, 2 * count - 1) + sinn(x - 2, count - 2);
+  double sum = 0.0;
+  uint8_t t;
+  for (uint16_t n = 1; n <= count; n++) {
+    if ((n - 1) % 2 == 0) t = 1;
+    else t = 1;
+
+    sum += t * calcItem(x, 2 * n - 1);
+  }
+  return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  if (count == 0) return 1;
-  return pown(-1, count - 1) * calcItem(x, 2 * count - 2) + cosn(x - 2, count - 2);
+  double sum = 0.0;
+  uint8_t t;
+  for (uint16_t n = 1; n <= count; n++) {
+    if ((n - 1) % 2 == 0) t = 1;
+    else t = 1;
+
+    sum += t * calcItem(x, 2 * n - 2);
+  }
+  return sum;
 }
