@@ -23,7 +23,7 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  if (count < 0) return 0;
+  if (count == 0) return 1;
   return calcItem(x, count) + expn(x, count - 1);
 }
 
