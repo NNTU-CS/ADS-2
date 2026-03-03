@@ -3,14 +3,14 @@
 #include "alg.h"
 
 
-double pown(double value, uint16_t n) {
-  return pown(value, value, n);
-}
-
 double pown(double first, double current, uint16_t n) {
   if (n == 1) return current;
   else if (n == 0) return 1;
   return pown(first, current * first, n - 1);
+}
+
+double pown(double value, uint16_t n) {
+  return pown(value, value, n);
 }
 
 uint64_t fact(uint16_t n) {
