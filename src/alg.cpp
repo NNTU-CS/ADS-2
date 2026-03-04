@@ -4,25 +4,55 @@
 
 
 double pown(double value, uint16_t n) {
-  return 0.0;
+    double res = 1.0;
+    for (uint16_t i = 0; i < n;i++){
+        res *= value;
+    }
+    return res;
 }
 
-uint64_t fact(uint16_t n) {
-  return 0.0;
+uint64_t fact(uint64_t n) {
+    uint64_t res = n;
+    for (uint64_t i = 2; i < n; i++) {
+        res *= i;
+    }
+    return res;
 }
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+    return pown(x, n) / (double)fact(n);
 }
 
 double expn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 1.0;  
+    double term = 1.0;
+    for (uint16_t n = 1; n <= count; n++) {
+        term *= x / n;
+        sum += term;
+    }
+    return sum;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    double temp = x;
+    for (uint16_t n = 1; n <= count; n++) {
+        if (n > 1) {
+            temp = -temp * x * x / ((2 * n - 2) * (2 * n - 1));
+        }
+        sum += temp;
+    }
+    return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    double temp = 1.0;
+    for (uint64_t n = 1; n <= count; n++) {
+        if (n>1) {
+            temp = -temp * x * x / ((2 * n - 3) * (2 * n - 2));
+        }
+        sum += temp;
+    }
+    return sum;
 }
