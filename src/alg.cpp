@@ -13,7 +13,6 @@ double pown(double value, uint16_t n) {
 uint64_t fact_in(uint64_t l, uint16_t r) {
     if (l > r) return 1;
     if (l == r) return l;
-    if (l - r == 1) return l * r;
     return fact_in(l, (l + r) / 2 ) * fact_in(((l + r) / 2) + 1, r);
 }
 
@@ -40,7 +39,7 @@ double sinn(double x, uint16_t count) {
     while (count) {
         if (iter % 2) sin += calcItem(x, 2*iter -1);
         else sin -= calcItem(x, 2*iter-1);
-        iter ++;
+        iter++;
         count--;
     }
 
