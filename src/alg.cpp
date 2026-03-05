@@ -19,42 +19,47 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    if (n == 0) return 1.0;
-    return pown(x, n) / static_cast<double>(fact(n));
+    double result = 1.0;
+    for (uint16_t i = 1; i <= n; ++i) {
+        result *= x / static_cast<double>(i);
+    }
+    return result;
 }
 
 double expn(double x, uint16_t count) {
     double result = 0.0;
+    double item = 1.0;
     for (uint16_t n = 0; n < count; ++n) {
-        result += calcItem(x, n);
+        result += item;
+        item *= x / static_cast<double>(n + 1);
     }
     return result;
 }
 
 double sinn(double x, uint16_t count) {
     double result = 0.0;
+    double item = x;
     for (uint16_t n = 1; n <= count; ++n) {
-        uint16_t power = 2 * n - 1;
-        double term = pown(x, power) / static_cast<double>(fact(power));
-        if (n % 2 == 0) {
-            result -= term;
+        if (n % 2 == 1) {
+            result += item;
         } else {
-            result += term;
+            result -= item;
         }
+        item *= x * x / static_cast<double>((2*n) * (2*n + 1));
     }
     return result;
 }
 
 double cosn(double x, uint16_t count) {
     double result = 0.0;
+    double item = 1.0;
     for (uint16_t n = 1; n <= count; ++n) {
-        uint16_t power = 2 * (n - 1);
-        double term = pown(x, power) / static_cast<double>(fact(power));
-        if (n % 2 == 0) {
-            result -= term;
+        if (n % 2 == 1) {
+            result += item;
         } else {
-            result += term;
+            result -= item;
         }
+        item *= x * x / static_cast<double>((2*n-1) * (2*n));
     }
     return result;
 }
