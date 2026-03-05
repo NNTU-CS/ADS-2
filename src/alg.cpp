@@ -25,10 +25,8 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double result = 0.0;
-    double item = 1.0;
     for (uint16_t n = 0; n < count; ++n) {
-        result += item;
-        item *= x / static_cast<double>(n + 1);
+        result += calcItem(x, n);
     }
     return result;
 }
