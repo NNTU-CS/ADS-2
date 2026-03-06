@@ -2,7 +2,7 @@
 #include <cstdlib>
 #include "alg.h"
 
-double pow(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     double result = 1.0;
     for (uint16_t i = 0; i < n; ++i) {
         result *= value;
@@ -39,7 +39,7 @@ double sinn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t n = 1; n <= count; ++n) {
         uint16_t power = 2 * n - 1;
-        double term = pow(x, power) / static_cast<double>(fact(power));
+        double term = pown(x, power) / static_cast<double>(fact(power));
         if (n % 2 == 0) {
             result -= term;
         } else {
@@ -53,7 +53,7 @@ double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t n = 1; n <= count; ++n) {
         uint16_t power = 2 * (n - 1);
-        double term = pow(x, power) / static_cast<double>(fact(power));
+        double term = pown(x, power) / static_cast<double>(fact(power));
         if (n % 2 == 0) {
             result -= term;
         } else {
