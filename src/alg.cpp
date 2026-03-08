@@ -1,6 +1,5 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include <cmath>
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
@@ -20,23 +19,20 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    double factorial = 1.0;
+    double numerator = pown(x, n);
+    double denominator = 1.0;
     for (uint16_t i = 2; i <= n; ++i) {
-        factorial *= i;
+        denominator *= i;
     }
-    return pown(x, n) / factorial;
+    return numerator / denominator;
 }
 
 double expn(double x, uint16_t count) {
     double result = 0.0;
     double term = 1.0;
     for (uint16_t n = 0; n < count; ++n) {
-        if (n == 0) {
-            term = 1.0;
-        } else {
-            term *= x / n;
-        }
         result += term;
+        term *= x / (n + 1);
     }
     return result;
 }
@@ -45,13 +41,12 @@ double sinn(double x, uint16_t count) {
     double result = 0.0;
     double term = x;
     for (uint16_t n = 1; n <= count; ++n) {
-        uint16_t power = 2 * n - 1;
-        if (n == 1) {
-            term = x;
+        if (n % 2 == 1) {
+            result += term;
         } else {
-            term *= -x * x / ((2 * n - 2) * (2 * n - 1));
+            result -= term;
         }
-        result += term;
+        term *= x * x / ((2 * n + 1) * (2 * n));
     }
     return result;
 }
@@ -60,12 +55,12 @@ double cosn(double x, uint16_t count) {
     double result = 0.0;
     double term = 1.0;
     for (uint16_t n = 1; n <= count; ++n) {
-        if (n == 1) {
-            term = 1.0;
+        if (n % 2 == 1) {
+            result += term;
         } else {
-            term *= -x * x / ((2 * n - 3) * (2 * n - 2));
+            result -= term;
         }
-        result += term;
+        term *= x * x / ((2 * n) * (2 * n - 1));
     }
     return result;
 }
