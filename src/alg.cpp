@@ -4,7 +4,7 @@
 
 
 double pown(double value, uint16_t n) {
-  if (n == 1) { 
+  if (n == 1) {
     return value;
   }
   if (n == 0) {
