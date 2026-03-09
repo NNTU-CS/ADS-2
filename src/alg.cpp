@@ -26,20 +26,29 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double result = 0.0;
+    double item = 1.0;  // первый член при n=0: x^0/0! = 1
     for (uint16_t n = 0; n < count; n++) {
-        result += calcItem(x, n);
+        if (n == 0) {
+            result += 1.0;
+        } else {
+            item *= x / n;  // рекуррентная формула: следующий член = предыдущий * x/n
+            result += item;
+        }
     }
     return result;
 }
 
 double sinn(double x, uint16_t count) {
     double result = 0.0;
+    double item = x;  // первый член: x
     for (uint16_t n = 1; n <= count; n++) {
-        double item = pown(x, 2*n - 1) / static_cast<double>(fact(2*n - 1));
-        if (n % 2 == 1) {
-            result += item;
+        if (n == 1) {
+            result += x;
+            item = x;  // сохраняем для следующей итерации
         } else {
-            result -= item;
+            // рекуррентная формула: следующий член = - предыдущий * x^2 / ((2n-2)*(2n-1))
+            item *= -x * x / ((2*n - 2) * (2*n - 1));
+            result += item;
         }
     }
     return result;
@@ -47,12 +56,15 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
     double result = 0.0;
+    double item = 1.0;  // первый член: 1
     for (uint16_t n = 0; n < count; n++) {
-        double item = pown(x, 2*n) / static_cast<double>(fact(2*n));
-        if (n % 2 == 0) {
-            result += item;
+        if (n == 0) {
+            result += 1.0;
+            item = 1.0;  // сохраняем для следующей итерации
         } else {
-            result -= item;
+            // рекуррентная формула: следующий член = - предыдущий * x^2 / ((2n-1)*(2n))
+            item *= -x * x / ((2*n - 1) * (2*n));
+            result += item;
         }
     }
     return result;
