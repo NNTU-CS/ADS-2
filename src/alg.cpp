@@ -1,7 +1,8 @@
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 
-double pow(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     if (n == 0) return 1.0;
     double result = 1.0;
     for (uint16_t i = 0; i < n; i++) {
@@ -20,7 +21,7 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    return pow(x, n) / static_cast<double>(fact(n));
+    return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
@@ -34,10 +35,10 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t n = 1; n <= count; n++) {
-        double item = pow(x, 2*n - 1) / static_cast<double>(fact(2*n - 1));
-        if (n % 2 == 1) {  // нечет n дают +
+        double item = pown(x, 2*n - 1) / static_cast<double>(fact(2*n - 1));
+        if (n % 2 == 1) {
             result += item;
-        } else {  // чет n дают -
+        } else {
             result -= item;
         }
     }
@@ -47,10 +48,10 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t n = 0; n < count; n++) {
-        double item = pow(x, 2*n) / static_cast<double>(fact(2*n));
-        if (n % 2 == 0) {  // чет n дают +
+        double item = pown(x, 2*n) / static_cast<double>(fact(2*n));
+        if (n % 2 == 0) {
             result += item;
-        } else {  // нечет n дают -
+        } else {
             result -= item;
         }
     }
