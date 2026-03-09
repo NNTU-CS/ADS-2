@@ -23,11 +23,24 @@ double calcItem(double x, uint16_t n) { return (pown(x, n) / fact(n)); }
 
 double expn(double x, uint16_t count) {
   double result;
-  for (int i = 0; i <= count; i++) {
+  for (int i = 0; i < count; i++) {
+    result += calcItem(x, i);
   }
-  return 0.0;
+  return result;
 }
 
-double sinn(double x, uint16_t count) { return 0.0; }
+double sinn(double x, uint16_t count) {
+  double result = 0;
+  for (int i = 0; i < count; i++) {
+    result += pown(-1, i) * pown(x, 2 * i + 1) / fact(2 * i);
+  }
+  return result;
+}
 
-double cosn(double x, uint16_t count) { return 0.0; }
+double cosn(double x, uint16_t count) {
+  double result = 0;
+  for (int i = 0; i < count; i++) {
+    result += pown(-1, i - 1) * pown(x, 2 * i - 2) / fact(2 * i - 2);
+  }
+  return result;
+}
