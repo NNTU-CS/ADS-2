@@ -4,13 +4,11 @@
 
 
 double pown(double value, uint16_t n) {
-
     double pwn = 1;
     for (int i = 0; i < n; ++i) {
         pwn *= value;
     }
     return pwn;
-
 }
 
 uint64_t fact(uint16_t n) {
@@ -27,7 +25,6 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-
     double ansexpn = 1;
     for (int i = 1; i <= count; ++i) {
         ansexpn += calcItem(x, i);
@@ -39,11 +36,9 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
     double ansSin = 0;
     for (int i = 1; i <= count; ++i) {
-        ansSin = ansSin + pown(-1, i-1) * ((pown(x, 2 * i - 1) / fact(2 * i - 1)));
-        std::cout << ansSin << std::endl;
+        ansSin += pown(-1, i-1) * ((pown(x, 2 * i - 1) / fact(2 * i - 1)));
     }
     return ansSin;
-
 }
 
 double cosn(double x, uint16_t count) {
