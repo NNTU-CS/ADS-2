@@ -4,8 +4,12 @@
 
 
 double pown(double value, uint16_t n) {
-  if (n == 1) { return value; }
-  if (n == 0) { return 1.0; }
+  if (n == 1) { 
+    return value;
+  }
+  if (n == 0) {
+    return 1.0;
+  }
   double k = 1.0;
   for (uint16_t i = 0; i < n; i++) {
     k = k * value;
@@ -14,7 +18,9 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  if (n == 0) { return 1; }
+  if (n == 0) {
+    return 1;
+  }
   uint64_t k = 1;
   for (uint64_t i = 2; i <= n; ++i) {
     k *= i;
@@ -35,7 +41,9 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  if (x == 0) { return 0.0; }
+  if (x == 0) {
+    return 0.0;
+  }
   double s = x;
   double k = 2;
   while (k <= count) {
@@ -46,7 +54,9 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  if (x == 0) { return 1.0; }
+  if (x == 0) {
+    return 1.0;
+  }
   double s = 1.0;
   double k = 2;
   while (k <= count) {
