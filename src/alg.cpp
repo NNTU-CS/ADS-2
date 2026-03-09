@@ -21,7 +21,12 @@ uint64_t fact(uint16_t n) {
 
 double calcItem(double x, uint16_t n) { return (pown(x, n) / fact(n)); }
 
-double expn(double x, uint16_t count) { return 0.0; }
+double expn(double x, uint16_t count) {
+  double result;
+  for (int i = 0; i <= count; i++) {
+  }
+  return 0.0;
+}
 
 double sinn(double x, uint16_t count) { return 0.0; }
 
