@@ -33,17 +33,18 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double result = 0.0;
   for (uint16_t n = 1; n <= count; n++) {
-    double sign = (n % 2 == 1) ? 1.0 : -1.0; // (-1)^(n-1)
+    double sign = (n % 2 == 1) ? 1.0 : -1.0;
     result += sign * pown(x, 2 * n - 1) / fact(2 * n - 1);
   }
   return result;
 }
 
 double cosn(double x, uint16_t count) {
-  double result = 1.0; // первый член (n=1) = 1
-  for (uint16_t n = 2; n <= count; n++) {
-    double sign = (n % 2 == 1) ? -1.0 : 1.0; // (-1)^(n-1)
-    result += sign * pown(x, 2 * n - 2) / fact(2 * n - 2);
+  double result = 0.0;
+  for (uint16_t n = 0; n < count; n++) {
+    double sign = (n % 2 == 0) ? 1.0 : -1.0; // (-1)^n
+    uint16_t power = 2 * n;
+    result += sign * pown(x, power) / fact(power);
   }
   return result;
 }
