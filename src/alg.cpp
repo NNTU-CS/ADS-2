@@ -1,27 +1,24 @@
-// Copyright 2026 NNTU-CS
-
+// Copyright 2022 NNTU-CS
 #include <cstdint>
 #include "alg.h"
 #include <iostream>
 #include <cmath>
 
+
 double pown(double value, uint16_t n) {
-        double result = 1.0;
-    for (uint16_t i = 0; i < n; ++i) {
-        result *= value;
+    double pwn = 1;
+    for (int i = 0; i < n; ++i) {
+        pwn *= value;
     }
-    return result;
+    return pwn;
 }
 
 uint64_t fact(uint16_t n) {
-        if (n == 0 || n == 1) {
-        return 1;
+    uint64_t ans_fact = 1;
+    for (int i = 1; i <= n; ++i) {
+        ans_fact *= i;
     }
-    uint64_t result = 1;
-    for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
-    }
-    return result;
+    return ans_fact;
 }
 
 double calcItem(double x, uint16_t n) {
