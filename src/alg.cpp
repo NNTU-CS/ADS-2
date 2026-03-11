@@ -72,6 +72,3 @@ double cosn(double x, uint16_t count) {
 
   return sum;
 }
-
-  return cosn(x, count - 1) + term;
-}
