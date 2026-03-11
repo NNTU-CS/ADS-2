@@ -62,16 +62,16 @@ double sinn(double x, uint16_t count) {
 
 
 double cosn(double x, uint16_t count) {
-  if (count == 0) {
-    return 1.0;
+  double sum = 1.0;
+  double term = 1.0;
+
+  for (uint16_t i = 1; i <= count; i++) {
+    term *= -x * x / ((2 * i - 1) * (2 * i));
+    sum += term;
   }
 
-  uint16_t n = 2 * count;
-  double term = calcItem(x, n);
-
-  if (count % 2 == 1) {
-    term = -term;
-  }
+  return sum;
+}
 
   return cosn(x, count - 1) + term;
 }
