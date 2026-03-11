@@ -3,59 +3,59 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
-  if (n == 0) return 1.0;
-  double result = 1.0;
-  for (uint16_t i = 0; i < n; ++i) {
+  if (n == 0)
+    return 1;
+  double result = 1;
+  for (uint16_t counter = 1; counter <= n; counter++) {
     result *= value;
   }
   return result;
 }
 
 uint64_t fact(uint16_t n) {
-  if (n == 0) return 1;
+  if (n == 0)
+    return 1;
   uint64_t result = 1;
-  for (uint16_t i = 2; i <= n; ++i) {
-    result *= i;
+  for (int counter = 1; counter <= n; counter++) {
+    result *= counter;
   }
   return result;
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / static_cast<double>(fact(n));
+  return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n);
+  double result = 0;
+  for (uint16_t counter = 0; counter <= count; counter++) {
+    result += calcItem(x, counter);
   }
-  return sum;
+  return result;
 }
 
 double sinn(double x, uint16_t count) {
-  double sum = 0.0;
-  uint16_t power = 1;
-  for (uint16_t i = 0; i < count; ++i) {
-    if (i % 2 == 0) {
-      sum += calcItem(x, power);
-    } else {
-      sum -= calcItem(x, power);
-    }
+  double result = 0;
+  int power = 1;
+  for (uint16_t counter = 0; counter < count; counter++) {
+    if (counter % 2 == 0)
+      result += calcItem(x, power);
+    else
+      result -= calcItem(x, power);
     power += 2;
   }
-  return sum;
+  return result;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 0.0;
-  uint16_t power = 0;
-  for (uint16_t i = 0; i < count; ++i) {
-    if (i % 2 == 0) {
-      sum += calcItem(x, power);
-    } else {
-      sum -= calcItem(x, power);
-    }
+  double result = 0;
+  int power = 0;
+  for (uint16_t counter = 0; counter < count; counter++) {
+    if (counter % 2 == 0)
+      result += calcItem(x, power);
+    else
+      result -= calcItem(x, power);
     power += 2;
   }
-  return sum;
+  return result;
 }
