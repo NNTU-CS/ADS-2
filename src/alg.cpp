@@ -24,42 +24,34 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
-  double item = 1.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    if (n == 0) {
-      item = 1.0;
-    } else {
-      item *= x / static_cast<double>(n);
-    }
-    sum += item;
+  for (uint16_t n = 0; n <= count; ++n) {
+    sum += calcItem(x, n);
   }
   return sum;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  double item = x;
-  for (uint16_t n = 0; n < count; ++n) {
-    if (n == 0) {
-      item = x;
+  for (uint16_t n = 0; n <= count; ++n) {
+    double term = pown(x, 2 * n + 1) / static_cast<double>(fact(2 * n + 1));
+    if (n % 2 == 0) {
+      sum += term;
     } else {
-      item *= -x * x / static_cast<double>((2 * n) * (2 * n + 1));
+      sum -= term;
     }
-    sum += item;
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  double item = 1.0;
-  for (uint16_t n = 0; n < count; ++n) {
-    if (n == 0) {
-      item = 1.0;
+  for (uint16_t n = 0; n <= count; ++n) {
+    double term = pown(x, 2 * n) / static_cast<double>(fact(2 * n));
+    if (n % 2 == 0) {
+      sum += term;
     } else {
-      item *= -x * x / static_cast<double>((2 * n - 1) * (2 * n));
+      sum -= term;
     }
-    sum += item;
   }
   return sum;
 }
