@@ -8,7 +8,7 @@ double pown(double value, uint16_t n) {
     return 1;
   } else {
     double res = value;
-    for (uint16_t i = 0; i < n; i++) {
+    for (uint16_t i = n; i > 1; i--) {
       res *= value;
     }
     return res;
@@ -43,7 +43,8 @@ double sin(double x, uint16_t count, double res) {
   if (count == 1)
     return res + calcItem(x, count);
   else
-    return sin(x, count - 1, (res + pown(-1, count - 1) * calcItem(x, count * 2 - 1)));
+    return sin(x, count - 1, 
+      (res + pown(-1, count - 1) * calcItem(x, count * 2 - 1)));
 }
 double sinn(double x, uint16_t count) {
   return sin(x, count, 0);
@@ -53,7 +54,8 @@ double cos(double x, uint16_t count, double res) {
   if (count == 0)
     return res;
   else
-    return cos(x, count - 1, (res + pown(-1, count - 1) * calcItem(x, count * 2 - 2)));
+    return cos(x, count - 1, 
+      (res + pown(-1, count - 1) * calcItem(x, count * 2 - 2)));
 }
 double cosn(double x, uint16_t count) {
   return cos(x, count, 0);
