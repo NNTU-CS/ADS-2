@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-double pow(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     if (n == 0) return 1.0;
     double result = 1.0;
     double base = value;
