@@ -32,7 +32,7 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   double sinus = x;
   char znak = -1;
-  for (uint16_t i = 3; i <= count; i += 2) {
+  for (uint16_t i = 3; i <= (2 * count - 1); i += 2) {
     sinus = sinus + (znak * calcItem(x, i));
     znak = znak * (-1);
   }
@@ -42,8 +42,8 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double cosinus  = 1;
   char znak = -1;
-  for (uint16_t i = 2; i <= count; i += 2) {
-    cosinus += znak * calcItem(x, i);
+  for (uint16_t i = 2; i <= (2 * count - 2); i += 2) {
+    cosinus = cosinus + (znak * calcItem(x, i));
   }
   return cosinus;
 }
