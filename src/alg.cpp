@@ -34,7 +34,7 @@ double expn(double x, uint16_t count) {
     if (count == 0) return 0.0;
     double sum = 1.0;
     double term = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
+    for (uint16_t n = 1; n <= count; ++n) {
         term *= x / static_cast<double>(n);
         sum += term;
     }
