@@ -33,7 +33,7 @@ double expn(double x, uint16_t count) {
     if (count == 0) return 0.0;
     double res = 1.0;
     double temp = 1.0;
-    for (uint16_t n = 1; n < count; ++n) {
+    for (uint16_t n = 1; n <= count; n++) {
         temp *= x / n;
         res += temp;
     }
