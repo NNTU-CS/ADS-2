@@ -5,14 +5,14 @@
 
 double pown(double value, uint16_t n) {
   double resultat = 1;
-  for (uint16_t i = 1; i <= n; i++) 
+  for (uint16_t i = 1; i <= n; i++)
     resultat = resultat * value;
   return resultat;
 }
 
 uint64_t fact(uint16_t n) {
   uint64_t resultat = 1;
-  for (uint16_t i = 1; i <= n; i++) 
+  for (uint16_t i = 1; i <= n; i++)
     resultat = resultat * i;
   return resultat;
 }
