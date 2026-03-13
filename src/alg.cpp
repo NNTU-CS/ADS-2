@@ -44,6 +44,7 @@ double cosn(double x, uint16_t count) {
   char znak = -1;
   for (uint16_t i = 2; i <= (2 * count - 2); i += 2) {
     cosinus = cosinus + (znak * calcItem(x, i));
+    znak = znak * (-1);
   }
   return cosinus;
 }
