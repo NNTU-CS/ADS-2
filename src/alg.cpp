@@ -39,10 +39,10 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 1.0;
   double term = 1.0;
-  for (uint16_t n = 0; n < count; n++) {
-      term *= -x * x / ((2*n + 1) * (2*n + 2));
+  double sum = term;
+  for (uint16_t n = 1; n <= count; n++) {
+      term *= -x * x / ((2*n - 1) * (2*n));
       sum += term;
   }
   return sum;
