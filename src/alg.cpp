@@ -41,10 +41,10 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   if (count == 0) return 0.0;
   double res = 1.0;
-  double temp = 1.0;
+  double term = 1.0;
   for (uint16_t n = 1; n < count; ++n) {
-      temp *= -x * x / ((2 * n - 1) * (2 * n));
-      res += temp;
+      term *= -x * x / ((2*n - 1) * (2*n));
+      res += term;
   }
   return res;
 }
