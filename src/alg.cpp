@@ -53,15 +53,13 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
+  if (count == 0) 
+    return 1.0;
   double sum = 1.0;
-  if (count == 1) {
-    return 1;
-  }
-  for (int i = 2; i <= count; ++i) {
-    double chislitel = pown(x, 2*i-2);
-    double znamenatel = fact(2*i-2);
-    double sign = (i % 2 == 0) ? -1.0 : 1.0;
-    sum += sign * (chislitel / znamenatel);
+  double current_term = 1.0;
+  for (uint16_t k = 1; k < count; ++k) {
+      current_term *= -x * x / ((2 * k - 1) * 2 * k);
+      sum += current_term;
   }
   return sum;
 }
