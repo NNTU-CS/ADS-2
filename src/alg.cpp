@@ -22,19 +22,12 @@ uint64_t fact(uint16_t n) {
     return result;
 }
 
-double calcItem(double x, uint16_t n) {
-    return pown(x, n) / static_cast<double>(fact(n));
-}
-
 double expn(double x, uint16_t count) {
-    double sum = 0.0;
-    double item = 1.0;
-
-    for (uint16_t n = 0; n < count; ++n) {
-        sum += item;           
-        item *= x / (n + 1);  
+    double result = 1.0;
+    for (uint16_t n = 1; n <= count; ++n) {
+        result += pown(x, n) / static_cast<double>(fact(n));
     }
-    return sum;
+    return result;
 }
 
 double sinn(double x, uint16_t count) {
