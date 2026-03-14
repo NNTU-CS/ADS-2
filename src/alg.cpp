@@ -29,24 +29,21 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double sum = 0;
-  double sign = 1.0;
-  for (uint16_t n = 0; n <= count; n++) {
-      double term = sign * pown(x, 2*n + 1) / fact(2*n + 1);
+  double sum = x;
+  double term = x;
+  for (uint16_t n = 0; n < count; n++) {
+      term *= -x * x / ((2*n + 2) * (2*n + 3));
       sum += term;
-      sign = -sign;
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 0;
-  double sign = 1.0;
-
-  for (uint16_t n = 0; n <= count; n++) {
-    double term = sign * pown(x, 2*n) / fact(2*n);
-    sum += term;
-    sign = -sign;
+  double sum = 1.0;
+  double term = 1.0;
+  for (uint16_t n = 0; n < count; n++) {
+      term *= -x * x / ((2*n + 1) * (2*n + 2));
+      sum += term;
   }
   return sum;
 }
