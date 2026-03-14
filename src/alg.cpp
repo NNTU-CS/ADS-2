@@ -20,7 +20,7 @@ uint64_t fact(uint16_t n) {
   if (n <= 1) {
     return 1;
   } else {
-    for (uint64_t i = 0; i <= n; i++) {
+    for (uint64_t i = 1; i <= n; i++) {
       facti *= i;
     }
   }
