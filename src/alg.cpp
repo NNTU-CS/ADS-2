@@ -31,7 +31,7 @@ double sinn(double x, uint16_t count) {
     double sum = 0;
     double term = x;
     sum = term;
-    
+
     for (int n = 2; n <= count; n++) {
         term = -term * x * x / ((2*n-2) * (2*n-1));
         sum += term;
@@ -42,7 +42,7 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     double sum = 1.0;
     double term = 1.0;
-    
+
     for (int n = 2; n <= count; n++) {
         term = -term * x * x / ((2*n-3) * (2*n-2));
         sum += term;
