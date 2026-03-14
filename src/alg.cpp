@@ -50,11 +50,12 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double result = 1.0;
-  double date = 1.0;
+  long double result = 1.0L;
+  long double date = 1.0L;
+  long double ab = x
   for (uint16_t n = 1; n <= count; n++) {
-    date = -date * x * x / ((2*n) * (2*n - 1));
+    date = -date * ab * ab / ((2*n) * (2*n - 1));
     result += date;
   }
-  return result;
+  return (double)result;
 }
