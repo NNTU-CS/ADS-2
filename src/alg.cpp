@@ -53,12 +53,12 @@ double cosn(double x, uint16_t count) {
   double result = 1.0;
   double date = 1.0;
   for (uint16_t n = 1; n <= count; n++) {
+    date = date * x * x / ((2*n) * (2*n - 1));
     if (n % 2 == 1) {
       result -= date;
     } else {
       result += date;
     }
-    date = date * x * x / ((2*n) * (2*n - 1));
   }
   return result;
 }
