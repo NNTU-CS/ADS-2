@@ -31,9 +31,10 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t n = 1; n <= count; n += 2) {
+    for (uint16_t k = 0; k < count; ++k) {
+        uint16_t n = 2 * k + 1;
         double term = calcItem(x, n);
-        if (((n - 1) / 2) % 2 == 1) {
+        if (k % 2 == 1) {
             term = -term;
         }
         sum += term;
@@ -43,10 +44,10 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t n = 0; n <= count; n += 2) {
+    for (uint16_t k = 0; k < count; ++k) {
+        uint16_t n = 2 * k;
         double term = calcItem(x, n);
-        // Знак чередуется: (-1)^(n/2)
-        if ((n / 2) % 2 == 1) {
+        if (k % 2 == 1) {
             term = -term;
         }
         sum += term;
