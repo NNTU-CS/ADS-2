@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
-#include <cstdint>
 #include "alg.h"
+#include <cstdint>
 #include <cmath>
 
 double pown(double value, uint16_t n) {
@@ -35,7 +35,7 @@ double expn(double x, uint16_t count) {
   if (count == 1) {
     return 1;
   }
-  for(int n = 1, n <= count; n++) {
+  for (int n = 1; n <= count; n++) {
     sum += pown(x, n) / fact(n);
   }
   return sum;
@@ -43,7 +43,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  for(int i = 1; i <= count; ++i) {
+  for (int i = 1; i <= count; ++i) {
     double chislitel = pown(x, 2*i-1);
     double znamenatel = fact(2*i-1);
     double sign = (i % 2 == 0) ? 1.0 : -1.0;
@@ -54,7 +54,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  for(int i = 1; i <= count; ++i) {
+  for (int i = 1; i <= count; ++i) {
     double chislitel = pown(x, 2*i-2);
     double znamenatel = fact(2*i-2);
     double sign = (i % 2 == 0) ? -1.0 : 1.0;
