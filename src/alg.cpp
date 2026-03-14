@@ -20,12 +20,12 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / (double)fact(n);
+  return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
+  for (uint16_t n = 0; n <= count; ++n) {
     sum += calcItem(x, n);
   }
   return sum;
@@ -33,9 +33,9 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
+  for (uint16_t n = 0; n <= count; ++n) {
     uint16_t k = 2 * n + 1;
-    double term = pown(x, k) / (double)fact(k);
+    double term = pown(x, k) / static_cast<double>(fact(k));
     if (n % 2) term = -term;
     sum += term;
   }
@@ -44,9 +44,9 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t n = 0; n < count; ++n) {
+  for (uint16_t n = 0; n <= count; ++n) {
     uint16_t k = 2 * n;
-    double term = pown(x, k) / (double)fact(k);
+    double term = pown(x, k) / static_cast<double>(fact(k));
     if (n % 2) term = -term;
     sum += term;
   }
