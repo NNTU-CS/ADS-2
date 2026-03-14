@@ -16,11 +16,11 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  uint64_t k = n;
+  uint16_t k = n;
   uint64_t facti = 1;
-  if (n <= 1)
+  if (n <= 1) {
     return 1;
-  else {
+  } else {
     for (uint64_t i = 0; i < n; i++) {
       facti *= k;
       k -= 1;
