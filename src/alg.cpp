@@ -29,20 +29,20 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     double sum = 0;
+    int sign = 1;
     for (int n = 1; n <= count; n++) {
-        double term = calcItem(x, 2*n - 1);
-        if (n % 2 == 1) sum += term;
-        else sum -= term;
+        sum += sign * calcItem(x, 2*n - 1);
+        sign = -sign;
     }
     return sum;
 }
 
 double cosn(double x, uint16_t count) {
     double sum = 0;
+    int sign = 1;
     for (int n = 1; n <= count; n++) {
-        double term = calcItem(x, 2*n - 2);
-        if (n % 2 == 1) sum += term;
-        else sum -= term;
+        sum += sign * calcItem(x, 2*n - 2);
+        sign = -sign;
     }
     return sum;
 }
