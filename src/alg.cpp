@@ -1,10 +1,8 @@
-
+#include <cstdint>
+#include "alg.h"
 
 double pown(double value, uint16_t n) {
     double result = 1.0;
-    if (n == 0) {
-        return 1.0;
-    }
     for (uint16_t i = 0; i < n; i++) {
         result *= value;
     }
@@ -13,10 +11,7 @@ double pown(double value, uint16_t n) {
 
 uint64_t fact(uint16_t n) {
     uint64_t result = 1;
-    if (n == 0) {
-        return 1;
-    }
-    for (uint16_t i = 1; i <= n; i++) {
+    for (uint16_t i = 2; i <= n; i++) {
         result *= i;
     }
     return result;
@@ -38,7 +33,7 @@ double sinn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t i = 0; i < count; i++) {
         uint16_t num = 2 * i + 1;
-        double a = pown(x, num) / fact(num);
+        double a = calcItem(x, num);
         if (i % 2 == 0) {
             result += a;
         } else {
@@ -52,7 +47,7 @@ double cosn(double x, uint16_t count) {
     double result = 0.0;
     for (uint16_t i = 0; i < count; i++) {
         uint16_t num = 2 * i;
-        double c = pown(x, num) / fact(num);
+        double c = calcItem(x, num);
         if (i % 2 == 0) {
             result += c;
         } else {
