@@ -3,19 +3,19 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
-  double res = 1.0;
-  for (uint16_t i = 0; i < n; i++) {
-    res *= value;
+  double result = 1.0;
+  for (uint16_t i = 0; i < n; ++i) {
+    result *= value;
   }
-  return res;
+  return result;
 }
 
 uint64_t fact(uint16_t n) {
-  uint64_t res = 1;
-  for (uint16_t i = 1; i <= n; i++) {
-    res *= i;
+  uint64_t result = 1;
+  for (uint16_t i = 2; i <= n; ++i) {
+    result *= i;
   }
-  return res;
+  return result;
 }
 
 double calcItem(double x, uint16_t n) {
@@ -23,21 +23,22 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (uint16_t i = 0; i < count; i++) {
-    sum += calcItem(x, i);
+  double sum = 1.0;
+  for (uint16_t n = 1; n <= count; ++n) {
+    sum += calcItem(x, n);
   }
   return sum;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t i = 0; i < count; i++) {
-    double item = calcItem(x, 2 * i + 1);
-    if (i % 2 == 0) {
-      sum += item;
+  for (uint16_t n = 1; n <= count; ++n) {
+    uint16_t exponent = 2 * n - 1;
+    double term = pown(x, exponent) / static_cast<double>(fact(exponent));
+    if ((n - 1) % 2 == 0) {
+      sum += term;
     } else {
-      sum -= item;
+      sum -= term;
     }
   }
   return sum;
@@ -45,12 +46,13 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
-  for (uint16_t i = 0; i < count; i++) {
-    double item = calcItem(x, 2 * i);
-    if (i % 2 == 0) {
-      sum += item;
+  for (uint16_t n = 1; n <= count; ++n) {
+    uint16_t exponent = 2 * n - 2;
+    double term = pown(x, exponent) / static_cast<double>(fact(exponent));
+    if ((n - 1) % 2 == 0) {
+      sum += term;
     } else {
-      sum -= item;
+      sum -= term;
     }
   }
   return sum;
