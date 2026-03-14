@@ -40,8 +40,7 @@ double sinn(double x, uint16_t count) {
 
         if (isNegative) {
             result = result - term;
-        }
-        else {
+        } else {
             result = result + term;
         }
     }
@@ -57,8 +56,7 @@ double cosn(double x, uint16_t count) {
 
         if (isNegative) {
             result = result - term;
-        }
-        else {
+        } else {
             result = result + term;
         }
     }
