@@ -53,7 +53,7 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  if (count == 0) 
+  if (count == 0)
     return 1.0;
   double sum = 1.0;
   double current_term = 1.0;
