@@ -32,7 +32,7 @@ double expn(double x, uint16_t count) {
     date *= x / n;
     result += date;
   }
-  return result  
+  return result
 }
 
 double sinn(double x, uint16_t count) {
@@ -60,5 +60,5 @@ double cosn(double x, uint16_t count) {
     }
     date = date * x * x / ((2*n) * (2*n - 1));
   }
-  return result;  
+  return result;
 }
