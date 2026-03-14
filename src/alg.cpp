@@ -31,12 +31,8 @@ double expn(double x, uint16_t count) {
     double item = 1.0;
 
     for (uint16_t n = 0; n < count; ++n) {
-        if (n == 0) {
-            sum += item;
-        } else {
-            item *= x / n;
-            sum += item;
-        }
+        sum += item;           
+        item *= x / (n + 1);  
     }
     return sum;
 }
