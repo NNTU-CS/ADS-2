@@ -6,19 +6,19 @@
 
 
 double pown(double value, uint16_t n) {
-    double pwn = 1;
+    double Ires = 1;
     for (int i = 0; i < n; ++i) {
-        pwn *= value;
+        Ires *= value;
     }
-    return pwn;
+    return Ires;
 }
 
 uint64_t fact(uint16_t n) {
-    uint64_t ans_fact = 1;
+    uint64_t ansfact = 1;
     for (int i = 1; i <= n; ++i) {
-        ans_fact *= i;
+        ansfact *= i;
     }
-    return ans_fact;
+    return ansfact;
 }
 
 double calcItem(double x, uint16_t n) {
