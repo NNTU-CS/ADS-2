@@ -1,28 +1,64 @@
 // Copyright 2022 NNTU-CS
-#include <cstdint>
-#include "alg.h"
+#include <iostream>
+#include <cmath>
+#include <limits>
 
-
-double pown(double value, uint16_t n) {
-  return 0.0;
-}
 
 uint64_t fact(uint16_t n) {
-  return 0.0;
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    uint64_t result = 1;
+    for (uint16_t i = 2; i <= n; ++i) {
+        if (result > std::numeric_limits<uint64_t>::max() / i) {
+            std::cerr << "Factorial overflow for n = " << n << std::endl;
+            return std::numeric_limits<uint64_t>::max();
+        }
+        result *= i;
+    }
+    return result;
 }
+
+
+double pown(double base, uint16_t exp) {
+    double result = 1.0;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            result *= base;
+        }
+        base *= base;
+        exp /= 2;
+    }
+    return result;
+}
+
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+    return pown(x, n) / fact(n);
 }
+
 
 double expn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        sum += calcItem(x, n);
+    }
+    return sum;
 }
-
 double sinn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double term = pown(-1, n) * pown(x, 2 * n + 1) / fact(2 * n + 1);
+        sum += term;
+    }
+    return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+    double sum = 0.0;
+    for (uint16_t n = 0; n < count; ++n) {
+        double term = pown(-1, n) * pown(x, 2 * n) / fact(2 * n);
+        sum += term;
+    }
+    return sum;
 }
