@@ -46,15 +46,18 @@ double sinn(double x, uint16_t count) {
   for (int i = 1; i <= count; ++i) {
     double chislitel = pown(x, 2*i-1);
     double znamenatel = fact(2*i-1);
-    double sign = (i % 2 == 0) ? 1.0 : -1.0;
+    double sign = (i % 2 == 0) ? -1.0 : 1.0;
     sum += sign * (chislitel / znamenatel);
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
-  double sum = 0.0;
-  for (int i = 1; i <= count; ++i) {
+  double sum = 1.0;
+  if (count == 1) {
+    return 1;
+  }
+  for (int i = 2; i <= count; ++i) {
     double chislitel = pown(x, 2*i-2);
     double znamenatel = fact(2*i-2);
     double sign = (i % 2 == 0) ? -1.0 : 1.0;
