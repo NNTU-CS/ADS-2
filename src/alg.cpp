@@ -56,5 +56,5 @@ double cosn(double x, uint16_t count) {
     date = -date * x * x / ((2*n) * (2*n - 1));
     result += date;
   }
-  return (double)result;
+  return result;
 }
