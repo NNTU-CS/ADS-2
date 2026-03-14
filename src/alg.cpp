@@ -37,9 +37,9 @@ double sinn(double x, uint16_t count) {
   double num = 0.0;
   for (uint64_t i = 0; i < count; i++) {
     if (i%2 == 0) {
-      num -= calcItem(x, (2*i-1));
-    } else {
       num += calcItem(x, (2*i-1));
+    } else {
+      num -= calcItem(x, (2*i-1));
     }
   }
   return num;
