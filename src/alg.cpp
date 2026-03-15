@@ -32,14 +32,6 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t i = 0; i < count; i++) {
-        result += pown(-1, i - 1) * calcItem(x, i);
-    }
-    return result;
-}
-
-double sinn(double x, uint16_t count) {
     if (count == 0) return 0.0;
     double term = x;    
     double result = term;  
