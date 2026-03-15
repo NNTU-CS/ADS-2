@@ -2,7 +2,7 @@
 #include <cstdint>
 #include "alg.h"
 
-double pow(double value, uint16_t n) {
+double pown(double value, uint16_t n) {
     if (n == 0) return 1.0;
     double result = 1.0;
     for (uint16_t i = 0; i < n; ++i) {
