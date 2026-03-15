@@ -3,6 +3,7 @@
 #include "alg.h"
 
 
+
 double pown(double value, uint16_t n) {
   long double OVal = 1;
   for (uint16_t i = 0; i < n; i++) {
