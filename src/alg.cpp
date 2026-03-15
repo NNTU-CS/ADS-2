@@ -3,7 +3,9 @@
 #include "alg.h"
 
 double pown(double value, uint16_t n) {
-  if (n == 0) return 1;
+  if (n == 0) {
+    return 1;
+  }
   else {
     double x = value;
     for (uint16_t i = 1; i < n; i++) {
