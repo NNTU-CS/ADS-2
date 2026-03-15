@@ -50,9 +50,9 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  x = std::fmod(x,2*M_PI);
-  if (x > M_PI) x-=2*M_PI;
-  if (x < -M_PI) x+=2*M_PI;
+  x = std::fmod(x, 2*M_PI);
+  if (x > M_PI) x -= 2*M_PI;
+  if (x < -M_PI) x += 2*M_PI;
   double result = 1.0;
   double date = 1.0;
   for (uint16_t n = 1; n <= count; n++) {
