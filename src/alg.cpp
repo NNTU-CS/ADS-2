@@ -45,7 +45,6 @@ double sinn(double x, uint16_t count) {
     double sum = 0.0;
 
     for (uint16_t n = 0; n < count; n++) {
-
         double sign = pown(-1.0, n);
         double power = pown(x, 2 * n + 1);
         uint64_t factorial = fact(2 * n + 1);
@@ -62,7 +61,6 @@ double cosn(double x, uint16_t count) {
     double sum = 0.0;
 
     for (uint16_t n = 0; n < count; n++) {
-
         double sign = pown(-1.0, n);
         double power = pown(x, 2 * n);
         uint64_t factorial = fact(2 * n);
