@@ -2,69 +2,64 @@
 #include <cstdint>
 #include "alg.h"
 
-double pown(double value, uint16_t n) {
+
+double pown(const double value, const uint16_t n) {
   double result = 1.0;
   for (uint16_t i = 0; i < n; ++i) {
-    result *= value;
+    result = result * value;
   }
   return result;
 }
 
-uint64_t fact(uint16_t n) {
+uint64_t fact(const uint16_t n) {
   uint64_t result = 1;
   for (uint16_t i = 2; i <= n; ++i) {
-    result *= i;
+    result = result * i;
   }
   return result;
 }
 
-double calcItem(double x, uint16_t n) {
-  if (n == 0) return 1.0;
-  double numerator = pown(x, n);
-  double denominator = static_cast<double>(fact(n));
+double calcItem(const double x, const uint16_t n) {
+  if (n == 0) {
+    return 1.0;
+  }
+  const double numerator = pown(x, n);
+  const double denominator = static_cast<double>(fact(n));
   return numerator / denominator;
 }
 
-double expn(double x, uint16_t count) {
+double expn(const double x, const uint16_t count) {
   double sum = 0.0;
-  double item = 1.0;
   for (uint16_t n = 0; n < count; ++n) {
-    if (n == 0) {
-      item = 1.0;
-    } else {
-      item *= x / static_cast<double>(n);
-    }
-    sum += item;
+    sum = sum + calcItem(x, n);
   }
   return sum;
 }
 
-double sinn(double x, uint16_t count) {
+double sinn(const double x, const uint16_t count) {
   double sum = 0.0;
-  double item = x;
   for (uint16_t n = 0; n < count; ++n) {
-    uint16_t power = 2 * n + 1;
-    if (n == 0) {
-      item = x;
+    const uint16_t power = 2 * n + 1;
+    const double item = calcItem(x, power);
+    if (n % 2 == 0) {
+      sum = sum + item;
     } else {
-      item *= -x * x / ((2 * n) * (2 * n + 1));
+      sum = sum - item;
     }
-    sum += item;
   }
   return sum;
 }
 
-double cosn(double x, uint16_t count) {
+double cosn(const double x, const uint16_t count) {
   double sum = 0.0;
-  double item = 1.0;
   for (uint16_t n = 0; n < count; ++n) {
-    uint16_t power = 2 * n;
-    if (n == 0) {
-      item = 1.0;
+    const uint16_t power = 2 * n;
+    const double item = calcItem(x, power);
+    if (n % 2 == 0) {
+      sum = sum + item;
     } else {
-      item *= -x * x / ((2 * n - 1) * (2 * n));
+      sum = sum - item;
     }
-    sum += item;
   }
   return sum;
 }
