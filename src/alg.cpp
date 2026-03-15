@@ -25,8 +25,14 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t i = 0; i < count; i++) {
-        sum += calcItem(x, i);
+    double term = 1.0; 
+    for (uint16_t n = 0; n <= count; ++n) {
+        if (n == 0) {
+            term = 1.0;
+        } else {
+            term *= x / static_cast<double>(n);
+        }
+        sum += term;
     }
     return sum;
 }
@@ -50,9 +56,8 @@ double cosn(double x, uint16_t count) {
       double p = pown(x, 2 * i) / fact(2 * i);
       if (i % 2 == 0) {
           summ += p;
-      }
-      else {
-          summ -= p;
+      } else {
+        summ -= p;
       }
   }
   return summ;
