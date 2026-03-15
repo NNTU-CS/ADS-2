@@ -4,7 +4,7 @@
 
 double pown(double value, uint16_t n) {
   double res = 1.0;
-  for (uint16_t a = 1; a <= n; ++i) {
+  for (uint16_t a = 1; a <= n; ++a) {
     res *= value;
   }
   return res;
@@ -43,7 +43,7 @@ double sinn(double x, uint16_t count) {
     res += signa * num / static_cast<double>(dem);
     ++i;
   }
-  return result;
+  return res;
 }
 
 double cosn(double x, uint16_t count) {
@@ -55,5 +55,5 @@ double cosn(double x, uint16_t count) {
     uint64_t denom = fact(power);
     accumu += signa * numer / static_cast<double>(denom);
   }
-  return accumur;
+  return accumu;
 }
