@@ -56,7 +56,7 @@ double cosn(double x, uint16_t count) {
   if (x < -M_PI) x += 2*M_PI;
   double result = 1.0;
   double date = 1.0;
-  for (uint16_t n = 1; n <= count; n++) {
+  for (uint16_t n = 1; n < count; n++) {
     date = -date * x * x / ((2*n) * (2*n - 1));
     result += date;
   }
