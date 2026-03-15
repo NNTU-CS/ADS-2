@@ -36,7 +36,7 @@ double sinn(double x, uint16_t count) {
   double Result = 0;
   for (uint16_t i = 0; i < count; i++) {
     Result += pown(-1, count - 1) * pown(x, 2 * count - 1;
-    Result /= fact(2 * count - 1));
+    Result /= fact(2 * count - 1);
   }
   return Result;
 }
@@ -45,7 +45,7 @@ double cosn(double x, uint16_t count) {
   double Result = 0;
   for (uint16_t i = 0; i < count; i++) {
     Result += pown(-1, count - 1) * pown(x, 2 * count - 2;
-    Result /= fact(2 * count - 2));
+    Result /= fact(2 * count - 2);
   }
   return Result;
 }
