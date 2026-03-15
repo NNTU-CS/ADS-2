@@ -33,8 +33,8 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     if (count == 0) return 0.0;
-    double term = x;    
-    double result = term;  
+    double term = x;
+    double result = term;
     for (uint16_t i = 1; i < count; ++i) {
         term *= (-x * x) / (2.0 * i * (2.0 * i + 1.0));
         result += term;
@@ -45,8 +45,8 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
     if (count == 0) return 0.0;
 
-    double term = 1.0;  
-    double result = term;  
+    double term = 1.0;
+    double result = term;
 
     for (uint16_t i = 1; i < count; ++i) {
         term *= (-x * x) / ((2.0 * i - 1.0) * (2.0 * i));
