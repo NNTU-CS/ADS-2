@@ -12,7 +12,8 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  uint16_t result = 1;
+  if (n > 20) return 0;
+  uint64_t result = 1;
   for (uint16_t i = 2; i <= n; ++i) {
     result = result * i;
   }
