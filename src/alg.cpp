@@ -21,12 +21,12 @@ uint64_t fact(uint16_t n) {
 double calcItem(double x, uint16_t n) {
     return pown(x, n) / static_cast<double>(fact(n));
 }
-double expn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t i = 0; i < count; ++i) {
-        result += calcItem(x, i);
+double expn(double x, uint16_t n) {
+    double sum = 0.0;
+    for (uint16_t k = 0; k <= n; ++k) {
+        sum += pown(x, k) / fact(k);
     }
-    return result;
+    return sum;
 }
 double sinn(double x, uint16_t count) {
     double result = 0.0;
