@@ -1,13 +1,12 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include "alg.h"
 #include <cmath>
 #include <cstdint>
 
-double pown(double value, uint16_t n) {    
+double pown(double value, uint16_t n) {
     if (n == 0) return 1.0;
     if (n < 0) {
-        return 1.0 / power(value, -n);  
+        return 1.0 / power(value, -n);
     }
     double result = 1.0;
     double b = value;
@@ -20,9 +19,8 @@ double pown(double value, uint16_t n) {
     }
     return result;
 }
- 
-uint64_t fact(uint16_t n) {#include <cstdint>
 
+uint64_t fact(uint16_t n) {#include <cstdint>
     uint64_t result = 1;
     for (unsigned int i = 2; i <= n; ++i) {
         result *= i;
@@ -31,10 +29,10 @@ uint64_t fact(uint16_t n) {#include <cstdint>
 }
 
 double calcItem(double x, uint16_t n) {
-  if (n == 0) return 1.0;
+  if (n == 0)return 1.0;
     double term = 1.0;
     for (int i = 1; i <= n; ++i) {
-        term *= x / i;   // сразу накапливаем x^n/n!
+        term *= x / i;
     }
     return term;
 }
@@ -51,22 +49,22 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-   if (count <= 0) return 0.0;
-    double sum = x;  
-    double term = x;      
+   if (count <= 0)return 0.0;
+    double sum = x;
+    double term = x;
     for (int n = 1; n < count; ++n) {
-        term *= - (x * x) / ((2 * n) * (2 * n + 1)); // aₙ
+        term *= - (x * x) / ((2 * n) * (2 * n + 1));
         sum += term;
     }
     return sum;
 }
 
 double cosn(double x, uint16_t count) {
- if (count <= 0) return 0.0;
+ if (count <= 0)return 0.0;
     double sum = 1.0;
     double term = 1.0;
     for (int n = 1; n < count; ++n) {
-        term *= - (x * x) / ((2 * n - 1) * (2 * n)); // aₙ
+        term *= - (x * x) / ((2 * n - 1) * (2 * n));
         sum += term;
     }
     return sum;
