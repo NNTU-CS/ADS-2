@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
-#include "alg.h"
 #include <iostream>
+#include "alg.h"
 
 int main() {
   double val = 1.0;
