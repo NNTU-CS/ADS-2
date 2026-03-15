@@ -2,27 +2,58 @@
 #include <cstdint>
 #include "alg.h"
 
-
 double pown(double value, uint16_t n) {
-  return 0.0;
+  double res = 1.0;
+  for (uint16_t a = 1; a <= n; ++a) {
+    res *= value;
+  }
+  return res;
 }
 
 uint64_t fact(uint16_t n) {
-  return 0.0;
+  uint64_t res = 1;
+  while (n > 1) {
+    res *= n--;
+  }
+  return res;
 }
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+  double num = pown(x, n);
+  uint64_t dem = fact(n);
+  return num / static_cast<double>(dem);
 }
 
 double expn(double x, uint16_t count) {
-  return 0.0;
+  double total = 0.0;
+  for (uint16_t idx = 0; idx <= count; ++idx) {
+    total += calcItem(x, idx);
+  }
+  return total;
 }
 
 double sinn(double x, uint16_t count) {
-  return 0.0;
+  double res = 0.0;
+  uint16_t i = 0;
+  while (i < count) {
+    double signa = (i % 2 == 0) ? 1.0 : -1.0;
+    uint16_t expon = 2 * i + 1;
+    double num = pown(x, expon);
+    uint64_t dem = fact(expon);
+    res += signa * num / static_cast<double>(dem);
+    ++i;
+  }
+  return res;
 }
 
 double cosn(double x, uint16_t count) {
-  return 0.0;
+  double accumu = 0.0;
+  for (uint16_t ter = 0; ter < count; ++ter) {
+    double signa = (ter % 2 == 0) ? 1.0 : -1.0;
+    uint16_t power = 2 * ter;
+    double numer = pown(x, power);
+    uint64_t denom = fact(power);
+    accumu += signa * numer / static_cast<double>(denom);
+  }
+  return accumu;
 }
