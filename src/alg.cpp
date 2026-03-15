@@ -45,13 +45,13 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double Result = 0;
-  double tmp = 1;
+  long double Result = 0;
+  long double tmp = 1;
 
-  for (uint16_t i = 1; i <= count; i++) {
+  for (uint16_t i = 0; i <= count; i++) {
     Result += tmp;
     tmp *= -x * x / ((2 * i + 1) * (2 * i + 2));
   }
 
-  return Result;
+  return (double)Result;
 }
