@@ -10,7 +10,7 @@ double pown(double value, uint16_t n) {
   }
   return res;
 }
-https://github.com/TechStrelka/ADS-2/blob/main/src/alg.cpp
+
 uint64_t fact(uint16_t n) {
   uint64_t res = 1;
   for (uint16_t i = 0; i < n; ++i) {
