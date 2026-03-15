@@ -25,10 +25,12 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   if (count == 1) return x;
-  else return calcItem(x, 2*count-1)*(pown(-1,count-1)) + sinn(x, count - 1);
+  else return calcItem(x, 2 * count - 1) *
+  (pown(-1, count - 1)) + sinn(x, count - 1);
 }
 
 double cosn(double x, uint16_t count) {
   if (count == 1) return 1;
-  else return calcItem(x, 2 * count - 2) * (pown(-1, count - 1)) + cosn(x, count - 1);
+  else return calcItem(x, 2 * count - 2) *
+  (pown(-1, count - 1)) + cosn(x, count - 1);
 }
