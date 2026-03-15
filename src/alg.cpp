@@ -6,7 +6,7 @@
 double pown(double value, uint16_t n) {
   double res = 1;
   if (n == 0) {
-    return res;
+    return 1;
   }
   else {
     for (int i = 0; i < n; i++) {
@@ -33,8 +33,8 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
   double exp = 0;
-  for (int i = 0; i < count; i++) {
-    exp += calcItem(x, count);
+  for (uint32_t i = 0; i < count; i++) {
+    exp += calcItem(x, i);
   }
   return exp;
 }
@@ -42,8 +42,13 @@ double expn(double x, uint16_t count) {
 double sinn(double x, uint16_t count) {
   uint16_t j = 1;
   double res = 0;
-  for (uint16_t i = 1; i < count; i++) {
-    res += pown(-1, i - 1) * pown(x, j) / fact(j);
+  for (uint16_t i = 0; i < count; i++) {
+    if (i % 2 == 0) {
+      res += calcItem(x, j);
+    }
+    else {
+      res -= calcItem(x, j);
+    }
     j += 2;
   }
   return res;
@@ -52,8 +57,13 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   uint16_t j = 0;
   double res = 0;
-  for (uint16_t i = 1; i < count; i++) {
-    res += pown(-1, i - 1) * pown(x, j) / fact(j);
+  for (uint16_t i = 0; i < count; i++) {
+    if (i % 2 == 0) {
+      res += calcItem(x, j);
+    }
+    else {
+      res -= calcItem(x, j);
+    }
     j += 2;
   }
   return res;
