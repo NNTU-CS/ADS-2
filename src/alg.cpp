@@ -25,10 +25,10 @@ double calcItem(double x, uint16_t n) {
 }
 
 double expn(double x, uint16_t count) {
-    if (count == 1) {
+    if (count == 0) {
         return 1;
     }
-    return calcItem(x, count-1) + expn(x, count - 1);
+    return calcItem(x, count) + expn(x, count - 1);
 }
 
 double sinn(double x, uint16_t count) {
