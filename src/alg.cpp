@@ -20,14 +20,16 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  return 0.0;
+  if (n == 0) return 1.0;
+  return pown(x, n) / static_cast<double>(fact(n));
 }
 
 double expn(double x, uint16_t count) {
-  double result = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        result += pown(x, n) / static_cast<double>(fact(n));
+    double result = 0.0;
+    for (uint16_t n = count; n > 0; --n) {
+        result += calcItem(x, n);
     }
+    result += calcItem(x, 0);
     return result;
 }
 
