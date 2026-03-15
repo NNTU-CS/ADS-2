@@ -10,7 +10,7 @@ double pown(double value, uint16_t n) {
   }
   return res;
 }
-
+https://github.com/TechStrelka/ADS-2/blob/main/src/alg.cpp
 uint64_t fact(uint16_t n) {
   uint64_t res = 1;
   for (uint16_t i = 0; i < n; ++i) {
@@ -33,15 +33,15 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double res = x;
-  for (uint16_t i = 2; i < count + 2; ++i) {
+  for (uint16_t i = 2; i < count + 1; ++i) {
     res = res + pown(-1, i - 1) * calcItem(x, (2 * i - 1));
   }
   return res;
 }
 
 double cosn(double x, uint16_t count) {
- double res = 1.0;
-  for (uint16_t i = 2; i < count + 2; ++i) {
+  double res = 1.0;
+  for (uint16_t i = 2; i < count + 1; ++i) {
     res = res + pown(-1, i - 1) * calcItem(x, (2 * i - 2));
   }
   return res;
