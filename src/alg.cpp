@@ -1,71 +1,59 @@
 // Copyright 2022 NNTU-CS
 #include <cstdint>
-#include <cmath>
-#include <cstdint>
+#include "alg.h"
 
 double pown(double value, uint16_t n) {
-    if (n == 0) return 1.0;
-    if (n < 0) {
-        return 1.0 / power(value, -n);
-    }
-    double result = 1.0;
-    double b = value;
-    while (n > 0) {
-        if (n % 2 == 1) {
-            result *= b;
-        }
-        b *= b;
-        n /= 2;
-    }
-    return result;
+  double result = 1.0;
+  for (uint16_t a = 1; a <= n; ++i) {
+    result *= value;
+  }
+  return res;
 }
 
-uint64_t fact(uint16_t n) {#include <cstdint>
-    uint64_t result = 1;
-    for (unsigned int i = 2; i <= n; ++i) {
-        result *= i;
-    }
-    return result;
+uint64_t fact(uint16_t n) {
+  uint64_t result = 1;
+  while (n > 1) {
+    result *= n--;
+  }
+  return result;
 }
 
 double calcItem(double x, uint16_t n) {
-  if (n == 0)return 1.0;
-    double term = 1.0;
-    for (int i = 1; i <= n; ++i) {
-        term *= x / i;
-    }
-    return term;
+  double num = pown(x, n);
+  uint64_t dem = fact(n);
+  return num / static_cast<double>(dem);
 }
 
 double expn(double x, uint16_t count) {
-   if (count <= 0) return 0.0;
-    double sum = 1.0; // n=0 член
-    double term = 1.0; // текущий член
-    for (int n = 1; n < count; ++n) {
-        term *= x / n;
-        sum += term;
-    }
-    return sum;
+  double total = 0.0;
+  for (uint16_t idx = 0; idx <= count; ++idx) {
+    total += calcItem(x, idx);
+  }
+  return total;
 }
 
 double sinn(double x, uint16_t count) {
-   if (count <= 0)return 0.0;
-    double sum = x;
-    double term = x;
-    for (int n = 1; n < count; ++n) {
-        term *= - (x * x) / ((2 * n) * (2 * n + 1));
-        sum += term;
-    }
-    return sum;
+  double result = 0.0;
+  uint16_t i = 0;
+  while (i < count) {
+    double signa = (i % 2 == 0) ? 1.0 : -1.0;
+    uint16_t expon = 2 * i + 1;
+    double num = pown(x, expon);
+    uint64_t dem = fact(expon);
+    result += sign * num / static_cast<double>(dem);
+    ++i;
+  }
+  return result;
 }
 
 double cosn(double x, uint16_t count) {
- if (count <= 0)return 0.0;
-    double sum = 1.0;
-    double term = 1.0;
-    for (int n = 1; n < count; ++n) {
-        term *= - (x * x) / ((2 * n - 1) * (2 * n));
-        sum += term;
-    }
-    return sum;
+  double accumu = 0.0;
+  for (uint16_t ter = 0; ter < count; ++ter) {
+    double signa = (ter % 2 == 0) ? 1.0 : -1.0;
+    uint16_t power = 2 * ter;
+    double numer = pown(x, power);
+    uint64_t denom = fact(power);
+    accumulator += signa * numer / static_cast<double>(denom);
+  }
+  return accumur;
 }
