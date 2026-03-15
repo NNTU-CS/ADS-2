@@ -2,8 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
-
 double pown(double value, uint16_t n) {
   double result = 1.0;
   for (uint16_t i = 0; i < n; i++) {
@@ -21,7 +19,6 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  if (n == 0) return 1.0;
   return pown(x, n) / fact(n);
 }
 
@@ -37,12 +34,13 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
+  double term = x;
   for (uint16_t i = 0; i < count; i++) {
-    double term = pown(x, 2 * i + 1) / fact(2 * i + 1);
-    if (i % 2 == 0) {
+    if (i == 0) {
       sum += term;
     } else {
-      sum -= term;
+      term *= -x * x / ((2 * i) * (2 * i + 1));
+      sum += term;
     }
   }
   return sum;
@@ -50,12 +48,13 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
+  double term = 1.0;
   for (uint16_t i = 0; i < count; i++) {
-    double term = pown(x, 2 * i) / fact(2 * i);
-    if (i % 2 == 0) {
+    if (i == 0) {
       sum += term;
     } else {
-      sum -= term;
+      term *= -x * x / ((2 * i - 1) * (2 * i));
+      sum += term;
     }
   }
   return sum;
