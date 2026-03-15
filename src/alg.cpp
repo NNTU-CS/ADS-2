@@ -52,9 +52,13 @@ double sinn(double x, uint16_t count) {
 double cosn(double x, uint16_t count) {
   double result = 1.0;
   double date = 1.0;
+  double com = 0.0;
   for (uint16_t n = 1; n <= count; n++) {
     date = -date * x * x / ((2*n) * (2*n - 1));
-    result += date;
+    double a = date - com;
+    double b = result + a;
+    com = (b - result) - a;
+    result = b;
   }
   return result;
 }
