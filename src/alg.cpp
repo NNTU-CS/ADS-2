@@ -2,7 +2,6 @@
 #include <cstdint>
 #include "alg.h"
 
-
 double pown(double value, uint16_t n) {
   double result = 1.0;
   for (uint16_t i = 0; i < n; ++i) {
@@ -20,41 +19,52 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-  return pown(x, n) / static_cast<double>(fact(n));
+  if (n == 0) return 1.0;
+  double numerator = pown(x, n);
+  double denominator = static_cast<double>(fact(n));
+  return numerator / denominator;
 }
 
 double expn(double x, uint16_t count) {
   double sum = 0.0;
+  double item = 1.0;
   for (uint16_t n = 0; n < count; ++n) {
-    sum += calcItem(x, n);
+    if (n == 0) {
+      item = 1.0;
+    } else {
+      item *= x / static_cast<double>(n);
+    }
+    sum += item;
   }
   return sum;
 }
 
 double sinn(double x, uint16_t count) {
   double sum = 0.0;
+  double item = x;
   for (uint16_t n = 0; n < count; ++n) {
     uint16_t power = 2 * n + 1;
-    double item = calcItem(x, power);
-    if (n % 2 == 0) {
-      sum += item;
+    if (n == 0) {
+      item = x;
     } else {
-      sum -= item;
+      item *= -x * x / ((2 * n) * (2 * n + 1));
     }
+    sum += item;
   }
   return sum;
 }
 
 double cosn(double x, uint16_t count) {
   double sum = 0.0;
+  double item = 1.0;
   for (uint16_t n = 0; n < count; ++n) {
     uint16_t power = 2 * n;
-    double item = calcItem(x, power);
-    if (n % 2 == 0) {
-      sum += item;
+    if (n == 0) {
+      item = 1.0;
     } else {
-      sum -= item;
+      item *= -x * x / ((2 * n - 1) * (2 * n));
     }
+    sum += item;
   }
   return sum;
 }
