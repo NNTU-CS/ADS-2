@@ -21,6 +21,7 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
+  if (n == 0) return 1.0;
   double numerator = pown(x, n);
   uint64_t denominator = fact(n);
   return numerator / denominator;
