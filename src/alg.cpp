@@ -53,7 +53,7 @@ double cosn(double x, uint16_t count) {
         if (n % 2 == 0) {
             result -= term;
         } else {
-            result += term; 
+            result += term;
         }
     }
     return result;
