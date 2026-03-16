@@ -3,6 +3,8 @@
 #include "alg.h"
 
 
+#include <cstdint>
+
 double pown(double value, uint16_t n) {
     double result = 1.0;
     for (uint16_t i = 0; i < n; ++i) {
@@ -11,35 +13,40 @@ double pown(double value, uint16_t n) {
     return result;
 }
 
-uint64_t fact(uint16_t n) {
-    uint64_t result = 1;
+double fact(uint16_t n) {
+    double result = 1.0;
     for (uint16_t i = 2; i <= n; ++i) {
-        result *= i;
+        result *= static_cast<double>(i);
     }
     return result;
 }
 
 double calcItem(double x, uint16_t n) {
-    return pown(x, n) / static_cast<double>(fact(n));
+    return pown(x, n) / fact(n);
 }
 
 double expn(double x, uint16_t count) {
-    double result = 0.0;
-    for (uint16_t n = 0; n < count; ++n) {
-        result += calcItem(x, n);
+    double result = 1.0;  
+    double term = 1.0;    
+    
+    for (uint16_t n = 1; n < count; ++n) {
+        term *= x / static_cast<double>(n);
+        result += term;
     }
     return result;
 }
 
 double sinn(double x, uint16_t count) {
     double result = 0.0;
+    double term = x; 
+    
     for (uint16_t n = 0; n < count; ++n) {
-        uint16_t k = 2 * n + 1;
-        double term = pown(x, k) / static_cast<double>(fact(k));
-        if (n % 2 == 0) {
+        if (n == 0) {
             result += term;
         } else {
-            result -= term;
+
+            term *= -x * x / (static_cast<double>(2 * n) * (2 * n + 1));
+            result += term;
         }
     }
     return result;
@@ -47,13 +54,14 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
     double result = 0.0;
+    double term = 1.0;  
+    
     for (uint16_t n = 0; n < count; ++n) {
-        uint16_t k = 2 * n;
-        double term = pown(x, k) / static_cast<double>(fact(k));
-        if (n % 2 == 0) {
+        if (n == 0) {
             result += term;
         } else {
-            result -= term;
+            term *= -x * x / (static_cast<double>(2 * n - 1) * (2 * n));
+            result += term;
         }
     }
     return result;
