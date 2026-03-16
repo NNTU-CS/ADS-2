@@ -33,14 +33,13 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double Result = 0;
+  double Result = 0.0;
   double tmp = x;
-
   for (uint16_t i = 0; i <= count; i++) {
     Result += tmp;
-    tmp *= -x * x / ((2 * i + 2) * (2 * i + 3));
+    double denom = (2.0 * i + 2.0) * (2.0 * i + 3.0);
+    tmp *= - (x * x) / denom;
   }
-
   return Result;
 }
 
