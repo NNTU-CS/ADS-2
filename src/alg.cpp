@@ -19,18 +19,18 @@ uint64_t fact(uint16_t n) {
 double calcItem(double x, uint16_t n) {
   return pown(x, n) / fact(n);
 }
-double expn(double x, uint16_t count) {
-    if (count == 0) {
-        return 0.0;
-    }
-    double result = 1.0;
+double expn(double x, int n) {
+    double sum = 1.0;  // первый член ряда (i=0)
     double term = 1.0;
-    for (uint16_t n = 1; n <= count - 1; ++n) {
-        term = term * x / static_cast<double>(n);
-        result = result + term;
+    
+    for (int i = 1; i < n; i++) {  // начинаем с i=1, т.к. i=0 уже учтен
+        term *= x / i;  // рекуррентное соотношение: term = term * x / i
+        sum += term;
     }
-    return result;
+    
+    return sum;
 }
+
 double sinn(double x, uint16_t count) {
     if (count == 0) {
         return 0.0;
