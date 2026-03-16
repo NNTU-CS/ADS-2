@@ -25,7 +25,7 @@ double expn(double x, int n) {
     for (int i = 1; i < n; i++) {
         term *= x / i;
         sum += term;
-    }  
+    }
     return sum;
 }
 double sinn(double x, uint16_t count) {
