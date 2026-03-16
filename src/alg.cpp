@@ -13,8 +13,8 @@ double pown(double value, uint16_t n) {
 }
 
 uint64_t fact(uint16_t n) {
-  int64_t Result = 1;
-  for (uint16_t i = 1; i <= n; i++) {
+  uint64_t Result = 1;
+  for (uint64_t i = 1; i <= n; i++) {
     Result *= i;
   }
   return Result;
@@ -36,19 +36,17 @@ double sinn(double x, uint16_t count) {
   double Result = 0.0;
   double tmp = x;
   for (uint16_t i = 0; i <= count; i++) {
-    Result += tmp;
-    double denom = (2.0 * i + 2.0) * (2.0 * i + 3.0);
-    tmp *= - (x * x) / denom;
+    
   }
   return Result;
 }
 
 double cosn(double x, uint16_t count) {
   long double Result = 0;
-  long double tmp = 1;
-  for (uint16_t i = 0; i <= count; i++) {
+  for (uint16_t i = 0; i < count; i++) {
+    double tmp = pown(-1, i - 1) * pown(x, 2 * i - 2);
+    tmp /= fact(2 * i - 2);
     Result += tmp;
-    tmp *= -(long double)x * x / ((2 * i + 1) * (2 * i + 2));
   }
   return (double)Result;
 }
