@@ -20,17 +20,14 @@ double calcItem(double x, uint16_t n) {
   return pown(x, n) / fact(n);
 }
 double expn(double x, int n) {
-    double sum = 1.0;  // первый член ряда (i=0)
+    double sum = 1.0;
     double term = 1.0;
-    
-    for (int i = 1; i < n; i++) {  // начинаем с i=1, т.к. i=0 уже учтен
-        term *= x / i;  // рекуррентное соотношение: term = term * x / i
+    for (int i = 1; i < n; i++) {
+        term *= x / i;
         sum += term;
-    }
-    
+    }  
     return sum;
 }
-
 double sinn(double x, uint16_t count) {
     if (count == 0) {
         return 0.0;
