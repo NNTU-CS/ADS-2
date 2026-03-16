@@ -52,3 +52,4 @@ double cosn(double x, uint16_t count) {
   }
   return sum;
 }
+
