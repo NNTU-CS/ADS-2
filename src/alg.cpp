@@ -25,7 +25,7 @@ double calcItem(double x, uint16_t n) {
 
 double expn(double x, uint16_t count) {
     double ans = 0.0;
-    for (uint16_t n = 0; n < count; n++) {
+    for (uint16_t n = 0; n <= count; n++) {
         ans += calcItem(x, n);
     }
     return ans;
@@ -39,7 +39,7 @@ double sinn(double x, uint16_t count) {
 
         if (n % 2 == 0) {
             ans += t;
-        }else {
+        } else {
             ans -= t;
         }
     }
@@ -53,7 +53,7 @@ double cosn(double x, uint16_t count) {
         double t = calcItem(x, power);
         if (n % 2 == 0) {
             ans += t;
-        }else {
+        } else {
             ans -= t;
         }
     }
