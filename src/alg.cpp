@@ -35,13 +35,13 @@ double sinn(double x, uint16_t count) {
 	double ans = 0.0;
 	for (uint16_t i = 0; i < count; i++) {
 		uint16_t power = 2 * i + 1;
-		double x = calcItem(x, power);
+		double t = calcItem(x, power);
 		if (i % 2 == 0) {
-			ans += x;
+			ans += t;
 		}
 		else
 		{
-			ans -= x;
+			ans -= t;
 		}
 	}
 	return ans;
@@ -51,13 +51,13 @@ double cosn(double x, uint16_t count) {
 	double ans = 0.0;
 	for (uint16_t i = 0; i < count; i++) {
 		uint16_t power = 2 * i;
-		double x = calcItem(x, power);
+		double t = calcItem(x, power);
 		if (i % 2 == 0) {
-			ans += x;
+			ans += t;
 		}
 		else
 		{
-			ans -= x;
+			ans -= t;
 		}
 	}
 	return ans;
