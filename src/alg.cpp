@@ -44,12 +44,11 @@ double sinn(double x, uint16_t count) {
 }
 
 double cosn(double x, uint16_t count) {
-  double Result = 0.0;
-  double tmp = 1.0;
+  long double Result = 0;
+  long double tmp = 1;
   for (uint16_t i = 0; i <= count; i++) {
     Result += tmp;
-    double denom = (2.0 * i + 1.0) * (2.0 * i + 2.0);
-    tmp *= - (x * x) / denom;
+    tmp *= -(long double)x * x / ((2 * i + 1) * (2 * i + 2));
   }
-  return Result;
+  return (double)Result;
 }
