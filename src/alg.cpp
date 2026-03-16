@@ -1,6 +1,6 @@
 // Copyright 2022 NNTU-CS
 #include "alg.h"
-#include <stdint>
+#include <stdint.h>
 
 double pown(double value, uint16_t n) {
     double ans = 1.0;
