@@ -20,7 +20,6 @@ uint64_t fact(uint16_t n) {
 }
 
 double calcItem(double x, uint16_t n) {
-    if (n == 0) return 1.0;
     return pown(x, n) / static_cast<double>(fact(n));
 }
 
