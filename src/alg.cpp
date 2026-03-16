@@ -33,20 +33,20 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double Result = 0.0;
-  double tmp = x;
-  for (uint16_t i = 0; i <= count; i++) {
-    
-  }
+  double Result = 0; 
+  double tmp = x; 
+  for (uint16_t i = 0; i <= count; i++) { 
+    Result += tmp; tmp *= -x * x / ((2 * i + 2) * (2 * i + 3)); 
+  } 
   return Result;
 }
 
 double cosn(double x, uint16_t count) {
-  long double Result = 0;
-  for (uint16_t i = 0; i < count; i++) {
-    double tmp = pown(-1, i - 1) * pown(x, 2 * i - 2);
-    tmp /= fact(2 * i - 2);
-    Result += tmp;
+  long double Result = 0; 
+  long double tmp = 1; 
+  for (uint16_t i = 0; i <= count; i++) { 
+    Result += tmp; 
+    tmp *= -x * x / ((2.0 * i + 1) * (2.0 * i + 2));
   }
-  return (double)Result;
+  return Result
 }
