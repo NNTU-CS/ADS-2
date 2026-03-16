@@ -23,26 +23,32 @@ double calcItem(double x, uint16_t n) {
 }
 double expn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t i = 0; i < count; i++) {
-        sum += calcItem(x, i);
+    for (uint16_t n = 1; n <= count; n++) {
+        sum += pown(x, n) / fact(n);
     }
     return sum;
 }
+
 double sinn(double x, uint16_t count) {
-    double sum = x;
-    double term = x;
-    for (uint16_t i = 1; i < count; i++) {
-        term *= -x * x / ((2*i) * (2*i + 1));
-        sum += term;
+    double sum = 0.0;
+    for (uint16_t n = 1; n <= count; n++) {
+        if (n % 2 == 1) {
+            sum += pown(x, 2*n-1) / fact(2*n-1);
+        } else {
+            sum -= pown(x, 2*n-1) / fact(2*n-1);
+        }
     }
     return sum;
 }
+
 double cosn(double x, uint16_t count) {
     double sum = 1.0;
-    double term = 1.0;
-    for (uint16_t i = 1; i < count; i++) {
-        term *= -x * x / ((2*i - 1) * (2*i));
-        sum += term;
+    for (uint16_t n = 2; n <= count; n+=2) {
+        if ((n/2) % 2 == 1) {
+            sum -= pown(x, n) / fact(n);
+        } else {
+            sum += pown(x, n) / fact(n);
+        }
     }
     return sum;
 }
