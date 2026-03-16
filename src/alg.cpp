@@ -33,20 +33,23 @@ double expn(double x, uint16_t count) {
 }
 
 double sinn(double x, uint16_t count) {
-  double Result = 0; 
-  double tmp = x; 
-  for (uint16_t i = 0; i <= count; i++) { 
-    Result += tmp; tmp *= -x * x / ((2 * i + 2) * (2 * i + 3)); 
-  } 
+  double Result = 0;
+  double tmp = x;
+  for (uint16_t i = 0; i <= count; i++) {
+    Result += tmp; tmp *= -x * x / ((2 * i + 2) * (2 * i + 3));
+  }
   return Result;
 }
 
 double cosn(double x, uint16_t count) {
-  long double Result = 0; 
-  long double tmp = 1; 
-  for (uint16_t i = 0; i <= count; i++) { 
-    Result += tmp; 
-    tmp *= -x * x / ((2.0 * i + 1) * (2.0 * i + 2));
+  x = std::fmod(x, 2 * M_PI);
+  if (x > M_PI) x -= 2 * M_PI;
+  if (x < -M_PI) x += 2 * M_PI;
+  double Result = 1.0;
+  double tmp = 1.0;
+  for (uint16_t n = 1; n < count; ++n) {
+      tmp *= -x * x / ((2 * n - 1) * (2 * n));
+      Result += tmp;
   }
-  return Result
+  return Result;
 }
