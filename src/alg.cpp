@@ -35,7 +35,7 @@ double expn(double x, uint16_t count) {
 
 double sinn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t n = 0; n <= count; ++n) {
+    for (uint16_t n = 0; n < count; ++n) {
         uint16_t power = 2 * n + 1;
         double numerator = pown(x, power);
         uint64_t denominator = fact(power);
@@ -50,7 +50,7 @@ double sinn(double x, uint16_t count) {
 
 double cosn(double x, uint16_t count) {
     double sum = 0.0;
-    for (uint16_t n = 0; n <= count; ++n) {
+    for (uint16_t n = 0; n < count; ++n) {
         uint16_t power = 2 * n;
         double numerator = pown(x, power);
         uint64_t denominator = fact(power);
